@@ -1,0 +1,22 @@
+-- SQLBook: Code
+INSERT INTO cliente (nome, cpf, telefone, email, data_de_nascimento) VALUES
+('Ana Silva', '123.456.789-01', '(11) 98765-4321', 'ana.silva@example.com', '1990-01-15'),
+('Bruno Costa', '234.567.890-12', '(21) 91234-5678', 'bruno.costa@example.com', '1985-05-22'),
+('Carla Mendes', '345.678.901-23', '(31) 99876-5432', 'carla.mendes@example.com', '1992-03-10'),
+('Diego Oliveira', '456.789.012-34', '(41) 98765-4321', 'diego.oliveira@example.com', '1988-07-19'),
+('Elisa Santos', '567.890.123-45', '(51) 91234-5678', 'elisa.santos@example.com', '1995-12-25'),
+('Felipe Souza', '678.901.234-56', '(61) 99876-5432', 'felipe.souza@example.com', '1993-11-01'),
+('Gabriela Lima', '789.012.345-67', '(71) 98765-4321', 'gabriela.lima@example.com', '1987-04-14'),
+('Hugo Pereira', '890.123.456-78', '(81) 91234-5678', 'hugo.pereira@example.com', '1991-06-30'),
+('Isabela Rocha', '901.234.567-89', '(91) 99876-5432', 'isabela.rocha@example.com', '1989-09-20'),
+('João Almeida', '012.345.678-90', '(31) 98765-4321', 'joao.almeida@example.com', '1994-10-05'),
+('Larissa Fernandes', '123.456.789-01', '(41) 91234-5678', 'larissa.fernandes@example.com', '1996-02-18'),
+('Marcelo Azevedo', '234.567.890-12', '(51) 99876-5432', 'marcelo.azevedo@example.com', '1983-08-27'),
+('Natalia Martins', '345.678.901-23', '(61) 98765-4321', 'natalia.martins@example.com', '1997-01-12'),
+('Otavio Ramos', '456.789.012-34', '(71) 91234-5678', 'otavio.ramos@example.com', '1986-03-25'),
+('Paula Barros', '567.890.123-45', '(81) 99876-5432', 'paula.barros@example.com', '1990-05-10'),
+('Rafael Vieira', '678.901.234-56', '(91) 98765-4321', 'rafael.vieira@example.com', '1992-07-22'),
+('Sofia Freitas', '789.012.345-67', '(31) 91234-5678', 'sofia.freitas@example.com', '1984-11-09'),
+('Tiago Correia', '890.123.456-78', '(41) 99876-5432', 'tiago.correia@example.com', '1988-09-15'),
+('Ursula Reis', '901.234.567-89', '(51) 91234-5678', 'ursula.reis@example.com', '1993-04-01'),
+('Vinicius Cardoso', '012.345.678-90', '(61) 99876-5432', 'vinicius.cardoso@example.com', '1995-12-20');

@@ -1,0 +1,266 @@
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #00c4ff, #ffd900);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 20px;
+    background-color: rgba(243, 243, 243, 0.1);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do título dentro do cabeçalho */
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+}
+
+header h1 span {
+    color: black;
+}
+
+/* Estilo da navegação */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+a:hover {
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+/* Estilo para o Botão do Dropdown */
+.dropbtn {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* O contêiner <div> - necessário para posicionar o conteúdo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Conteúdo do Dropdown (Oculto por Padrão) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Mostrar o menu dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mudar a cor de fundo do botão do dropdown quando o conteúdo do dropdown está visível */
+.dropdown:hover .dropbtn {
+    filter: drop-shadow(10px 10px 15px black);
+}
+
+/* Estilo para os elementos com classes .biblioteca e .dono */
+.biblioteca, .dono, .galeria, .painel {
+    padding: 30px;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos subtítulos */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo do contêiner de conteúdo */
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Estilo das imagens dentro do contêiner de conteúdo */
+.content img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+/* Estilo dos parágrafos dentro do contêiner de conteúdo */
+.content p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Estilo do logo */
+#logo {
+    max-height: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+/* Estilo para a coleção */
+.colecao {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo geral da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo para o cabeçalho da tabela */
+thead {
+    background-color: #007acc;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: none;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #d1e7fd;
+    cursor: pointer;
+}
+
+/* Estilo do rodapé */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: auto;
+}
+
+/* Estilo para o contêiner de rolagem horizontal */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: transparent;
+    scroll-behavior: smooth;
+    justify-content: space-evenly;
+}
+
+.scroll-container img {
+    display: inline-block;
+    height: auto;
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.scroll-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Media query para telas com largura máxima de 768 pixels */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .scroll-container {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .scroll-container img {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .logo {
+        width: auto;
+        height: auto;
+    }
+}

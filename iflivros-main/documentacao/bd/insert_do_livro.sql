@@ -1,0 +1,22 @@
+-- SQLBook: Code
+INSERT INTO livro (nome, genero, status, autor) VALUES
+('A Garota no Trem', 'Suspense', 'Disponível', 'Paula Hawkins'),
+('O Sol é Para Todos', 'Drama', 'Emprestado', 'Harper Lee'),
+('A Vida Invisível de Addie LaRue', 'Fantasia', 'Disponível', 'V.E. Schwab'),
+('A Garota que Roubava Livros', 'Drama', 'Emprestado', 'Markus Zusak'),
+('O Nome do Vento', 'Fantasia', 'Disponível', 'Patrick Rothfuss'),
+('O Sol Também é Uma Estrela', 'Romance', 'Emprestado', 'Nicola Yoon'),
+('A Sombra do Vento', 'Suspense', 'Disponível', 'Carlos Ruiz Zafón'),
+('O Ceifador', 'Fantasia', 'Emprestado', 'Neal Shusterman'),
+('A Casa dos Espíritos', 'Romance', 'Disponível', 'Isabel Allende'),
+('Os Homens Que Não Amavam as Mulheres', 'Suspense', 'Emprestado', 'Stieg Larsson'),
+('A Garota do Trem', 'Suspense', 'Disponível', 'Paula Hawkins'),
+('O Lobo de Wall Street', 'Memórias', 'Emprestado', 'Jordan Belfort'),
+('A Hospedeira', 'Ficção Científica', 'Disponível', 'Stephenie Meyer'),
+('A Revolução dos Bichos', 'Fábula', 'Emprestado', 'George Orwell'),
+('O Homem de Areia', 'Terror', 'Disponível', 'Fritz Lieber'),
+('A Coluna de Fogo', 'Histórico', 'Emprestado', 'Ken Follett'),
+('O Andar do Bêbado', 'Ciência', 'Disponível', 'Leonard Mlodinow'),
+('A Última Nota', 'Drama', 'Emprestado', 'A.J. Banner'),
+('O Leitor', 'Drama', 'Disponível', 'Bernhard Schlink'),
+('A Cidade do Sol', 'Drama', 'Emprestado', 'Khaled Hosseini');

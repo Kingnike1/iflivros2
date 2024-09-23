@@ -1,0 +1,22 @@
+-- SQLBook: Code
+INSERT INTO `IF_livros`.`funcionario` (`nome`, `cpf`, `telefone`, `data_de_nascimento`, `funcao`) VALUES
+('João Silva', '123.456.789-01', '(11) 98765-4341', '1985-01-15', 'Gerente'),
+('Maria Oliveira', '234.567.890-12', '(11) 98765-4342', '1990-02-20', 'Atendente'),
+('Carlos Souza', '345.678.901-23', '(11) 98765-4343', '1988-03-25', 'Bibliotecário'),
+('Ana Costa', '456.789.012-34', '(11) 98765-4344', '1992-04-30', 'Assistente de Biblioteca'),
+('Lucas Pereira', '567.890.123-45', '(11) 98765-4345', '1995-05-10', 'Técnico de Informação'),
+('Mariana Lima', '678.901.234-56', '(11) 98765-4346', '1983-06-15', 'Catalogador'),
+('Rafael Mendes', '789.012.345-67', '(11) 98765-4347', '1987-07-20', 'Auxiliar de Serviços Gerais'),
+('Fernanda Rocha', '890.123.456-78', '(11) 98765-4348', '1991-08-25', 'Gerente'),
+('Gustavo Ferreira', '901.234.567-89', '(11) 98765-4349', '1989-09-30', 'Especialista em Multimídia'),
+('Isabela Duarte', '012.345.678-90', '(11) 98765-4350', '1993-10-05', 'Atendente'),
+('Pedro Almeida', '123.456.789-11', '(11) 98765-4351', '1986-11-10', 'Coordenador de Programas'),
+('Juliana Barros', '234.567.890-13', '(11) 98765-4352', '1990-12-15', 'Assistente de Biblioteca'),
+('Ricardo Santos', '345.678.901-24', '(11) 98765-4353', '1988-01-20', 'Técnico de Informação'),
+('Beatriz Gonçalves', '456.789.012-35', '(11) 98765-4354', '1992-02-25', 'Catalogador'),
+('Felipe Araújo', '567.890.123-46', '(11) 98765-4355', '1995-03-30', 'Auxiliar de Serviços Gerais'),
+('Larissa Martins', '678.901.234-57', '(11) 98765-4356', '1983-04-05', 'Especialista em Multimídia'),
+('Thiago Ribeiro', '789.012.345-68', '(11) 98765-4357', '1987-05-10', 'Gerente'),
+('Patrícia Silva', '890.123.456-79', '(11) 98765-4358', '1991-06-15', 'Bibliotecário'),
+('Bruno Lima', '901.234.567-80', '(11) 98765-4359', '1989-07-20', 'Coordenador de Programas'),
+('Carolina Ferreira', '012.345.678-91', '(11) 98765-4360', '1993-08-25', 'Atendente');
