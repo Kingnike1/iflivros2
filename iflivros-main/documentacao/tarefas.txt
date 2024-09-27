@@ -1,2 +1,5 @@
 corriji o login.php pois nao esta indo para o home
-
+e todos os arquivos devem ser verificados a localização
+adicionar o botao de deletar
+adicionar o nome no lugar dos ids dentro das tabelas
+cria um arquivo para deletar linhas do banco de dados
