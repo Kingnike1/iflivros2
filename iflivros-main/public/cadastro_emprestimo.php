@@ -15,10 +15,10 @@
         
         <select name="livro_id" required>
             <?php
-            require_once "conexao.php";
+            require_once "../controle/conexao.php";
 
             // Livros
-            $sql = "SELECT idlivros, nome FROM livro";
+            $sql = "SELECT idlivros, nome FROM livro WHERE status = 'Disponível'"; // Alterado aqui
             $resultados = mysqli_query($conexao, $sql);
 
             while ($linha = mysqli_fetch_array($resultados)) {
@@ -28,6 +28,7 @@
             }
             ?>
         </select><br><br>
+
         
         <label for="cliente_id">Cliente:</label><br>
         <select name="cliente_id" required>

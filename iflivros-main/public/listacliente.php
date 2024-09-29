@@ -55,7 +55,7 @@
             <?php
             require_once "../controle/conexao.php";
 
-            $sql = "SELECT * FROM cliente";
+            $sql = "SELECT * FROM cliente ";
 
             $resultados = mysqli_query($conexao, $sql);
 
