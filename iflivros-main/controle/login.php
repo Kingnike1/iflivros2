@@ -8,8 +8,11 @@
     $resultados = mysqli_query($conexao, $sql);
 
     if(mysqli_num_rows($resultados) == 0) {
-        header("location: ../public/index.html");
+        header("location: ../public/index.php");
     } else {
-        header("location: ../public/home.html");
+        session_start();
+        $_SESSION['logado'] = 1;
+
+        header("location: ../public/home.php");
     }
 ?>

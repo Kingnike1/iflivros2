@@ -1,3 +1,6 @@
+<?php
+require_once '../controle/verificar_login.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,31 +15,9 @@
 </head>
 
 <body>
-    <img src="public/assets/logo.png" alt="logo do site" id="logo">
-
-    <header>
-        <nav>
-            <button class="dropbtn"><a href="home.html">Página Inicial</a></button>
-            <div class="dropdown">
-                <button class="dropbtn"><a href="#">Lista</a></button>
-                <div class="dropdown-content">
-                    <a href="public/listalivros.php">Livros</a><br>
-                    <a href="public/listacliente.php">Clientes</a><br>
-                    <a href="public/listaemprestimo.php">Empréstimos</a><br>
-                    <a href="public/listafuncionario.php">Funcionários</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn"><a href="#">Cadastro</a></button>
-                <div class="dropdown-content">
-                    <a href="public/cadastro_livro.html">Cadastro do Livro</a><br>
-                    <a href="public/cadastro_cliente.html">Cadastro do Cliente</a><br>
-                    <a href="public/cadastro_emprestimo.php">Cadastro do Empréstimo</a><br>
-                    <a href="public/cadastro_funcionario.html">Cadastro do Funcionário</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <?php
+        require_once './assets/header.html'
+    ?>
     <h2>Lista de Livros</h2>
     <table>
 
@@ -53,7 +34,7 @@
                 </tr>
             </thead>
             <?php
-            require_once "/controle/conexao.php";
+            require_once "../controle/conexao.php";
 
             $sql = "SELECT * FROM livro";
 

@@ -11,7 +11,7 @@
 </head>
 <body>
     <h2>Login do Usuario</h2>
-    <form action="login.php" method="post">
+    <form action="../controle/login.php" method="post">
         E-mail: <br>
         <input type="email" name="login"> <br><br>
         Senha: <br>

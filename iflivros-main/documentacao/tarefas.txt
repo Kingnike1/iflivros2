@@ -1,8 +1,19 @@
-arquivos organizados em pastas separadas
-listagem com nomes no lugar do id's
+*arquivos organizados em pastas separadas = feito
+    Paulo Ricardo
+    Sara
+    Bianca
+    Pablo
+    Kaio
+
+*listagem com nomes no lugar do id's = feito
+    Pablo
+
+*pasta controle
+    Paulo Ricardo
 
 30/09
-cria um verificar longado para ver se a pessoa ta longada
-cria o arquivo para evitar invasao! que no caso seja session_start()
-cria um arquivo para deslongar
-cria um botao de longout
+*cria um verificar longado para ver se a pessoa ta longada
+*cria o arquivo para evitar invasao! que no caso seja session_start()
+*cria um arquivo para deslongar = 'KAIO'
+*cria um botao de longout = Sara
+*COLOCAR O ARQUIVO VERIFICAR LOGIN NO INDEX = 'Kaio'
