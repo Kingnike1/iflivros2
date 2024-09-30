@@ -1,5 +1,8 @@
-corriji o login.php pois nao esta indo para o home
-e todos os arquivos devem ser verificados a localização
-adicionar o botao de deletar
-adicionar o nome no lugar dos ids dentro das tabelas
-cria um arquivo para deletar linhas do banco de dados
+arquivos organizados em pastas separadas
+listagem com nomes no lugar do id's
+
+30/09
+cria um verificar longado para ver se a pessoa ta longada
+cria o arquivo para evitar invasao! que no caso seja session_start()
+cria um arquivo para deslongar
+cria um botao de longout
