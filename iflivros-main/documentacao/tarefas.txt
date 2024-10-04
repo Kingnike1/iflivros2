@@ -1,19 +1,52 @@
-*arquivos organizados em pastas separadas = feito
-    Paulo Ricardo
-    Sara
-    Bianca
-    Pablo
-    Kaio
+Tarefas Realizadas:
 
-*listagem com nomes no lugar do id's = feito
-    Pablo
+Arquivos organizados em pastas separadas para os usuários:
+Paulo Ricardo
+Sara
+Bianca
+Pablo
+Kaio
 
-*pasta controle
-    Paulo Ricardo
+Listagem com nomes no lugar dos IDs:
+Pablo
 
-30/09
-*cria um verificar longado para ver se a pessoa ta longada
-*cria o arquivo para evitar invasao! que no caso seja session_start()
-*cria um arquivo para deslongar = 'KAIO'
-*cria um botao de longout = Sara
-*COLOCAR O ARQUIVO VERIFICAR LOGIN NO INDEX = 'Kaio'
+Pasta de controle:
+Paulo Ricardo
+
+Tarefas Pendentes:
+
+Criar uma verificação de login:
+
+Objetivo: Verificar se o usuário está logado (longado).
+Tarefa: Criar uma função ou arquivo para checar o status de login.
+Criar arquivo para evitar invasão (Sessão segura):
+
+Objetivo: Garantir que a sessão de cada usuário seja segura.
+Tarefa: Incluir session_start() no início de cada página onde o login é necessário.
+Criar arquivo para deslogar (logout):
+
+Objetivo: Criar um arquivo ou função para deslogar o usuário.
+Tarefa: Criar um script que destrua a sessão e redirecione para a página de login.
+Criar botão de logout na interface de Sara:
+
+Objetivo: Adicionar um botão para Sara (ou qualquer outro usuário) poder deslogar.
+Tarefa: Adicionar um botão de logout na interface (página) de Sara.
+Incluir o arquivo de verificação de login no index.php (Kaio):
+
+Objetivo: Incluir a verificação de login no arquivo index.php para garantir que o usuário esteja logado ao acessar a página principal.
+
+Tarefa: Incluir a verificação no início de index.php.
+
+Resumo das Ações:
+
+Feito: Organização das pastas e arquivos.
+Pendências:
+Criar o arquivo para verificar login.
+Criar o arquivo para deslogar.
+Adicionar o botão de logout.
+Incluir o arquivo de verificação no index.php.
+
+
+04/10
+
+criar um arquivo pesquisa, conforme a aula de hoje: 
