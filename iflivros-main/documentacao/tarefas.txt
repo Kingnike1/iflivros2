@@ -35,17 +35,6 @@ Incluir o arquivo de verificação de login no index.php (Kaio):
 
 Objetivo: Incluir a verificação de login no arquivo index.php para garantir que o usuário esteja logado ao acessar a página principal.
 
-Tarefa: Incluir a verificação no início de index.php.
-
-Resumo das Ações:
-
-Feito: Organização das pastas e arquivos.
-Pendências:
-Criar o arquivo para verificar login.
-Criar o arquivo para deslogar.
-Adicionar o botão de logout.
-Incluir o arquivo de verificação no index.php.
-
 
 04/10
 
