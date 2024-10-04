@@ -1,7 +1,16 @@
 <?php
-require_once '../controle/verificar_login.php'
+require_once '../controle/verificar_login.php';
+
+if (isset($_GET['valor'])) {
+    $valor = $_GET['valor'];
+} else {
+    $valor = '';
+}
 ?>
-<!DOCTYPE html> 
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,18 +19,21 @@ require_once '../controle/verificar_login.php'
     <title>Cliente</title>
     <link rel="stylesheet" href="../public/css/styles.css">
     <link rel="shortcut icon" href="../public/assets/download.png" type="../public/assets/image.png">
+</head>
 
-    
-</head> 
+
 
 <body>
-<?php
-        require_once './assets/header.html'
-    ?>
-        <h2>Lista de Cliente</h2>
+    <form action="listacliente.php" method="get">
+        Nome: <br>
+        <input type="text" name="valor" value="<?php echo $valor; ?>"> <br><br>
+
+        <input type="submit" value="Enviar">
+    </form> <br>
+
+
+    <h2>Clientes encontrados</h2>
     <table>
-
-
         <table>
             <thead>
                 <tr>
@@ -31,37 +43,116 @@ require_once '../controle/verificar_login.php'
                     <th>TELEFONE</th>
                     <th>EMAIL</th>
                     <th>DATA DE NASCIMENTO</th>
+                    <th>Apagar</th>
                 </tr>
-            </thead>            
+            </thead>
             <?php
-            require_once "../controle/conexao.php";
+            require_once './assets/header.html';
 
-            $sql = "SELECT * FROM cliente ";
+            //pesquisa
+            if (isset($_GET['valor'])) {
+                // $valor = $_GET['valor'];
 
-            $resultados = mysqli_query($conexao, $sql);
+                require_once "../controle/conexao.php";
+                $sql = "SELECT * FROM cliente WHERE nome or cpf LIKE '%$valor%'";
+                $resultados = mysqli_query($conexao, $sql);
 
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idcliente'];
-                $nome = $linha['nome'];
-                $cpf = $linha['cpf'];
-                $telefone = $linha['telefone'];
-                $email = $linha['email'];
-                $data_de_nascimento = $linha['data_de_nascimento'];
-                echo  "<tbody>";
-                echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$nome</td>";
-                echo "<td>$cpf</td>";
-                echo "<td>$telefone</td>";
-                echo "<td>$email</td>";
-                echo "<td>$data_de_nascimento</td>";
-                echo "</tbody>";
+                if (mysqli_num_rows($resultados) == 0) {
+                    echo "Não foram encontrados resultados.";
+                } else {
+                    echo "<table border='1'>";
+                    echo "<tr>";
+                    echo "<td>idcliente</td>";
+                    echo "<td>nome</td>";
+                    echo "<td>cpf</td>";
+                    echo "<td>telefone</td>";
+                    echo "<td>email</td>";
+                    echo "<td>data_de_nascimento</td>";
+                    while ($linha = mysqli_fetch_array($resultados)) {
+                        //$id = $linha['idpaciente'];
+                        //$nome = $linha['nome'];
+                        //$cpf = $linha['cpf'];
+                        //$telefone = $linha['telefone'];
+                        //echo "<tr>";
+                        //echo "<td>$id</td>";
+                        //echo "<td>$nome</td>";
+                        //echo "<td>$cpf</td>";
+                        //echo "<td>$telefone</td>";
+                        //echo "</tr>";
+
+                        $id = $linha['idcliente'];
+                        $nome = $linha['nome'];
+                        $cpf = $linha['cpf'];
+                        $telefone = $linha['telefone'];
+                        $email = $linha['email'];
+                        $data_de_nascimento = $linha['data_de_nascimento'];
+                        echo  "<tbody>";
+                        echo "<tr>";
+                        echo "<td>$id</td>";
+                        echo "<td>$nome</td>";
+                        echo "<td>$cpf</td>";
+                        echo "<td>$telefone</td>";
+                        echo "<td>$email</td>";
+                        echo "<td>$data_de_nascimento</td>";
+                        echo "</tbody>";
+                    }
+                }
+            } else {
+                echo "Digite o nome ou o cpf para pesquisar";
             }
+
+
+
+
             ?>
-        </table><br>
-        <footer>
-        <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
-    </footer>
+
+
+
+            <h2>Lista de Cliente</h2>
+            <table>
+
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>CPF</th>
+                            <th>TELEFONE</th>
+                            <th>EMAIL</th>
+                            <th>DATA DE NASCIMENTO</th>
+                            <th>Apagar</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    require_once "../controle/conexao.php";
+
+                    $sql = "SELECT * FROM cliente ";
+
+                    $resultados = mysqli_query($conexao, $sql);
+
+                    while ($linha = mysqli_fetch_array($resultados)) {
+                        $id = $linha['idcliente'];
+                        $nome = $linha['nome'];
+                        $cpf = $linha['cpf'];
+                        $telefone = $linha['telefone'];
+                        $email = $linha['email'];
+                        $data_de_nascimento = $linha['data_de_nascimento'];
+                        echo  "<tbody>";
+                        echo "<tr>";
+                        echo "<td>$id</td>";
+                        echo "<td>$nome</td>";
+                        echo "<td>$cpf</td>";
+                        echo "<td>$telefone</td>";
+                        echo "<td>$email</td>";
+                        echo "<td>$data_de_nascimento</td>";
+                        echo "</tbody>";
+                    }
+                    ?>
+                </table><br>
+                <footer>
+                    <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
+                </footer>
 </body>
 
 </html>

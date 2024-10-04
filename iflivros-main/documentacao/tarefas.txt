@@ -39,3 +39,10 @@ Objetivo: Incluir a verificação de login no arquivo index.php para garantir qu
 04/10
 
 criar um arquivo pesquisa, conforme a aula de hoje: 
+
+lista livros = bianca
+lista emprestimo = 
+lista funcionario = Kaio
+lista cliente = Paulo
+
+192.168.24.215:83/public/
