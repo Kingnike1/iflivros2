@@ -106,9 +106,7 @@ require_once '../controle/verificar_login.php'
                 echo "<td>$status</td>";
                 echo "<td>$autor</td>";
                 echo "</tr>";
-            } else 
-            {
-                echo "Digite um nome para pesquisar.";
+            }
             ?>
         </table><br>
 
