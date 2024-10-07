@@ -41,7 +41,7 @@ Objetivo: Incluir a verificação de login no arquivo index.php para garantir qu
 criar um arquivo pesquisa, conforme a aula de hoje: 
 
 lista livros = bianca
-lista emprestimo = 
+lista emprestimo = Paulo
 lista funcionario = Kaio
 lista cliente = Paulo
 
