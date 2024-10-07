@@ -112,7 +112,7 @@ if (isset($_GET['valor'])) {
             echo "<td>$telefone</td>";
             echo "<td>$data_de_nascimento</td>";
             echo "<td>$funcao</td>";
-            echo "<td><a href='../controle/deletar.php?id=$id'>Apagar</a></td>";            
+            echo "<td><a href='../controle/deletar/deletar.php?id=$id'>Apagar</a></td>";            
             echo "</tr>";
         }
     ?>

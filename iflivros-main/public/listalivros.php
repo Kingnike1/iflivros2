@@ -41,29 +41,33 @@ require_once '../controle/verificar_login.php'
         if (mysqli_num_rows($resultados) == 0) {
             echo "Não foram encontrados resultados.";
         }else {
-            echo "<table border = '1'";
+            echo "<table border = '1'>";
             echo "<tr>";
             echo "<td>ID</td>";
             echo "<td>Nome</td>";
             echo "<td>Genero</td>";
             echo "<td>Status</td>";
             echo "<td>Autor</td>";
+
             while ($linha = mysqli_fetch_array($resultados)) {
                 $id = $linha['idlivros'];
                 $nome = $linha['nome'];
                 $genero = $linha['genero'];
                 $status = $linha['status'];
                 $autor = $linha['autor'];
+
+                echo "<tr>";
+                echo "<td>$id</td>";
+                echo "<td>$nome</td>";
+                echo "<td>$genero</td>";
+                echo "<td>$status</td>";
+                echo "<td>$autor</td>";
+                echo "</tr>";   
             }
-            echo "<tr>";
-            echo "<td>$id</td>";
-            echo "<td>$nome</td>";
-            echo "<td>$genero</td>";
-            echo "<td>$status</td>";
-            echo "<td>$autor</td>";
-            echo "</tr>";
-            
+            echo "</table>";
         }
+    } else {
+        echo "Digite um nome para pesquisar.";
     }
     ?>
 

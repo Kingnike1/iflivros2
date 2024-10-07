@@ -21,3 +21,4 @@ INSERT INTO `IF_livros`.`usuario` (`email`, `senha`) VALUES
 ('ricardo.santos@gmail.com', 'Ricardo123'),
 ('thiago.ribeiro@gmail.com', 'Thiago123');
 
+INSERT INTO usuario ('email' , 'senha') VALUES ('pablo@gmail.com' , 'p123');

@@ -32,20 +32,6 @@ if (isset($_GET['valor'])) {
     </form> <br>
 
 
-    <h2>Clientes encontrados</h2>
-    <table>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>NOME</th>
-                    <th>CPF</th>
-                    <th>TELEFONE</th>
-                    <th>EMAIL</th>
-                    <th>DATA DE NASCIMENTO</th>
-                    <th>Apagar</th>
-                </tr>
-            </thead>
             <?php
             require_once './assets/header.html';
 
@@ -54,7 +40,7 @@ if (isset($_GET['valor'])) {
                 // $valor = $_GET['valor'];
 
                 require_once "../controle/conexao.php";
-                $sql = "SELECT * FROM cliente WHERE nome or cpf LIKE '%$valor%'";
+                $sql = "SELECT * FROM cliente WHERE nome LIKE '%$valor%' or cpf LIKE '%$valor%'";
                 $resultados = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($resultados) == 0) {
@@ -62,24 +48,13 @@ if (isset($_GET['valor'])) {
                 } else {
                     echo "<table border='1'>";
                     echo "<tr>";
-                    echo "<td>idcliente</td>";
-                    echo "<td>nome</td>";
-                    echo "<td>cpf</td>";
-                    echo "<td>telefone</td>";
-                    echo "<td>email</td>";
-                    echo "<td>data_de_nascimento</td>";
+                    echo "<td>ID</td>";
+                    echo "<td>NOME</td>";
+                    echo "<td>CPF</td>";
+                    echo "<td>TELEFONE</td>";
+                    echo "<td>EMAIL</td>";
+                    echo "<td>DATA DE NASCIMENTO</td>";
                     while ($linha = mysqli_fetch_array($resultados)) {
-                        //$id = $linha['idpaciente'];
-                        //$nome = $linha['nome'];
-                        //$cpf = $linha['cpf'];
-                        //$telefone = $linha['telefone'];
-                        //echo "<tr>";
-                        //echo "<td>$id</td>";
-                        //echo "<td>$nome</td>";
-                        //echo "<td>$cpf</td>";
-                        //echo "<td>$telefone</td>";
-                        //echo "</tr>";
-
                         $id = $linha['idcliente'];
                         $nome = $linha['nome'];
                         $cpf = $linha['cpf'];
