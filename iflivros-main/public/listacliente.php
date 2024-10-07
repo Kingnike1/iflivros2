@@ -1,11 +1,10 @@
--- Active: 1722269924296@@127.0.0.1@3306@IF_livros
 <?php
 require_once '../controle/verificar_login.php';
 
 if (isset($_GET['valor'])) {
     $valor = $_GET['valor'];
 } else {
-    $valor = ' ';
+    $valor = '';
 }
 ?>
 
@@ -54,7 +53,7 @@ if (isset($_GET['valor'])) {
                             <th>TELEFONE</th>
                             <th>EMAIL</th>
                             <th>DATA DE NASCIMENTO</th>
-                            <th>Apagar</th>
+                            <th>APAGAR</th>
                         </tr>
                     </thead>
             <?php
@@ -90,7 +89,11 @@ if (isset($_GET['valor'])) {
                         echo "<td>$telefone</td>";
                         echo "<td>$email</td>";
                         echo "<td>$data_de_nascimento</td>";
-                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
+                        echo "<td>
+                                <a href='../controle/deletar/deletar_cliente.php?id=$id'>
+                                    <img src='./assets/deletar.png' alt='Deletar'>
+                                </a>
+                            </td>";
                         echo "</tbody>";
                     }
                     
@@ -111,8 +114,12 @@ if (isset($_GET['valor'])) {
                         echo "<td>$telefone</td>";
                         echo "<td>$email</td>";
                         echo "<td>$data_de_nascimento</td>";
-                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
-                        echo "</tbody>";
+                        echo "<td>
+                                <a href='../controle/deletar/deletar_cliente.php?id=$id'>
+                                    <img src='./assets/delete.png' alt='Deletar'>
+                                </a>
+                                </td>";
+                                        echo "</tbody>";
                     }
                 }
             } else {
