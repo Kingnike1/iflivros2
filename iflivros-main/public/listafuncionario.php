@@ -16,8 +16,8 @@ if (isset($_GET['valor'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>funcionario</title>
+    <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
     <link rel="stylesheet" href="../public/css/styles.css">
-    <link rel="shortcut icon" href="../public/assets/download.png" type="../public/assets/image.png">
 </head> 
 
 
@@ -112,8 +112,13 @@ if (isset($_GET['valor'])) {
             echo "<td>$telefone</td>";
             echo "<td>$data_de_nascimento</td>";
             echo "<td>$funcao</td>";
-            echo "<td><a href='../controle/deletar/deletar.php?id=$id'>Apagar</a></td>";            
-            echo "</tr>";
+            echo "<td>
+            <a href='../controle/deletar/deletar_cliente.php?id=$id'>
+                <img src='excluir.png' alt='Lixeira' class='lixeira'>
+
+            </a>
+        </td>";            
+        echo "</tr>";
         }
     ?>
 </table><br>

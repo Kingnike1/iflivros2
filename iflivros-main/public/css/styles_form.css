@@ -71,7 +71,7 @@ select {
 } */
 
 /* Estilo para o botão de submit */
-input[type="submit"]
+input[type="submit"],
 input[type="text"]
 {
     background-color: #00c4ff;

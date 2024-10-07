@@ -15,27 +15,15 @@ require_once '../controle/verificar_login.php'
 
 </head>
 
-
-
-<body>       
-    
-
-
-
-      <?php
-        require_once './assets/header.html'
-    ?>
-    
-    
-    <h2>Lista de Livros</h2>
-
-       <?php
+    <?php
     if (isset($_GET['valor'])){
         $valor = $_GET['valor'];
     } else {
         $valor = '';
     }
     ?>
+
+<body>
     <form action="listalivros.php" method="get">
     Nome: <br>
     <input type="text" name="valor" value="<?php echo $valor; ?>"><br><br>
@@ -51,43 +39,38 @@ require_once '../controle/verificar_login.php'
         $resultados = mysqli_query($conexao, $sql);
 
         if (mysqli_num_rows($resultados) == 0) {
-            
-            
-            
             echo "Não foram encontrados resultados.";
         }else {
-            echo "<table border = '1'>";
+            echo "<table border = '1'";
             echo "<tr>";
             echo "<td>ID</td>";
             echo "<td>Nome</td>";
             echo "<td>Genero</td>";
             echo "<td>Status</td>";
             echo "<td>Autor</td>";
-
             while ($linha = mysqli_fetch_array($resultados)) {
                 $id = $linha['idlivros'];
                 $nome = $linha['nome'];
                 $genero = $linha['genero'];
                 $status = $linha['status'];
                 $autor = $linha['autor'];
-
-                echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$nome</td>";
-                echo "<td>$genero</td>";
-                echo "<td>$status</td>";
-                echo "<td>$autor</td>";
-                echo "<td><a href='../controle/deletar/deletar_livros.php?id=$id'>Apagar</a></td>";  
-                echo "</tr>";   
             }
-            echo "</table>";
+            echo "<tr>";
+            echo "<td>$id</td>";
+            echo "<td>$nome</td>";
+            echo "<td>$genero</td>";
+            echo "<td>$status</td>";
+            echo "<td>$autor</td>";
+            echo "</tr>";
+            
         }
-    } else {
-        echo "Digite um nome para pesquisar.";
     }
     ?>
 
-
+    <?php
+        require_once './assets/header.html'
+    ?>
+    <h2>Lista de Livros</h2>
     <table>
 
 
@@ -100,7 +83,6 @@ require_once '../controle/verificar_login.php'
                     <th>GENERO</th>
                     <th>STATUS</th>
                     <th>AUTOR</th>
-                    <th>APAGAR</th>
                 </tr>
             </thead>
             <?php
@@ -122,9 +104,12 @@ require_once '../controle/verificar_login.php'
                 echo "<td>$nome</td>";
                 echo "<td>$genero</td>";
                 echo "<td>$status</td>";
-                echo "<td>$autor</td>";
-                echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
-                echo "</tr>";
+                echo "<td>
+                        <a href='../controle/deletar/delete_livros.php?id=$id'>
+                            <img src='./assets/excluir.png' alt='Deletar class='img' '>
+                        </a>
+                        </td>";               
+                 echo "</tr>";
             }
             ?>
         </table><br>
