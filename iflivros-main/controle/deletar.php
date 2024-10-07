@@ -12,6 +12,4 @@
     mysqli_query($conexao, $sql_funcionario);
     
     header("Location: ../public/listafuncionario.php");
-    
-
 ?>
