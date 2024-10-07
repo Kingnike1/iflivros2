@@ -1,4 +1,3 @@
--- Active: 1722269924296@@127.0.0.1@3306@IF_livros
 <?php
 require_once '../controle/verificar_login.php';
 
