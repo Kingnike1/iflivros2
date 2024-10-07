@@ -4,7 +4,7 @@ require_once '../controle/verificar_login.php';
 if (isset($_GET['valor'])) {
     $valor = $_GET['valor'];
 } else {
-    $valor = ' ';
+    $valor = '';
 }
 ?>
 
@@ -40,7 +40,57 @@ if (isset($_GET['valor'])) {
 
 
 
-        <h2>Lista de Cliente</h2>
+            <?php
+            //pesquisa
+            if (isset($_GET['valor'])) {
+                // $valor = $_GET['valor'];
+
+                require_once "../controle/conexao.php";
+                $sql = "SELECT * FROM cliente WHERE nome LIKE '%$valor%' or cpf LIKE '%$valor%'";
+                $resultados = mysqli_query($conexao, $sql);
+
+                if (mysqli_num_rows($resultados) == 0) {
+                    echo "Não foram encontrados resultados.";
+                } else {
+                    echo "<table border='1'>";
+                    echo "<tr>";
+                    echo "<td>ID</td>";
+                    echo "<td>NOME</td>";
+                    echo "<td>CPF</td>";
+                    echo "<td>TELEFONE</td>";
+                    echo "<td>EMAIL</td>";
+                    echo "<td>DATA DE NASCIMENTO</td>";
+                    while ($linha = mysqli_fetch_array($resultados)) {
+                        $id = $linha['idcliente'];
+                        $nome = $linha['nome'];
+                        $cpf = $linha['cpf'];
+                        $telefone = $linha['telefone'];
+                        $email = $linha['email'];
+                        $data_de_nascimento = $linha['data_de_nascimento'];
+                        echo  "<tbody>";
+                        echo "<tr>";
+                        echo "<td>$id</td>";
+                        echo "<td>$nome</td>";
+                        echo "<td>$cpf</td>";
+                        echo "<td>$telefone</td>";
+                        echo "<td>$email</td>";
+                        echo "<td>$data_de_nascimento</td>";
+                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
+                        echo "</tbody>";
+                    }
+                }
+            } else {
+                echo "Digite o nome ou o cpf para pesquisar";
+            }
+
+
+
+
+            ?>
+
+
+
+            <h2>Lista de Cliente</h2>
             <table>
 
 
@@ -56,19 +106,8 @@ if (isset($_GET['valor'])) {
                             <th>Apagar</th>
                         </tr>
                     </thead>
-            <?php
-            //pesquisa
-            if (isset($_GET['valor'])) {
-                // $valor = $_GET['valor'];
-
-                require_once "../controle/conexao.php";
-                $sql = "SELECT * FROM cliente WHERE nome LIKE '%$valor%' or cpf LIKE '%$valor%'";
-                $resultados = mysqli_query($conexao, $sql);
-
-                if (mysqli_num_rows($resultados) == 0) {
-                    echo "Não foram encontrados resultados.";
-
-                    // require_once "../controle/conexao.php";
+                    <?php
+                    require_once "../controle/conexao.php";
 
                     $sql = "SELECT * FROM cliente ";
 
@@ -92,36 +131,7 @@ if (isset($_GET['valor'])) {
                         echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
                         echo "</tbody>";
                     }
-                    
-                } else {
-                    while ($linha = mysqli_fetch_array($resultados)) {
-                        $id = $linha['idcliente'];
-                        $nome = $linha['nome'];
-                        $cpf = $linha['cpf'];
-                        $telefone = $linha['telefone'];
-                        $email = $linha['email'];
-                        $data_de_nascimento = $linha['data_de_nascimento'];
-                        echo  "<tbody>";
-                        echo "<tr>";
-                        echo "<td>$id</td>";
-                        echo "<td>$nome</td>";
-                        echo "<td>$cpf</td>";
-                        echo "<td>$telefone</td>";
-                        echo "<td>$email</td>";
-                        echo "<td>$data_de_nascimento</td>";
-                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
-                        echo "</tbody>";
-                    }
-                }
-            } else {
-                echo "Digite o nome ou o cpf para pesquisar";
-            }
-            ?>
-
-
-
-
-
+                    ?>
                 </table><br>
                 <footer>
                     <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>

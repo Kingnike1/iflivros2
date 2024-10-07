@@ -15,15 +15,27 @@ require_once '../controle/verificar_login.php'
 
 </head>
 
-    <?php
+
+
+<body>       
+    
+
+
+
+      <?php
+        require_once './assets/header.html'
+    ?>
+    
+    
+    <h2>Lista de Livros</h2>
+
+       <?php
     if (isset($_GET['valor'])){
         $valor = $_GET['valor'];
     } else {
         $valor = '';
     }
     ?>
-
-<body>
     <form action="listalivros.php" method="get">
     Nome: <br>
     <input type="text" name="valor" value="<?php echo $valor; ?>"><br><br>
@@ -39,6 +51,9 @@ require_once '../controle/verificar_login.php'
         $resultados = mysqli_query($conexao, $sql);
 
         if (mysqli_num_rows($resultados) == 0) {
+            
+            
+            
             echo "Não foram encontrados resultados.";
         }else {
             echo "<table border = '1'>";
@@ -62,6 +77,7 @@ require_once '../controle/verificar_login.php'
                 echo "<td>$genero</td>";
                 echo "<td>$status</td>";
                 echo "<td>$autor</td>";
+                echo "<td><a href='../controle/deletar/deletar_livros.php?id=$id'>Apagar</a></td>";  
                 echo "</tr>";   
             }
             echo "</table>";
@@ -71,10 +87,7 @@ require_once '../controle/verificar_login.php'
     }
     ?>
 
-    <?php
-        require_once './assets/header.html'
-    ?>
-    <h2>Lista de Livros</h2>
+
     <table>
 
 
@@ -87,6 +100,7 @@ require_once '../controle/verificar_login.php'
                     <th>GENERO</th>
                     <th>STATUS</th>
                     <th>AUTOR</th>
+                    <th>APAGAR</th>
                 </tr>
             </thead>
             <?php
@@ -109,6 +123,7 @@ require_once '../controle/verificar_login.php'
                 echo "<td>$genero</td>";
                 echo "<td>$status</td>";
                 echo "<td>$autor</td>";
+                echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
                 echo "</tr>";
             }
             ?>
