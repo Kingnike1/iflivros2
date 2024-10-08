@@ -216,25 +216,9 @@ footer {
     transform: scale(1.05);
 }
 
-/* .icon {
-    width: 20px;  /* Ajuste a largura conforme necessário */
-    /* height: auto; /* Mantém a proporção da imagem */
-    /* cursor: pointer; /* Muda o cursor ao passar o mouse */
-    /* transition: transform 0.2s; Animação suave ao passar o mouse */
-/* } */
-
-/* .icon:hover { */
-    /* transform: scale(1.5); Aumenta a imagem ao passar o mouse */
-/* } */ 
-
-.lixeira {
-    height: 19px;  /* Define a altura */
-    width: 19px;   /* Define a largura */
-    object-fit: contain; /* Garante que a imagem se ajuste ao tamanho definido */
+.link{
+    cursor: url(../assets/deletar.png), auto ;
 }
-
-
-
 
 
 /* Media query para telas com largura máxima de 768 pixels */
