@@ -105,9 +105,7 @@ require_once '../controle/verificar_login.php'
                 echo "<td>$genero</td>";
                 echo "<td>$status</td>";
                 echo "<td>
-                        <a href='../controle/deletar/delete_livros.php?id=$id'>
-                            <img src='./assets/excluir.png' alt='Deletar class='img' '>
-                        </a>
+                        <a href='../controle/deletar/delete_livros.php?id=$id'></a>
                         </td>";               
                  echo "</tr>";
             }

@@ -114,8 +114,6 @@ if (isset($_GET['valor'])) {
             echo "<td>$funcao</td>";
             echo "<td>
             <a href='../controle/deletar/deletar_cliente.php?id=$id'>
-                <img src='excluir.png' alt='Lixeira' class='lixeira'>
-
             </a>
         </td>";            
         echo "</tr>";
