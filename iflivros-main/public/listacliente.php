@@ -89,11 +89,7 @@ if (isset($_GET['valor'])) {
                         echo "<td>$telefone</td>";
                         echo "<td>$email</td>";
                         echo "<td>$data_de_nascimento</td>";
-                        echo "<td>
-                                <a href='../controle/deletar/deletar_cliente.php?id=$id'>
-                                    <img src='./assets/excluir.png' alt='Deletar'>
-                                </a>
-                            </td>";
+                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
                         echo "</tbody>";
                     }
                     
@@ -114,12 +110,8 @@ if (isset($_GET['valor'])) {
                         echo "<td>$telefone</td>";
                         echo "<td>$email</td>";
                         echo "<td>$data_de_nascimento</td>";
-                        echo "<td>
-                                <a href='../controle/deletar/deletar_cliente.php?id=$id'>
-                                    <img src='./assets/delete.png' alt='Deletar class='img''>
-                                </a>
-                                </td>";
-                                        echo "</tbody>";
+                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
+                        echo "</tbody>";
                     }
                 }
             } else {
