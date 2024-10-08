@@ -10,11 +10,16 @@ require_once '../controle/verificar_login.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="../public/css/styles.css">
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 
 <body>
+    <?php require_once './assets/header.html'; ?>
+    
+    <h2>Lista de Livros</h2>
+    
     <?php
     if (isset($_GET['valor'])) {
         $valor = $_GET['valor'];
@@ -67,9 +72,6 @@ require_once '../controle/verificar_login.php';
     }
     ?>
 
-    <?php require_once './assets/header.html'; ?>
-
-    <h2>Lista de Livros</h2>
     <table>
         <thead>
             <tr>
@@ -101,7 +103,7 @@ require_once '../controle/verificar_login.php';
             echo "<td>$status</td>";
             echo "<td>$autor</td>";
             echo "<td>
-                    <a href='../controle/deletar/delete_livros.php?id=$id' class='btn btn-danger'>APAGAR</a>
+                    <a href='../controle/deletar/delete_livros.php?id=<?php echo $id; ?>' class='btn btn-danger btn-bounce'>APAGAR</a>
                   </td>";               
             echo "</tr>";
         }

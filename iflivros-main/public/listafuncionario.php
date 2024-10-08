@@ -10,7 +10,6 @@ if (isset($_GET['valor'])) {
 
 <!DOCTYPE html> 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,7 @@ if (isset($_GET['valor'])) {
 
     <form action="listacliente.php" method="get">
         <label for="valor">Nome:</label><br>
-        <input type="text" name="valor" id="valor" value="<?php echo $valor; ?>"> <br><br>
+        <input type="text" name="valor" id="valor" value="<?php echo $valor; ?>" placeholder="Digite um nome para pesquisar.";"> <br><br>
         <input type="submit" value="Enviar">
     </form> <br>
 
@@ -102,18 +101,18 @@ if (isset($_GET['valor'])) {
             echo "<td>$telefone</td>";
             echo "<td>$data_de_nascimento</td>";
             echo "<td>$funcao</td>";
-            echo "<td>
-                <a href='../controle/deletar/deletar_cliente.php?id=$id' class='btn btn-danger'>APAGAR</a>
-            </td>";            
+            echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";           
             echo "</tr>";
         }
         ?>
         </tbody>
     </table><br>
 
-    <footer>
-        <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
-    </footer>
+    <?php
+    
+    require_once '../public/assets/footer.html'
+    
+    ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
