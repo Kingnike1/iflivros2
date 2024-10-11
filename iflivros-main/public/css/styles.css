@@ -216,17 +216,25 @@ footer {
     transform: scale(1.05);
 }
 
-.icon {
-    width: 20px;  /* Ajuste a largura conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
-    cursor: pointer; /* Muda o cursor ao passar o mouse */
-    transition: transform 0.2s; /* Animação suave ao passar o mouse */
+.link{
+    cursor: url(../assets/deletar.png), auto ;
 }
 
-.icon:hover {
-    transform: scale(1.5); /* Aumenta a imagem ao passar o mouse */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
+.btn-bounce:hover {
+    animation: bounce 0.5s; /* Duração da animação */
+}
 
 
 /* Media query para telas com largura máxima de 768 pixels */

@@ -79,6 +79,7 @@ require_once '../controle/verificar_login.php'
                     echo "<td>$livro_nome</td>";
                     echo "<td>$cliente_nome</td>";
                     echo "<td>$funcionario_nome</td>";
+                    
                     echo "</tr>";
                 }
 
