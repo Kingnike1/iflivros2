@@ -19,7 +19,6 @@ if (isset($_GET['valor'])) {
     <link rel="stylesheet" href="../public/css/styles.css">
     <link rel="shortcut icon" href="../public/assets/download.png" type="../public/assets/image.png">
 </head>
-
 <body>
 
     <?php
