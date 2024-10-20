@@ -9,6 +9,72 @@ body {
     color: #333;
 }
 
+/* Estilos para a Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px; /* Largura da sidebar */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Oculta a sidebar inicialmente */
+    background-color: #282c34; /* Cor de fundo da sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+    overflow-x: hidden; /* Oculta o overflow horizontal */
+    transition: 0.3s ease; /* Transição suave para abrir/fechar */
+    padding-top: 20px; /* Espaçamento superior */
+    z-index: 1000; /* Coloca a sidebar acima de outros elementos */
+}
+
+.sidebar h2 {
+    color: #fff; /* Cor do texto do cabeçalho */
+    text-align: center; /* Alinhamento central do texto */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar ul li a {
+    padding: 15px 20px; /* Espaçamento interno dos links */
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-size: 18px; /* Tamanho da fonte */
+    color: #818181; /* Cor dos links */
+    display: block; /* Faz o link ocupar toda a largura */
+    transition: 0.3s; /* Transição suave para hover */
+}
+
+.sidebar ul li a:hover {
+    background-color: #444; /* Cor de fundo ao passar o mouse */
+    color: #f1f1f1; /* Cor do link ao passar o mouse */
+}
+
+/* Estilos para o botão off-menu */
+.off-menu-btn {
+    position: fixed;
+    top: 20px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+    background-color: #282c34; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove bordas */
+    padding: 12px; /* Espaçamento interno */
+    font-size: 24px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para pointer */
+    border-radius: 5px; /* Arredondamento nas bordas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+    transition: 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.off-menu-btn:hover {
+    background-color: #444; /* Cor de fundo ao passar o mouse */
+}
+
+/* Exibe a sidebar quando ativa */
+.sidebar.active {
+    left: 0; /* Move a sidebar para a esquerda */
+}
+
+
 /* =========================== */
 /* CABEÇALHO */
 /* =========================== */
