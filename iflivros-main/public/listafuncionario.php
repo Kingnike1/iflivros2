@@ -22,11 +22,6 @@ if (isset($_GET['valor'])) {
 <body>
     <?php require_once './assets/header.html'; ?>    
 
-    <form action="listacliente.php" method="get">
-        <label for="valor">Nome:</label><br>
-        <input type="text" name="valor" id="valor" value="<?php echo $valor; ?>" placeholder="Digite um nome para pesquisar.";"> <br><br>
-        <input type="submit" value="Enviar">
-    </form> <br>
 
     <?php
     // Pesquisa

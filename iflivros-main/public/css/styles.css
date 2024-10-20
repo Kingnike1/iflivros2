@@ -216,9 +216,29 @@ footer {
     transform: scale(1.05);
 }
 
-.link{
-    cursor: url(../assets/deletar.png), auto ;
+.form-pesquisa {
+    display: flex;
+    align-items: center;
 }
+
+.campo-pesquisa {
+    padding: 10px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.botao-pesquisa {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

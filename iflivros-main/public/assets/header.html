@@ -23,5 +23,10 @@
         </div>
         <button class="dropbtn"><a href="../../controle/deslogar.php">Sair</a></button>
 
+        <form action="listacliente.php" method="get" class="form-pesquisa">
+            <input type="text" name="valor" id="valor" value="<?php echo $valor; ?>" placeholder="Digite um nome para pesquisar." class="campo-pesquisa">
+            <input type="submit" value="Pesquisar" class="botao-pesquisa">
+        </form>
+
     </nav>
 </header>
