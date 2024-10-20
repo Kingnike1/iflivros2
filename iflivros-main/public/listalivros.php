@@ -9,6 +9,7 @@ require_once '../controle/verificar_login.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="../public/css/styles.css">
@@ -29,9 +30,12 @@ require_once '../controle/verificar_login.php';
     }
     ?>
 
-<form action="listalivros.php" method="get" class="mb-4 form-pesquisa">
+<form action="listacliente.php" method="get" class="mb-4 form-pesquisa">
         <div class="form-group">
-            <input type="text" name="valor" id="valor" class="form-control campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
+            <div class="search-wrapper">
+                <i class="fas fa-search lupa"></i>
+                <input type="text" name="valor" id="valor" class="form-control campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
+            </div>
         </div>
         <button type="submit" class="btn btn-primary botao-pesquisa">Pesquisar</button>
     </form>
