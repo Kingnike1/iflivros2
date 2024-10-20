@@ -23,7 +23,6 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
     
     <?php require_once './assets/header.html'; ?>
     
-    <h2>Lista de Clientes</h2>
     <form action="listacliente.php" method="get" class="mb-4 form-pesquisa">
         <div class="form-group">
             <div class="search-wrapper">

@@ -25,7 +25,6 @@ require_once '../controle/verificar_login.php'
     
 
 
-    <h2>Lista de Emprestimo</h2>
 
     <table>
         <thead>

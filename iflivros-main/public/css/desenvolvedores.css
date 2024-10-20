@@ -1,0 +1,13 @@
+/* Estilos adicionais para a página de desenvolvedores */
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    border-radius: 0.5rem;
+}

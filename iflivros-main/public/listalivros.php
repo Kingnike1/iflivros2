@@ -20,7 +20,6 @@ require_once '../controle/verificar_login.php';
 <body>
     <?php require_once './assets/header.html'; ?>
     
-    <h2>Lista de Livros</h2>
     
     <?php
     if (isset($_GET['valor'])) {

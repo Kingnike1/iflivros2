@@ -24,7 +24,6 @@ if (isset($_GET['valor'])) {
 
 <body>
     <?php require_once './assets/header.html'; ?>    
-    <h2>Lista de Funcionários</h2>
     <form action="listacliente.php" method="get" class="mb-4 form-pesquisa">
         <div class="form-group">
             <div class="search-wrapper">
