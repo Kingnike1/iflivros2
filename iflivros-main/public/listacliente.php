@@ -19,7 +19,6 @@ if (isset($_GET['valor'])) {
     <link rel="stylesheet" href="../public/css/styles.css">
     <link rel="shortcut icon" href="../public/assets/download.png" type="../public/assets/image.png">
 </head>
-
 <body>
 
     <?php
@@ -48,6 +47,9 @@ if (isset($_GET['valor'])) {
 
         <tbody>
             <?php
+
+
+
             //pesquisa
             if (isset($_GET['valor'])) {
                 require_once "../controle/conexao.php";
@@ -55,12 +57,42 @@ if (isset($_GET['valor'])) {
                 $resultados = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($resultados) == 0) {
-                    echo "<tr><td colspan='7'>Não foram encontrados resultados.</td></tr>";
-
-                    // Segunda consulta sem filtro
-                    $sql = "SELECT * FROM cliente";
-                    $resultados = mysqli_query($conexao, $sql);
+                    echo "Não foram encontrados resultados.";
+                    
+                } 
+                else {
+                    while ($linha = mysqli_fetch_array($resultados)) {
+                        $id = $linha['idcliente'];
+                        $nome = $linha['nome'];
+                        $cpf = $linha['cpf'];
+                        $telefone = $linha['telefone'];
+                        $email = $linha['email'];
+                        $data_de_nascimento = $linha['data_de_nascimento'];
+                        echo  "<tbody>";
+                        echo "<tr>";
+                        echo "<td>$id</td>";
+                        echo "<td>$nome</td>";
+                        echo "<td>$cpf</td>";
+                        echo "<td>$telefone</td>";
+                        echo "<td>$email</td>";
+                        echo "<td>$data_de_nascimento</td>";
+                        echo "<td>
+                                <a href='../controle/deletar/deletar_cliente.php?id=$id'>
+                                    <img src='./assets/delete.png' alt='Deletar'>
+                                </a>
+                                </td>";
+                                        echo "</tbody>";
+                    }
                 }
+            } 
+            else {
+                echo "Digite o nome ou o cpf para pesquisar";
+
+                require_once "../controle/conexao.php";
+
+                $sql = "SELECT * FROM cliente ";
+
+                $resultados = mysqli_query($conexao, $sql);
 
                 while ($linha = mysqli_fetch_array($resultados)) {
                     $id = $linha['idcliente'];
@@ -69,7 +101,7 @@ if (isset($_GET['valor'])) {
                     $telefone = $linha['telefone'];
                     $email = $linha['email'];
                     $data_de_nascimento = $linha['data_de_nascimento'];
-
+                    echo  "<tbody>";
                     echo "<tr>";
                     echo "<td>$id</td>";
                     echo "<td>$nome</td>";
@@ -77,11 +109,9 @@ if (isset($_GET['valor'])) {
                     echo "<td>$telefone</td>";
                     echo "<td>$email</td>";
                     echo "<td>$data_de_nascimento</td>";
-                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";
-                    echo "</tr>";
+                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";  
+                    echo "</tbody>";
                 }
-            } else {
-                echo "<tr><td colspan='7'>Digite o nome ou o cpf para pesquisar</td></tr>";
             }
             ?>
         </tbody>
