@@ -12,6 +12,7 @@ require_once '../controle/verificar_login.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/header.css">
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 

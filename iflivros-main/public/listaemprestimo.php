@@ -10,6 +10,8 @@ require_once '../controle/verificar_login.php'
     <title>Emprestimo</title>
     <link rel="stylesheet" href="../public/css/styles.css">
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
+    <link rel="stylesheet" href="../public/css/header.css">
+
 
     
 </head>

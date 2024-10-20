@@ -8,6 +8,8 @@ require_once '../controle/verificar_login.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IF_LIVROS</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+
     <link rel="shortcut icon" href="./assets/download.png" type="image/png">
 </head>
 
