@@ -1,32 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <img src="../public/assets/logo.png" alt="logo do site" id="logo">
 
 <header>
     <nav>
-        <button class="dropbtn"><a href="../../public/home.php">Página Inicial</a></button>
+        <button class="dropbtn">
+            <a href="../../public/home.php"><i class="fa fa-home"></i> Página Inicial</a>
+        </button>
         <div class="dropdown">
-            <button class="dropbtn"><a href="#">Lista</a></button>
+            <button class="dropbtn"><a href="#"><i class="fa fa-list"></i> Lista</a></button>
             <div class="dropdown-content">
-                <a href="../../public/listalivros.php">Livros</a><br>
-                <a href="../../public/listacliente.php">Clientes</a><br>
-                <a href="../../public/listaemprestimo.php">Empréstimos</a><br>
-                <a href="../../public/listafuncionario.php">Funcionários</a>
+                <a href="../../public/listalivros.php"><i class="fa fa-book"></i> Livros</a><br>
+                <a href="../../public/listacliente.php"><i class="fa fa-user"></i> Clientes</a><br>
+                <a href="../../public/listaemprestimo.php"><i class="fa fa-bookmark"></i> Empréstimos</a><br>
+                <a href="../../public/listafuncionario.php"><i class="fa fa-users"></i> Funcionários</a>
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn"><a href="#">Cadastro</a></button>
+            <button class="dropbtn"><a href="#"><i class="fa fa-plus"></i> Cadastro</a></button>
             <div class="dropdown-content">
-                <a href="../../public/cadastro_livro.php">Cadastro do Livro</a><br>
-                <a href="../../public/cadastro_cliente.php">Cadastro do Cliente</a><br>
-                <a href="../../public/cadastro_emprestimo.php">Cadastro do Empréstimo</a><br>
-                <a href="../../public/cadastro_funcionario.php">Cadastro do Funcionário</a>
+                <a href="../../public/cadastro_livro.php"><i class="fa fa-book"></i> Cadastro do Livro</a><br>
+                <a href="../../public/cadastro_cliente.php"><i class="fa fa-user-plus"></i> Cadastro do Cliente</a><br>
+                <a href="../../public/cadastro_emprestimo.php"><i class="fa fa-bookmark-o"></i> Cadastro do Empréstimo</a><br>
+                <a href="../../public/cadastro_funcionario.php"><i class="fa fa-user-secret"></i> Cadastro do Funcionário</a>
             </div>
         </div>
-        <button class="dropbtn"><a href="../../controle/deslogar.php">Sair</a></button>
 
-        <form action="listacliente.php" method="get" class="form-pesquisa">
-            <input type="text" name="valor" id="valor" value="<?php echo $valor; ?>" placeholder="Digite um nome para pesquisar." class="campo-pesquisa">
-            <input type="submit" value="Pesquisar" class="botao-pesquisa">
-        </form>
-
+        <button class="dropbtn"><a href="../../controle/deslogar.php"><i class="fa fa-sign-out"></i> Sair</a></button>        
     </nav>
 </header>

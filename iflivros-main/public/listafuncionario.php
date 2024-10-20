@@ -21,7 +21,10 @@ if (isset($_GET['valor'])) {
 
 <body>
     <?php require_once './assets/header.html'; ?>    
-
+    <form action="listafuncionario.php" method="get" class="form-pesquisa">
+            <input type="text" name="valor" id="valor" value="<?php echo $valor; ?>" placeholder="Digite um nome para pesquisar." class="campo-pesquisa">
+            <input type="submit" value="Pesquisar" class="botao-pesquisa">
+        </form>
 
     <?php
     // Pesquisa
@@ -58,7 +61,7 @@ if (isset($_GET['valor'])) {
             echo "</table>";
         }
     } else {
-        echo "Digite um nome para pesquisar.";
+        echo "";
     }
     ?>
 

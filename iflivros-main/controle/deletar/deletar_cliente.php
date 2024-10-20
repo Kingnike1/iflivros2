@@ -1,5 +1,5 @@
 <?php
-    require_once "conexao.php";
+    require_once "../conexao.php";
 
     $id = $_GET['id'];
     
@@ -9,5 +9,5 @@
     $sql_funcionario = "DELETE FROM cliente WHERE idcliente = $id;";
     mysqli_query($conexao, $sql_funcionario);
     
-    header("Location: ../public/listafuncionario.php");
+    header("Location: ../../public/listacliente.php");
 ?>

@@ -28,11 +28,12 @@ require_once '../controle/verificar_login.php';
     }
     ?>
 
-    <form action="listalivros.php" method="get">
-        Nome: <br>
-        <input type="text" name="valor" value="<?php echo $valor; ?>"><br><br>
-        <input type="submit" value="Enviar">
-    </form> <br><br>
+<form action="listalivros.php" method="get" class="mb-4 form-pesquisa">
+        <div class="form-group">
+            <input type="text" name="valor" id="valor" class="form-control campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
+        </div>
+        <button type="submit" class="btn btn-primary botao-pesquisa">Pesquisar</button>
+    </form>
 
     <?php 
     if (isset($_GET['valor'])) {

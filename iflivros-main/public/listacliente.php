@@ -1,11 +1,7 @@
 <?php
 require_once '../controle/verificar_login.php';
 
-if (isset($_GET['valor'])) {
-    $valor = $_GET['valor'];
-} else {
-    $valor = '';
-}
+$valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -17,23 +13,22 @@ if (isset($_GET['valor'])) {
     <title>Cliente</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/styles.css">
-    <link rel="shortcut icon" href="../public/assets/download.png" type="../public/assets/image.png">
+    <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 
 <body>
 
-    <?php
-    require_once './assets/header.html';
-    ?>
+    <?php require_once './assets/header.html'; ?>
 
-    <form action="listacliente.php" method="get">
-        Nome: <br>
-        <input type="text" name="valor" value="<?php echo $valor; ?>" placeholder="Digite o nome ou o cpf para pesquisar"> <br><br>
-        <input type="submit" value="Enviar">
-    </form> <br>
+    <form action="listacliente.php" method="get" class="mb-4 form-pesquisa">
+        <div class="form-group">
+            <input type="text" name="valor" id="valor" class="form-control campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
+        </div>
+        <button type="submit" class="btn btn-primary botao-pesquisa">Pesquisar</button>
+    </form>
 
-    <h2>Lista de Cliente</h2>
-    <table>
+    <h2>Lista de Clientes</h2>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
@@ -45,77 +40,52 @@ if (isset($_GET['valor'])) {
                 <th>APAGAR</th>
             </tr>
         </thead>
-
         <tbody>
             <?php
+            require_once "../controle/conexao.php";
 
-
-
-            //pesquisa
-            if (isset($_GET['valor'])) {
-                require_once "../controle/conexao.php";
-                $sql = "SELECT * FROM cliente WHERE nome LIKE '%$valor%' or cpf LIKE '%$valor%'";
+            // Pesquisa
+            if ($valor) {
+                $sql = "SELECT * FROM cliente WHERE nome LIKE '%$valor%' OR cpf LIKE '%$valor%'";
                 $resultados = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($resultados) == 0) {
-                    echo "Não foram encontrados resultados.";
+                    echo "<tr><td colspan='7'>Não foram encontrados resultados.</td></tr>";
                 } else {
                     while ($linha = mysqli_fetch_array($resultados)) {
-                        $id = $linha['idcliente'];
-                        $nome = $linha['nome'];
-                        $cpf = $linha['cpf'];
-                        $telefone = $linha['telefone'];
-                        $email = $linha['email'];
-                        $data_de_nascimento = $linha['data_de_nascimento'];
-                        echo  "<tbody>";
                         echo "<tr>";
-                        echo "<td>$id</td>";
-                        echo "<td>$nome</td>";
-                        echo "<td>$cpf</td>";
-                        echo "<td>$telefone</td>";
-                        echo "<td>$email</td>";
-                        echo "<td>$data_de_nascimento</td>";
-                        echo "<td>
-                                <a href='../controle/deletar/deletar_cliente.php?id=$id'>
-                                    <img src='./assets/delete.png' alt='Deletar'>
-                                </a>
-                                </td>";
-                        echo "</tbody>";
+                        echo "<td>{$linha['idcliente']}</td>";
+                        echo "<td>{$linha['nome']}</td>";
+                        echo "<td>{$linha['cpf']}</td>";
+                        echo "<td>{$linha['telefone']}</td>";
+                        echo "<td>{$linha['email']}</td>";
+                        echo "<td>{$linha['data_de_nascimento']}</td>";
+                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
+                        echo "</tr>";
                     }
                 }
             } else {
-                echo "Digite o nome ou o cpf para pesquisar";
-
-                require_once "../controle/conexao.php";
-
-                $sql = "SELECT * FROM cliente ";
-
+                // Carrega todos os clientes se não houver pesquisa
+                $sql = "SELECT * FROM cliente";
                 $resultados = mysqli_query($conexao, $sql);
 
                 while ($linha = mysqli_fetch_array($resultados)) {
-                    $id = $linha['idcliente'];
-                    $nome = $linha['nome'];
-                    $cpf = $linha['cpf'];
-                    $telefone = $linha['telefone'];
-                    $email = $linha['email'];
-                    $data_de_nascimento = $linha['data_de_nascimento'];
-                    echo  "<tbody>";
                     echo "<tr>";
-                    echo "<td>$id</td>";
-                    echo "<td>$nome</td>";
-                    echo "<td>$cpf</td>";
-                    echo "<td>$telefone</td>";
-                    echo "<td>$email</td>";
-                    echo "<td>$data_de_nascimento</td>";
-                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id=$id'>Apagar</a></td>";
-                    echo "</tbody>";
+                    echo "<td>{$linha['idcliente']}</td>";
+                    echo "<td>{$linha['nome']}</td>";
+                    echo "<td>{$linha['cpf']}</td>";
+                    echo "<td>{$linha['telefone']}</td>";
+                    echo "<td>{$linha['email']}</td>";
+                    echo "<td>{$linha['data_de_nascimento']}</td>";
+                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
+                    echo "</tr>";
                 }
             }
             ?>
         </tbody>
-    </table><br>
+    </table>
 
-    <footer>
+    <footer class="mt-4">
         <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
     </footer>
 
