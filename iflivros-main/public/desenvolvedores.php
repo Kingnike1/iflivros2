@@ -36,8 +36,7 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev1.jpg" class="card-img-top" alt="Desenvolvedor 1">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor 1</h5>
-                        <p class="card-text">Função: Backend Developer</p>
-                        <a href="https://www.linkedin.com/in/dev1" class="btn btn-primary">Ver Perfil</a>
+                        <p class="card-text">Nome: </p>
                     </div>
                 </div>
             </div>
@@ -46,8 +45,7 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev2.jpg" class="card-img-top" alt="Desenvolvedor 2">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor 2</h5>
-                        <p class="card-text">Função: Frontend Developer</p>
-                        <a href="https://www.linkedin.com/in/dev2" class="btn btn-primary">Ver Perfil</a>
+                        <p class="card-text">Nome: </p>
                     </div>
                 </div>
             </div>
@@ -56,8 +54,7 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev3.jpg" class="card-img-top" alt="Desenvolvedor 3">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor 3</h5>
-                        <p class="card-text">Função: UI/UX Designer</p>
-                        <a href="https://www.linkedin.com/in/dev3" class="btn btn-primary">Ver Perfil</a>
+                        <p class="card-text">Nome: </p>
                     </div>
                 </div>
             </div>
