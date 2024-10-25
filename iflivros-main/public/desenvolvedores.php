@@ -36,7 +36,7 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev1.jpg" class="card-img-top" alt="Desenvolvedor 1">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor 1</h5>
-                        <p class="card-text">Nome: </p>
+                        <p class="card-text">Nome: Pablo Rodrigues </p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev2.jpg" class="card-img-top" alt="Desenvolvedor 2">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor 2</h5>
-                        <p class="card-text">Nome: </p>
+                        <p class="card-text">Nome: kaio Barbosa </p>
                     </div>
                 </div>
             </div>
@@ -54,12 +54,32 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev3.jpg" class="card-img-top" alt="Desenvolvedor 3">
                     <div class="card-body">
                         <h5 class="card-title">Desenvolvedor 3</h5>
-                        <p class="card-text">Nome: </p>
+                        <p class="card-text">Nome: Paulo Ricardo </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="col-md-4 text-center" data-aos="fade-up">
+                <div class="card mb-4">
+                    <img src="./assets/dev3.jpg" class="card-img-top" alt="Desenvolvedor 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Desenvolvedor 4</h5>
+                        <p class="card-text">Nome: Bianca </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" data-aos="fade-up">
+                <div class="card mb-4">
+                    <img src="./assets/dev3.jpg" class="card-img-top" alt="Desenvolvedor 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Desenvolvedor 5</h5>
+                        <p class="card-text">Nome: Sara Xavier </p>
+                    </div>
+                </div>
+            </div>
+        <div>
+    </div> 
+    
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
