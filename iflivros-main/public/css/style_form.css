@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom right, #00c4ff, #ffd900);
+    background: linear-gradient(to bottom right, #110127, #053a4a);
     display: flex; /* Corrigido de flexbox para flex */
     flex-direction: column; /* Adiciona direção de coluna para organizar o conteúdo */
     min-height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
@@ -14,7 +14,7 @@ body {
     max-width: 400px;
     padding: 25px;
     border-radius: 15px;
-    background-color: rgb(20, 20, 20); /* Fundo mais escuro com transparência */
+    background-color: rgba(20, 20, 20, 0.343); /* Fundo mais escuro com transparência */
     color: #ffffff; /* Texto branco para contraste */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Borda leve para suavizar */
     margin: 0 auto;
@@ -26,7 +26,7 @@ body {
     font-size: 28px;
     font-weight: 600;
     letter-spacing: -1px;
-    color: #ffd900; /* Cor do título para combinar com o gradiente */
+    color: white; /* Cor do título para combinar com o gradiente */
     margin-bottom: 10px;
 }
 
