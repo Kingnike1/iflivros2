@@ -10,7 +10,7 @@ require_once '../controle/verificar_login.php'
     <title>Cadastro de Cliente</title>
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/styles_form.css">
 </head>
 <body>
     <h2>Cadastro de Cliente</h2>

@@ -15,7 +15,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../public/css/header.css">
-    <link rel="stylesheet" href="../public/css/styles_form.css">
+    <link rel="stylesheet" href="../public/css/styles.css">
 </head>
 
 
