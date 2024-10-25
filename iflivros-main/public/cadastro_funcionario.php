@@ -1,57 +1,70 @@
 <?php
-require_once '../controle/verificar_login.php'
+require_once '../controle/verificar_login.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Funcionário</title>
-    <link rel="stylesheet" href="./css/styles_form.css">
     <link rel="shortcut icon" href="./assets/download.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/styles_form.css">
+    <link rel="stylesheet" href="../public/css/header.css">
 
+    <link rel="stylesheet" href="./css/style_form.css">
 </head>
 <body>
-    <h2>Cadastro de Funcionário</h2>
-    <form action="../controle/banco_funcionario.php" method="get">
-        
-        <!-- <label>Nome:</label><br> -->
+<?php require_once './assets/header.html'; ?>
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nome">
-            <label for="floatingInput">Nome:</label>
-        </div><br>
-        
-        <!-- <label>CPF:</label><br> -->
+    <form action="../controle/banco_funcionario.php" method="get" class="form">
+        <p class="title">Cadastro de Funcionário</p>
+        <p class="message">Preencha os dados abaixo para cadastrar um novo funcionário.</p>
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="cpf">
-            <label for="floatingInput">CPF:</label>
-        </div><br>
-        
-        <!-- <label>Telefone:</label><br> -->
-
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="telefone">
-            <label for="floatingInput">Telefone:</label>
-        </div><br>
-    
-        <!-- <label>Data de Nascimento:</label><br> -->
-        <div class="form-floating mb-3">
-            <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com" name="data_nascimento">
-            <label for="floatingInput">Data de Nascimento:</label>
-        </div><br>
-        
-        <!-- <label>Função:</label><br> -->
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="funcao">
-            <label for="floatingInput">Função:</label>
+        <!-- Nome -->
+        <div class="flex">
+            <label>
+                <input type="text" class="input" name="nome" required>
+                <span>Nome:</span>
+            </label>
         </div>
-        
-        <input type="submit" value="Cadastrar Funcionário">
+
+        <!-- CPF -->
+        <div class="flex">
+            <label>
+                <input type="text" class="input" name="cpf" required>
+                <span>CPF:</span>
+            </label>
+        </div>
+
+        <!-- Telefone -->
+        <div class="flex">
+            <label>
+                <input type="text" class="input" name="telefone" required>
+                <span>Telefone:</span>
+            </label>
+        </div>
+
+        <!-- Data de Nascimento -->
+        <div class="flex">
+            <label>
+                <input type="date" class="input" name="data_nascimento" required>
+            </label>
+        </div>
+
+        <!-- Função -->
+        <div class="flex">
+            <label>
+                <input type="text" class="input" name="funcao" required>
+                <span>Função:</span>
+            </label>
+        </div>
+
+        <button class="submit">Cadastrar Funcionário</button>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
+    <footer class="mt-4">
+        <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

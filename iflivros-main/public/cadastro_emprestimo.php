@@ -8,9 +8,13 @@ require_once '../controle/verificar_login.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empréstimo de Livro</title>
     <link rel="stylesheet" href="../public/css/styles_form.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 <body>
+<?php require_once './assets/header.html'; ?>
+
     <h2>Empréstimo de Livro</h2>
     <form action="../controle/banco_emprestimo.php" method="get">
         <label for="livro_id">Livro:</label><br>

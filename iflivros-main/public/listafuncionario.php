@@ -22,6 +22,7 @@ if (isset($_GET['valor'])) {
 </head> 
 
 <body>
+<img src="../public/assets/logo.png" alt="logo do site" id="logo">
     <?php require_once './assets/header.html'; ?>    
     <form action="listacliente.php" method="get" class="mb-4 form-pesquisa">
         <div class="form-group">

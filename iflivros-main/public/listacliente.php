@@ -20,7 +20,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 
 
 <body>
-    
+<img src="../public/assets/logo.png" alt="logo do site" id="logo">
     <?php require_once './assets/header.html'; ?>
     
     <form action="listacliente.php" method="get" class="mb-4 form-pesquisa">

@@ -14,6 +14,7 @@ require_once '../controle/verificar_login.php'
 </head>
 
 <body>
+<img src="../public/assets/logo.png" alt="logo do site" id="logo">
 <?php
         require_once './assets/header.html'
     ?>

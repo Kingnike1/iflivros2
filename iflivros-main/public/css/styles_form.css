@@ -1,15 +1,24 @@
-/* Reset básico de margens e paddings */
-* {
+/* Variáveis CSS */
+:root {
+    --primary-color: #00c4ff;
+    --primary-color-hover: #0099cc;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --padding: 10px;
+  }
+  
+  /* Reset básico de margens e paddings */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Estilo para o corpo da página */
-body {
+  }
+  
+  /* Estilo para o corpo da página */
+  body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,64 +26,65 @@ body {
     height: 100vh;
     padding: 20px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para os títulos h2 */
-h2 {
+    font-size: 1rem; /* Usando rem para melhorar a acessibilidade */
+  }
+  
+  /* Estilo para os títulos h2 */
+  h2 {
     margin-bottom: 20px;
-    color: #00c4ff;
+    color: var(--primary-color);
     font-size: 24px;
     text-align: center;
-}
-
-/* Estilo para o formulário */
-form {
+  }
+  
+  /* Estilo para o formulário */
+  form {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
     width: 100%;
     max-width: 500px;
     margin-bottom: 20px;
-}
-
-/* Estilo para os rótulos (labels) */
-label {
+  }
+  
+  /* Estilo para os rótulos (labels) */
+  label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 12px; /* Aumentando o espaçamento */
     font-weight: bold;
-    color: #333;
-}
-
-/* Estilo para campos de entrada e select */
-input[type="text"],
-input[type="email"],
-input[type="date"],
-input[type="password"],
-select {
+    color: var(--text-color);
+  }
+  
+  /* Estilo para campos de entrada e select */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="password"],
+  select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-bottom: 16px;
+    margin-bottom: 20px; /* Mais espaço entre os campos */
     font-size: 16px;
     background-color: #fff;
-}
-
-/* Estilo específico para o select */
-/* select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #fff url('arrow-down.svg') no-repeat right center;
-    background-size: 12px;
-} */
-
-/* Estilo para o botão de submit */
-input[type="submit"],
-input[type="text"]
-{
-    background-color: #00c4ff;
+    line-height: 1.6; /* Melhorando a legibilidade */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="date"]:focus,
+  input[type="password"]:focus,
+  select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 196, 255, 0.3); /* Destaque ao focar */
+  }
+  
+  /* Estilo para o botão de submit */
+  input[type="submit"] {
+    background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     padding: 12px;
@@ -82,42 +92,59 @@ input[type="text"]
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #0099cc;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: var(--primary-color-hover);
     transform: scale(1.05);
-}
-
-input[type="submit"]:active {
+  }
+  
+  input[type="submit"]:active {
     transform: scale(0.95);
-}
-
-/* Media query para dispositivos com largura máxima de 768px */
-@media (max-width: 768px) {
+  }
+  
+  input[type="submit"]:focus {
+    outline: 2px solid var(--primary-color); /* Acessibilidade ao focar */
+  }
+  
+  /* Media query para dispositivos com largura máxima de 768px */
+  @media (max-width: 768px) {
     body {
-        padding: 10px;
+      padding: 10px;
     }
-
+  
     h2 {
-        font-size: 20px;
+      font-size: 20px;
     }
-
+  
     form {
-        padding: 15px;
-        max-width: 100%;
+      padding: 15px;
+      max-width: 100%;
     }
-
+  
     input[type="text"],
     input[type="email"],
     input[type="date"],
     input[type="password"],
     select {
-        font-size: 14px;
+      font-size: 14px;
     }
-
+  
     input[type="submit"] {
-        font-size: 14px;
-        padding: 10px;
+      font-size: 14px;
+      padding: 10px;
     }
-}
+  }
+  
+  /* Media query para dispositivos muito pequenos (max-width: 480px) */
+  @media (max-width: 480px) {
+    body {
+      font-size: 0.9rem;
+    }
+  
+    input[type="submit"] {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }
+  

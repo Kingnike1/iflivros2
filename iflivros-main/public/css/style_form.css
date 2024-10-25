@@ -1,0 +1,174 @@
+body {
+    background: linear-gradient(to bottom right, #00c4ff, #ffd900);
+    display: flex; /* Corrigido de flexbox para flex */
+    flex-direction: column; /* Adiciona direção de coluna para organizar o conteúdo */
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+    margin: 0; /* Remove margens padrões do body */
+}
+
+/* Estilos gerais do formulário */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: rgba(34, 34, 34, 0.8); /* Fundo mais escuro com transparência */
+    color: #ffffff; /* Texto branco para contraste */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda leve para suavizar */
+    margin: 0 auto;
+}
+
+/* Título do formulário */
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #ffd900; /* Cor do título para combinar com o gradiente */
+    margin-bottom: 10px;
+}
+
+/* Mensagem de instrução */
+.message {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8); /* Texto de instrução mais visível */
+    margin-bottom: 15px;
+}
+
+/* Estilo das labels e inputs */
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    background-color: rgba(255, 255, 255, 0.2); /* Input com fundo claro e semi-transparente */
+    color: #fff;
+    padding: 15px 10px;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda mais clara */
+    border-radius: 8px;
+    font-size: 16px;
+    width: 150%;
+}
+
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.7); /* Texto de label com boa visibilidade */
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+/* .form label .input:placeholder-shown + span {
+    top: 22px;
+    font-size: 0.9em;
+} */
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: #ffd900; /* Cor de foco combinando com o título */
+    top: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+/* Estilo dos botões */
+.submit {
+    border: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #00c4ff; /* Azul claro que combina com o fundo */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #0095cc; /* Azul um pouco mais escuro ao passar o mouse */
+}
+
+/* Flex containers para agrupar os inputs */
+.flex {
+    display: flex;
+    gap: 15px;
+}
+
+/* Mensagem de registro */
+.signin {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+}
+
+.signin a {
+    color: #ffd900; /* Cor do link igual ao título */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin a:hover {
+    text-decoration: underline;
+}
+
+/* Animação do título */
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Modo claro baseado na preferência do usuário */
+@media (prefers-color-scheme: light) {
+    .form {
+        background-color: #f0f0f0; /* Fundo claro suave */
+        color: #333; /* Texto mais escuro */
+        border: 1px solid #ccc; /* Borda mais clara */
+    }
+
+    .form label .input {
+        background-color: #fff; /* Inputs brancos */
+        color: #000; /* Texto preto */
+        border: 1px solid #ccc; /* Borda cinza clara */
+    }
+
+    .form label .input + span {
+        color: rgba(0, 0, 0, 0.6); /* Cor da label mais escura */
+    }
+
+    .form label .input:focus + span,
+    .form label .input:valid + span {
+        color: #ffd900; /* Manter a cor de foco no modo claro */
+    }
+
+    .submit {
+        background-color: #ffd900; /* Botão com cor uniforme */
+        color: #fff;
+    }
+
+    .signin {
+        color: rgba(0, 0, 0, 0.7); /* Texto de instrução mais escuro */
+    }
+
+    .signin a {
+        color: #ffd900; /* Link igual ao botão no modo claro */
+    }
+}
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: auto;
+}
