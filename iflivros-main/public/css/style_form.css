@@ -14,10 +14,11 @@ body {
     max-width: 400px;
     padding: 25px;
     border-radius: 15px;
-    background-color: rgba(34, 34, 34, 0.8); /* Fundo mais escuro com transparência */
+    background-color: rgb(20, 20, 20); /* Fundo mais escuro com transparência */
     color: #ffffff; /* Texto branco para contraste */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Borda leve para suavizar */
     margin: 0 auto;
+    height: auto;
 }
 
 /* Título do formulário */
@@ -49,7 +50,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.5); /* Borda mais clara */
     border-radius: 8px;
     font-size: 16px;
-    width: 150%;
+    width: 100%;
 }
 
 .form label .input + span {
@@ -127,42 +128,6 @@ body {
     }
 }
 
-/* Modo claro baseado na preferência do usuário */
-@media (prefers-color-scheme: light) {
-    .form {
-        background-color: #f0f0f0; /* Fundo claro suave */
-        color: #333; /* Texto mais escuro */
-        border: 1px solid #ccc; /* Borda mais clara */
-    }
-
-    .form label .input {
-        background-color: #fff; /* Inputs brancos */
-        color: #000; /* Texto preto */
-        border: 1px solid #ccc; /* Borda cinza clara */
-    }
-
-    .form label .input + span {
-        color: rgba(0, 0, 0, 0.6); /* Cor da label mais escura */
-    }
-
-    .form label .input:focus + span,
-    .form label .input:valid + span {
-        color: #ffd900; /* Manter a cor de foco no modo claro */
-    }
-
-    .submit {
-        background-color: #ffd900; /* Botão com cor uniforme */
-        color: #fff;
-    }
-
-    .signin {
-        color: rgba(0, 0, 0, 0.7); /* Texto de instrução mais escuro */
-    }
-
-    .signin a {
-        color: #ffd900; /* Link igual ao botão no modo claro */
-    }
-}
 footer {
     background: #333;
     color: #fff;
