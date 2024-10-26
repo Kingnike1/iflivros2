@@ -69,8 +69,12 @@ require_once '../controle/verificar_login.php'
     
         <label for="data_devolucao">Data de Devolução:</label><br>
         <input type="date" name="data_devolucao" required><br>
-        
+
         <input type="submit" value="Realizar Empréstimo">
     </form>    
+
+    <?php require_once "../public/assets/footer.html";?>
+
+
 </body>
 </html>

@@ -17,5 +17,9 @@
         <label for="">Senha</label>
         <input type="password" name="senha" placeholder="Crie uma senha de mais de 11 caracteres">
     </form>
+
+
+    <?php require_once "../public/assets/footer.html";?>
+
 </body>
 </html>

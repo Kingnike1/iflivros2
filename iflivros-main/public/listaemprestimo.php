@@ -88,9 +88,8 @@ require_once '../controle/verificar_login.php'
 
     </table><br>
 
-    <footer>
-        <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
-    </footer>
+    <?php require_once "../public/assets/footer.html";?>
+
 </body>
 
 </html>
