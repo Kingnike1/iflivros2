@@ -30,14 +30,10 @@ require_once '../controle/verificar_login.php';
     }
     ?>
 
-<form action="listacliente.php" method="get" class="mb-4 form-pesquisa">
-        <div class="form-group">
-            <div class="search-wrapper">
-                <i class="fas fa-search lupa"></i>
-                <input type="text" name="valor" id="valor" class="form-control campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary botao-pesquisa">Pesquisar</button>
+<form action="listacliente.php" method="post" class="form-pesquisa">
+        <input type="text" name="valor" id="valor" value=" <?php echo htmlspecialchars($valor);?> "   
+          class="campo-pesquisa" placeholder="Digite o nome ou o CPF para pesquisar">
+        <button type="submit" class="botao-pesquisa">Pesquisar</button>
     </form>
 
     <?php 
