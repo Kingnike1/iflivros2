@@ -33,7 +33,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 
 
 
-    <table class="table">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
