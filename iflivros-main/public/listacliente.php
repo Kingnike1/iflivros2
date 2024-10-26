@@ -66,7 +66,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                         echo "<td>{$linha['email']}</td>";
                         echo "<td>{$linha['data_de_nascimento']}</td>";
                         echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
-                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
+                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Editar</a></td>";
                         echo "</tr>";
                     }
                 }
@@ -84,7 +84,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                     echo "<td>{$linha['email']}</td>";
                     echo "<td>{$linha['data_de_nascimento']}</td>";
                     echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
-                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
+                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Editar</a></td>";
                     echo "</tr>";
                 }
             }
