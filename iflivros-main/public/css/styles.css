@@ -164,6 +164,10 @@ footer {
     transform: scale(1.05);
 }
 
+#acao{
+    text-align: center;
+}
+
 /* =========================== */
 /* ANIMAÇÕES */
 /* =========================== */

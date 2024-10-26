@@ -24,14 +24,16 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
     <?php require_once './templates/header.html'; ?>
 
 
-    <form action="listacliente.php" method="post" class="form-pesquisa">
-        <input type="text" name="valor" id="valor" value=" <?php echo htmlspecialchars($valor);?> "   
-          class="campo-pesquisa" placeholder="Digite o nome ou o CPF para pesquisar">
+    <form action="listacliente.php" method="get" class="form-pesquisa">
+        <div class="search-wrapper">
+            <input type="text" name="valor" id="valor" class="campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
+        </div>
         <button type="submit" class="botao-pesquisa">Pesquisar</button>
     </form>
 
 
-    <table class="table table-bordered">
+
+    <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -40,7 +42,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                 <th>TELEFONE</th>
                 <th>EMAIL</th>
                 <th>DATA DE NASCIMENTO</th>
-                <th>APAGAR</th>
+                <th id="acao" colspan="2">AÇÃO</th>
             </tr>
         </thead>
         <tbody>
@@ -64,6 +66,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                         echo "<td>{$linha['email']}</td>";
                         echo "<td>{$linha['data_de_nascimento']}</td>";
                         echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
+                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
                         echo "</tr>";
                     }
                 }
@@ -80,6 +83,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                     echo "<td>{$linha['telefone']}</td>";
                     echo "<td>{$linha['email']}</td>";
                     echo "<td>{$linha['data_de_nascimento']}</td>";
+                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
                     echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
                     echo "</tr>";
                 }
