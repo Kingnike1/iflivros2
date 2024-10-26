@@ -9,7 +9,11 @@ require_once '../controle/verificar_login.php'
     <title>IF_LIVROS</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="../public/css/header.css">
-
+    
+    <!-- Link Animate.css e AOS.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <link rel="shortcut icon" href="./assets/download.png" type="image/png">
 </head>
 
@@ -19,13 +23,13 @@ require_once '../controle/verificar_login.php'
         require_once './assets/header.html'
     ?>
     <main>
-        <section class="painel">
+        <!-- Seções com animação de subida no scroll -->
+        <section class="painel" data-aos="fade-up">
             <h2>Painel de Controle</h2>
             <p>Bem-vindo ao painel de controle do sistema da biblioteca! Aqui você tem acesso a todas as funcionalidades essenciais, incluindo o cadastro de novos livros, clientes, empréstimos e funcionários. Gerencie eficientemente todas as informações da biblioteca em um único lugar.</p>
-
         </section>
 
-        <section class="biblioteca">
+        <section class="biblioteca" data-aos="fade-up">
             <h2>Sobre a Biblioteca:</h2>
             <div class="content">
                 <p>
@@ -34,7 +38,7 @@ require_once '../controle/verificar_login.php'
             </div>
         </section>
 
-        <section class="dono">
+        <section class="dono" data-aos="fade-up">
             <h2>Atual Dono da Biblioteca:</h2>
             <div class="content">
                 <p>
@@ -43,15 +47,16 @@ require_once '../controle/verificar_login.php'
             </div>
         </section>
 
-        <section class="galeria">
+        <section class="galeria" data-aos="fade-up">
             <h2>Galeria da Biblioteca:</h2>
             <div class="scroll-container">
-                <img src="./assets/image1.png" alt="Biblioteca">
-                <img src="./assets/images.jpeg" alt="Biblioteca">
-                <img src="./assets/images (1).jpeg" alt="Biblioteca">
-                <img src="./assets/images (2).jpeg" alt="Biblioteca">
-                <img src="./assets/images (3).jpeg" alt="Biblioteca">
-                <img src="./assets/images (4).jpg" alt="Biblioteca">
+                <!-- Imagens com animação de subida no scroll -->
+                <img src="./assets/image1.png" alt="Biblioteca" data-aos="fade-up">
+                <img src="./assets/images.jpeg" alt="Biblioteca" data-aos="fade-up">
+                <img src="./assets/images (1).jpeg" alt="Biblioteca" data-aos="fade-up">
+                <img src="./assets/images (2).jpeg" alt="Biblioteca" data-aos="fade-up">
+                <img src="./assets/images (3).jpeg" alt="Biblioteca" data-aos="fade-up">
+                <img src="./assets/images (4).jpg" alt="Biblioteca" data-aos="fade-up">
             </div>
         </section>
     </main>
@@ -60,8 +65,13 @@ require_once '../controle/verificar_login.php'
         <p>&copy; 2024 IF_LIVROS. Todos os direitos reservados.</p>
     </footer>
 
-   
-
-
+    <!-- Scripts de Inicialização do AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: false
+      });
+    </script>
 </body>
 </html>
