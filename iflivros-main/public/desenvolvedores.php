@@ -24,7 +24,7 @@ require_once '../controle/verificar_login.php';
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="./css/styles_form.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./assets/download.png" type="image/png">
 </head>
 <body>
