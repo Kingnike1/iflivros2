@@ -1,12 +1,11 @@
 body {
     background: linear-gradient(to bottom right, #110127, #053a4a);
-    display: flex; /* Corrigido de flexbox para flex */
-    flex-direction: column; /* Adiciona direção de coluna para organizar o conteúdo */
-    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
-    margin: 0; /* Remove margens padrões do body */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* Estilos gerais do formulário */
 .form {
     display: flex;
     flex-direction: column;
@@ -14,47 +13,44 @@ body {
     max-width: 400px;
     padding: 25px;
     border-radius: 15px;
-    background-color: rgba(20, 20, 20, 0.343); /* Fundo mais escuro com transparência */
-    color: #ffffff; /* Texto branco para contraste */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda leve para suavizar */
+    background-color: rgba(20, 20, 20, 0.343);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0 auto;
     height: auto;
 }
 
-/* Título do formulário */
 .title {
     font-size: 28px;
     font-weight: 600;
     letter-spacing: -1px;
-    color: white; /* Cor do título para combinar com o gradiente */
+    color: white;
     margin-bottom: 10px;
 }
 
-/* Mensagem de instrução */
 .message {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.8); /* Texto de instrução mais visível */
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 15px;
 }
 
-/* Estilo das labels e inputs */
 .form label {
     position: relative;
 }
 
 .form label .input {
-    background-color: rgba(255, 255, 255, 0.2); /* Input com fundo claro e semi-transparente */
+    background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     padding: 15px 10px;
     outline: 0;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda mais clara */
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     font-size: 16px;
     width: 100%;
 }
 
 .form label .input + span {
-    color: rgba(255, 255, 255, 0.7); /* Texto de label com boa visibilidade */
+    color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 10px;
     top: 12px;
@@ -63,42 +59,34 @@ body {
     transition: 0.3s ease;
 }
 
-/* .form label .input:placeholder-shown + span {
-    top: 22px;
-    font-size: 0.9em;
-} */
-
 .form label .input:focus + span,
 .form label .input:valid + span {
-    color: #ffd900; /* Cor de foco combinando com o título */
+    color: #ffd900;
     top: 5px;
     font-size: 0.8em;
     font-weight: 600;
 }
 
-/* Estilo dos botões */
 .submit {
     border: none;
     padding: 10px 0;
     border-radius: 8px;
     color: #fff;
     font-size: 16px;
-    background-color: #00c4ff; /* Azul claro que combina com o fundo */
+    background-color: #00c4ff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .submit:hover {
-    background-color: #0095cc; /* Azul um pouco mais escuro ao passar o mouse */
+    background-color: #0095cc;
 }
 
-/* Flex containers para agrupar os inputs */
 .flex {
     display: flex;
     gap: 15px;
 }
 
-/* Mensagem de registro */
 .signin {
     text-align: center;
     font-size: 14px;
@@ -107,7 +95,7 @@ body {
 }
 
 .signin a {
-    color: #ffd900; /* Cor do link igual ao título */
+    color: #ffd900;
     text-decoration: none;
     font-weight: 600;
 }
@@ -116,7 +104,6 @@ body {
     text-decoration: underline;
 }
 
-/* Animação do título */
 @keyframes pulse {
     from {
         transform: scale(0.9);
