@@ -9,7 +9,6 @@ require_once '../controle/verificar_login.php'
     <title>Empréstimo de Livro</title>
     <link rel="stylesheet" href="../public/css/styles_form.css">
     <link rel="stylesheet" href="../public/css/header.css">
-
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 <body>
