@@ -23,7 +23,7 @@ if (isset($_GET['valor'])) {
 
 <body>
 <img src="../public/assets/logo.png" alt="logo do site" id="logo">
-    <?php require_once './assets/header.html'; ?>    
+    <?php require_once './templates/header.html'; ?>    
     <form action="listacliente.php" method="post" class="form-pesquisa">
         <input type="text" name="valor" id="valor" value=" <?php echo htmlspecialchars($valor);?> "   
           class="campo-pesquisa" placeholder="Digite o nome ou o CPF para pesquisar">
@@ -111,7 +111,7 @@ if (isset($_GET['valor'])) {
 
     <?php
     
-    require_once '../public/assets/footer.html'
+    require_once '../public/templates/footer.html'
     
     ?>
 

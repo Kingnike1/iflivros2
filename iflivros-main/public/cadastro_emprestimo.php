@@ -12,7 +12,7 @@ require_once '../controle/verificar_login.php'
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 <body>
-<?php require_once './assets/header.html'; ?>
+<?php require_once './templates/header.html'; ?>
 
     <h2>Empréstimo de Livro</h2>
     <form action="../controle/banco_emprestimo.php" method="get">
@@ -73,7 +73,7 @@ require_once '../controle/verificar_login.php'
         <input type="submit" value="Realizar Empréstimo">
     </form>    
 
-    <?php require_once "../public/assets/footer.html";?>
+    <?php require_once "../public/templates/footer.html";?>
 
 
 </body>

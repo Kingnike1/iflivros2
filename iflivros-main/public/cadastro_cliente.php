@@ -15,7 +15,7 @@ require_once '../controle/verificar_login.php'
     <link rel="stylesheet" href="../public/css/style_form.css">
 </head>
 <body>
-<?php require_once './assets/header.html'; ?>
+<?php require_once './templates/header.html'; ?>
 
     <form action="../controle/banco_cliente.php" method="get" class="form">
         <p class="title">Cadastro de Cliente</p>
@@ -63,7 +63,7 @@ require_once '../controle/verificar_login.php'
         <button class="submit">Cadastrar Cliente</button>
     </form>
 
-    <?php require_once "../public/assets/footer.html";?>
+    <?php require_once "../public/templates/footer.html";?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

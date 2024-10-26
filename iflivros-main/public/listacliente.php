@@ -21,7 +21,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 
 <body>
     <img src="../public/assets/logo.png" alt="logo do site" id="logo">
-    <?php require_once './assets/header.html'; ?>
+    <?php require_once './templates/header.html'; ?>
 
 
     <form action="listacliente.php" method="post" class="form-pesquisa">
@@ -88,7 +88,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
         </tbody>
     </table>
 
-    <?php require_once "../public/assets/footer.html"; ?>
+    <?php require_once "../public/templates/footer.html"; ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

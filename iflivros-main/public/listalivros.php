@@ -19,7 +19,7 @@ require_once '../controle/verificar_login.php';
 
 <body>
 <img src="../public/assets/logo.png" alt="logo do site" id="logo">
-    <?php require_once './assets/header.html'; ?>
+    <?php require_once './templates/header.html'; ?>
     
     
     <?php
@@ -113,7 +113,7 @@ require_once '../controle/verificar_login.php';
         </tbody>
     </table><br>
 
-    <?php require_once "../public/assets/footer.html";?>
+    <?php require_once "../public/templates/footer.html";?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

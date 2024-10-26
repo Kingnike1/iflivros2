@@ -1,8 +1,8 @@
 <?php
     require_once "conexao.php";
 
-    $email = $_GET['email'];        
-    $senha = $_GET['senha'];
+    $email = $_POST['email'];        
+    $senha = $_POST['senha'];
     
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 

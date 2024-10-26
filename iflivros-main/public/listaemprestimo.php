@@ -20,7 +20,7 @@ require_once '../controle/verificar_login.php'
 <img src="../public/assets/logo.png" alt="logo do site" id="logo">
 
 <?php
-        require_once './assets/header.html'
+        require_once './templates/header.html'
     ?>
     
 
@@ -88,7 +88,7 @@ require_once '../controle/verificar_login.php'
 
     </table><br>
 
-    <?php require_once "../public/assets/footer.html";?>
+    <?php require_once "../public/templates/footer.html";?>
 
 </body>
 
