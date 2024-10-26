@@ -33,7 +33,7 @@ require_once '../controle/verificar_login.php'
                 echo "<option value='$id'>$nome</option>";
             }
             ?>
-        </select><br><br>
+        </select><br>
 
         
         <label for="cliente_id">Cliente:</label><br>
@@ -48,7 +48,7 @@ require_once '../controle/verificar_login.php'
                 echo "<option value='$id'>$nome</option>";
             }
             ?>
-        </select><br><br>
+        </select><br>
         
         <label for="funcionario_id">Funcionário:</label><br>
         <select name="funcionario_id" required>
@@ -62,13 +62,13 @@ require_once '../controle/verificar_login.php'
                 echo "<option value='$id'>$nome</option>";
             }
             ?>
-        </select><br><br>
+        </select><br>
         
         <label for="data_emprestimo">Data de Empréstimo:</label><br>
-        <input type="date" name="data_emprestimo" required><br><br>
+        <input type="date" name="data_emprestimo" required><br>
     
         <label for="data_devolucao">Data de Devolução:</label><br>
-        <input type="date" name="data_devolucao" required><br><br>
+        <input type="date" name="data_devolucao" required><br>
         
         <input type="submit" value="Realizar Empréstimo">
     </form>    
