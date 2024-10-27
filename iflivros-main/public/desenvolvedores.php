@@ -32,7 +32,7 @@ require_once '../controle/verificar_login.php';
     <div class="container mt-5">
         <!-- Seção de Introdução -->
         <div class="intro text-center mb-5">
-            <h3>Bem-vindo à nossa equipe de desenvolvimento!</h3>
+            <h3>Bem-vindo à pagina da nossa equipe de desenvolvimento!</h3>
             <p>Conheça os desenvolvedores por trás deste projeto incrível. Cada membro traz habilidades únicas e está comprometido em criar uma experiência excepcional para os usuários. Sinta-se à vontade para explorar os perfis abaixo!</p>
         </div>
 
@@ -44,42 +44,62 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev1.jpeg" alt="Desenvolvedor 1" class="image">
                     <div class="overlay">
                         <a href="https://github.com/Kingnike1/" target="_blank" class="link_instagram">Nome: Pablo Rodrigues</a>
+                        <p class="codinome">
+                            <i class="fas fa-laptop-code "></i> Front-end
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 2</p>
+                    <p>Desenvolvedor 2</p> 
+                    
                     <img src="./assets/dev3.jpeg" alt="Desenvolvedor 2" class="image">
                     <div class="overlay">
                         <a href="https://github.com/" class="link_instagram">Nome: Paulo Ricardo</a>
+                        <p class="codinome">
+                            <i class="fas fa-code-branch"></i> Back-end
+                        </p>                  
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 3</p>
+                    <p>Desenvolvedor 3</p> 
+                    
                     <img src="./assets/dev2.jpeg" alt="Desenvolvedor 3" class="image">
                     <div class="overlay">
                         <a href="https://github.com/kaio062/" target="_blank" class="link_instagram">Nome: Kaio Barbosa</a>
+                        <p class="codinome">                        
+                            <i class="fas fa-tools"></i> Back-end
+                        </p>
                     </div>                
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 4</p>
+                    <p>Desenvolvedor 4</p> 
+                    
                     <img src="./assets/dev4.jpeg" alt="Desenvolvedor 4" class="image">
                     <div class="overlay">
                         <a href="https://github.com/" class="link_instagram">Nome: Bianca Vitoria</a>
+                        <p class="codinome">
+                        <i class="fas fa-cogs"></i> Back-end
+    
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 5</p>
+                    <p>Desenvolvedor 5</p> 
+                    
                     <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
                     <div class="overlay">
                         <a href="https://github.com/" class="link_instagram">Nome: Sara Xavier</a>
+                        <p class="codinome">
+                        <i class="fas fa-server"></i> Back-end
+                        </p>
                     </div>
                 </div>
             </div>
