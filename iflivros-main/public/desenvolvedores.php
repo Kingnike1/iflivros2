@@ -46,7 +46,7 @@ require_once '../controle/verificar_login.php';
                     <p>Desenvolvedor 2</p>
                     <img src="./assets/dev3.jpeg" alt="Desenvolvedor 2" class="image">
                     <div class="overlay">
-                        <a href="#" class="link_instagram">Nome: Paulo Ricardo</a>
+                        <a href="https://github.com/" class="link_instagram">Nome: Paulo Ricardo</a>
                     </div>                </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
@@ -63,7 +63,7 @@ require_once '../controle/verificar_login.php';
                     <p>Desenvolvedor 4</p>
                     <img src="./assets/dev4.jpeg" alt="Desenvolvedor 4" class="image">
                     <div class="overlay">
-                        <a href="#" class="link_instagram">Nome: Bianca Vitoria</a>
+                        <a href="https://github.com/" class="link_instagram">Nome: Bianca Vitoria</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ require_once '../controle/verificar_login.php';
                     <p>Desenvolvedor 5</p>
                     <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
                     <div class="overlay">
-                        <a href="#" class="link_instagram">Nome: Sara Xavier</a>
+                        <a href="https://github.com/" class="link_instagram">Nome: Sara Xavier</a>
                     </div>
                 </div>
             </div>
