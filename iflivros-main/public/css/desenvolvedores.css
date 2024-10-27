@@ -1,7 +1,7 @@
 /* Estilos gerais */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #e0e4e8; /* Tom neutro e claro para destaque suave do conteúdo */
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,38 +9,50 @@ body {
 
 h2 {
     font-weight: 700;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    text-align: center;
+    border-bottom: 4px solid #3498db; /* Barra de destaque */
+    display: inline-block;
+    padding-bottom: 0.3rem;
 }
 
+/* Container principal */
 .container {
     padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
-/* Estilo dos cards dos desenvolvedores */
+/* Card de desenvolvedor */
 .overlay-container {
     position: relative;
     max-width: 300px;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: #ffffff;
 }
 
 .overlay-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo da imagem */
 .image {
     display: block;
     width: 100%;
-    height: 300px;
+    height: 320px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease;
+    border-bottom: 3px solid #3498db; /* Detalhe de borda */
 }
 
 .overlay-container:hover .image {
@@ -52,46 +64,95 @@ h2 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 15px;
+    background: rgba(44, 62, 80, 0.85);
+    color: #ecf0f1;
+    padding: 1rem;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 600;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     opacity: 0;
+    border-top: 2px solid #3498db;
 }
 
 .overlay-container:hover .overlay {
     opacity: 1;
 }
 
-/* Estilos adicionais */
+/* Estilos do título e descrição do card */
 .text-center {
-    margin-bottom: 1rem;
     color: #555;
 }
 
 .card-title {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #2c3e50;
 }
 
 .card-text {
     font-size: 1rem;
-    color: #666;
+    color: #7f8c8d;
     margin: 0;
 }
 
+/* Link do Instagram */
 .link_instagram {
     text-decoration: none;
-    color: white;
-  }
+    color: #fff;
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    /* background-color: #3498db; */
+    border-radius: 0.3rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-.link_instagram:hover{
+.link_instagram:hover {
+    /* background-color: #2980b9; */
     text-decoration: none;
-    color: white;
+    color: white
+}
+/* Estilo personalizado para o parágrafo */
+p {
+    font-size: 1.1rem; /* Tamanho um pouco maior para facilitar a leitura */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: #4d4d4d; /* Tom de cinza suave para contraste confortável */
+    margin: 1rem 0;
+    text-align: justify;
+    font-weight: 500; /* Peso médio para um visual sofisticado */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animação leve */
+}
 
+/* Efeito de hover para parágrafos */
+p:hover {
+    color: #2c3e50; /* Escurece o texto no hover */
+    transform: scale(1.02); /* Suave aumento de tamanho */
+}
+
+/* Estilos adicionais para destaques */
+p span.highlight {
+    color: #3498db; /* Cor de destaque */
+    font-weight: 700;
+    background-color: #ecf0f1; /* Fundo claro */
+    padding: 0.1rem 0.3rem; /* Espessura para destacar */
+    border-radius: 0.2rem;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.4rem;
+    }
+    
+    .image {
+        height: 280px;
+    }
+
+    .container {
+        gap: 1.5rem;
+    }
 }

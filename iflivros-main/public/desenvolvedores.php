@@ -54,7 +54,7 @@ require_once '../controle/verificar_login.php';
                     <p>Desenvolvedor 3</p>
                     <img src="./assets/dev2.jpeg" alt="Desenvolvedor 3" class="image">
                     <div class="overlay">
-                        <a href="#" class="link_instagram">Nome: Kaio Barbosa</a>
+                        <a href="https://github.com/kaio062/" target="_blank" class="link_instagram">Nome: Kaio Barbosa</a>
                     </div>                
                 </div>
             </div>
