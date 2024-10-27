@@ -30,7 +30,7 @@ require_once '../controle/verificar_login.php';
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">Equipe de Desenvolvimento</h2>
+        <h2 class="text-center titulo">Equipe de Desenvolvimento</h2>
         <div class="row mt-4">
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
