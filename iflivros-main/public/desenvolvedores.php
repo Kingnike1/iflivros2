@@ -30,6 +30,12 @@ require_once '../controle/verificar_login.php';
 </head>
 <body>
     <div class="container mt-5">
+        <!-- Seção de Introdução -->
+        <div class="intro text-center mb-5">
+            <h3>Bem-vindo à nossa equipe de desenvolvimento!</h3>
+            <p>Conheça os desenvolvedores por trás deste projeto incrível. Cada membro traz habilidades únicas e está comprometido em criar uma experiência excepcional para os usuários. Sinta-se à vontade para explorar os perfis abaixo!</p>
+        </div>
+
         <h2 class="text-center titulo">Equipe de Desenvolvimento</h2>
         <div class="row mt-4">
             <div class="col-md-4 text-center" data-aos="fade-up">
@@ -47,7 +53,8 @@ require_once '../controle/verificar_login.php';
                     <img src="./assets/dev3.jpeg" alt="Desenvolvedor 2" class="image">
                     <div class="overlay">
                         <a href="https://github.com/" class="link_instagram">Nome: Paulo Ricardo</a>
-                    </div>                </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">

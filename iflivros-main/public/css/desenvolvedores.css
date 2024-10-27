@@ -22,6 +22,30 @@ h2 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para a seção de introdução */
+.intro {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.intro h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+
 .titulo {
     display: inline-block;
     overflow: hidden;
