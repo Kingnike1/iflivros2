@@ -5,7 +5,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
