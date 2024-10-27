@@ -13,6 +13,7 @@ require_once '../controle/verificar_login.php';
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -35,35 +36,44 @@ require_once '../controle/verificar_login.php';
                 <div class="container overlay-container">
                     <p>Desenvolvedor 1</p>
                     <img src="./assets/dev1.jpeg" alt="Desenvolvedor 1" class="image">
-                    <div class="overlay">Nome: Pablo Rodrigues</div>
+                    <div class="overlay">
+                        <a href="https://www.instagram.com/pabloalmeidathe1/" class="link_instagram">Nome: Pablo Rodrigues</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 2</p>
-                    <img src="./assets/dev3.jpeg" alt="Desenvolvedor 3" class="image">
-                    <div class="overlay">Nome: Paulo Ricardo</div>
-                </div>
+                    <img src="./assets/dev3.jpeg" alt="Desenvolvedor 2" class="image">
+                    <div class="overlay">
+                        <a href="#" class="link_instagram">Nome: Paulo Ricardo</a>
+                    </div>                </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 3</p>
-                    <img src="./assets/dev2.jpeg" alt="Desenvolvedor 2" class="image">
-                    <div class="overlay">Nome: Kaio Barbosa</div>
+                    <img src="./assets/dev2.jpeg" alt="Desenvolvedor 3" class="image">
+                    <div class="overlay">
+                        <a href="#" class="link_instagram">Nome: Kaio Barbosa</a>
+                    </div>                
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 4</p>
                     <img src="./assets/dev4.jpeg" alt="Desenvolvedor 4" class="image">
-                    <div class="overlay">Nome: Bianca Vitoria</div>
+                    <div class="overlay">
+                        <a href="#" class="link_instagram">Nome: Bianca Vitoria</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 5</p>
                     <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
-                    <div class="overlay">Nome: Sara Xavier</div>
+                    <div class="overlay">
+                        <a href="#" class="link_instagram">Nome: Sara Xavier</a>
+                    </div>
                 </div>
             </div>
         </div>

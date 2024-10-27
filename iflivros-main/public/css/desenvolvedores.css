@@ -84,3 +84,14 @@ h2 {
     color: #666;
     margin: 0;
 }
+
+.link_instagram {
+    text-decoration: none;
+    color: white;
+  }
+
+.link_instagram:hover{
+    text-decoration: none;
+    color: white;
+
+}
