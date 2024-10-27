@@ -37,7 +37,7 @@ require_once '../controle/verificar_login.php';
                     <p>Desenvolvedor 1</p>
                     <img src="./assets/dev1.jpeg" alt="Desenvolvedor 1" class="image">
                     <div class="overlay">
-                        <a href="https://www.instagram.com/pabloalmeidathe1/" class="link_instagram">Nome: Pablo Rodrigues</a>
+                        <a href="https://github.com/Kingnike1/" target="_blank" class="link_instagram">Nome: Pablo Rodrigues</a>
                     </div>
                 </div>
             </div>
