@@ -1,4 +1,3 @@
-
 <?php
 require_once '../controle/verificar_login.php';
 if (isset($_GET['valor'])) {
@@ -55,7 +54,7 @@ if (isset($_GET['valor'])) {
 
             // Pesquisa
             if ($valor) {
-                $sql = "SELECT * FROM cliente WHERE nome LIKE '%$valor%' OR cpf LIKE '%$valor%'";
+                $sql = "SELECT * FROM funcionario WHERE nome LIKE '%$valor%' OR cpf LIKE '%$valor%'";
                 $resultados = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($resultados) == 0) {
@@ -63,32 +62,32 @@ if (isset($_GET['valor'])) {
                 } else {
                     while ($linha = mysqli_fetch_array($resultados)) {
                         echo "<tr>";
-                        echo "<td>{$linha['idcliente']}</td>";
+                        echo "<td>{$linha['idfuncionario']}</td>";
                         echo "<td>{$linha['nome']}</td>";
                         echo "<td>{$linha['cpf']}</td>";
                         echo "<td>{$linha['telefone']}</td>";
-                        echo "<td>{$linha['email']}</td>";
                         echo "<td>{$linha['data_de_nascimento']}</td>";
-                        echo "<td><a href='../controle/deletar/deletar_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
-                        echo "<td><a href='cadastro_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
+                        echo "<td>{$linha['funcao']}</td>";
+                        echo "<td><a href='../controle/deletar/deletar_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
+                        echo "<td><a href='cadastro_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
                         echo "</tr>";
                     }
                 }
             } else {
                 // Carrega todos os clientes se não houver pesquisa
-                $sql = "SELECT * FROM cliente";
+                $sql = "SELECT * FROM funcionario";
                 $resultados = mysqli_query($conexao, $sql);
 
                 while ($linha = mysqli_fetch_array($resultados)) {
                     echo "<tr>";
-                    echo "<td>{$linha['idcliente']}</td>";
+                    echo "<td>{$linha['idfuncionario']}</td>";
                     echo "<td>{$linha['nome']}</td>";
                     echo "<td>{$linha['cpf']}</td>";
                     echo "<td>{$linha['telefone']}</td>";
-                    echo "<td>{$linha['email']}</td>";
                     echo "<td>{$linha['data_de_nascimento']}</td>";
-                    echo "<td><a href='../controle/deletar/deletar_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
-                    echo "<td><a href='cadastro_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
+                    echo "<td>{$linha['funcao']}</td>";
+                    echo "<td><a href='../controle/deletar/deletar_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
+                    echo "<td><a href='cadastro_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
                     echo "</tr>";
                 }
             }
@@ -97,12 +96,12 @@ if (isset($_GET['valor'])) {
     </table>
 
     <?php require_once "../public/templates/footer.html"; ?>
-    
 
 
 
 
-    
+
+
     <?php
     // Pesquisa
     if (isset($_GET['valor'])) {
@@ -120,8 +119,8 @@ if (isset($_GET['valor'])) {
             echo "<th>CPF</th>";
             echo "<th>Telefone</th>";
             echo "</tr>";
-            echo "<td><a href='../controle/deletar/deletar_funcionario.php?id={$id['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
-            echo "<td><a href='cadastro_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
+            echo "<td><a href='../controle/deletar/deletar_funcionario.php?id={$linha['idfuncionario']}' class='btn btn-danger'>Apagar</a></td>";
+            echo "<td><a href='cadastro_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
 
             while ($linha = mysqli_fetch_array($resultados)) {
                 $id = $linha['idpaciente'];
@@ -144,32 +143,32 @@ if (isset($_GET['valor'])) {
     ?>
 
 
-            <?php
-            require_once "../controle/conexao.php";
-            $sql = "SELECT * FROM funcionario";
-            $resultados = mysqli_query($conexao, $sql);
+    <?php
+    require_once "../controle/conexao.php";
+    $sql = "SELECT * FROM funcionario";
+    $resultados = mysqli_query($conexao, $sql);
 
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idfuncionario'];
-                $nome = $linha['nome'];
-                $cpf = $linha['cpf'];
-                $telefone = $linha['telefone'];
-                $data_de_nascimento = $linha['data_de_nascimento'];
-                $funcao = $linha['funcao'];
+    while ($linha = mysqli_fetch_array($resultados)) {
+        $id = $linha['idfuncionario'];
+        $nome = $linha['nome'];
+        $cpf = $linha['cpf'];
+        $telefone = $linha['telefone'];
+        $data_de_nascimento = $linha['data_de_nascimento'];
+        $funcao = $linha['funcao'];
 
-                echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$nome</td>";
-                echo "<td>$cpf</td>";
-                echo "<td>$telefone</td>";
-                echo "<td>$data_de_nascimento</td>";
-                echo "<td>$funcao</td>";
-                echo "<td><a href='../controle/deletar/deletar_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
-                echo "<td><a href='cadastro_funcionario.php?id=$id' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
-                echo "</tr>";
-            }
-            ?>
-        </tbody>
+        echo "<tr>";
+        echo "<td>$id</td>";
+        echo "<td>$nome</td>";
+        echo "<td>$cpf</td>";
+        echo "<td>$telefone</td>";
+        echo "<td>$data_de_nascimento</td>";
+        echo "<td>$funcao</td>";
+        echo "<td><a href='../controle/deletar/deletar_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
+        echo "<td><a href='cadastro_funcionario.php?id={$linha['idfuncionario']}' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
+        echo "</tr>";
+    }
+    ?>
+    </tbody>
     </table><br>
 
     <?php
