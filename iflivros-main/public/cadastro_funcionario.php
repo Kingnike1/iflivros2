@@ -63,7 +63,7 @@ require_once '../controle/verificar_login.php';
         <!-- CPF -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="cpf" value="<?php echo $CPF; ?>" required>
+                <input type="text" class="input" name="cpf" value="<?php echo $nome; ?>" required>
                 <span>CPF:</span>
             </label>
         </div>
@@ -71,7 +71,7 @@ require_once '../controle/verificar_login.php';
         <!-- Telefone -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="telefone" value="<?php echo $Telefone; ?>"  required>
+                <input type="text" class="input" name="telefone" value="<?php echo $nome; ?>"  required>
                 <span>Telefone:</span>
             </label>
         </div>
@@ -86,7 +86,7 @@ require_once '../controle/verificar_login.php';
         <!-- Função -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="funcao" value="<?php echo $nome; ?>" required>
+                <input type="text" class="input" name="funcao" required>
                 <span>Função:</span>
             </label>
         </div>
