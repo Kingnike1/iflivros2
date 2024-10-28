@@ -23,4 +23,4 @@
 
     mysqli_query( $conexao, $sql);
 
-    header ("location: ../public/home.php") ; 
+    header ("location: ../public/listacliente.php") ; 

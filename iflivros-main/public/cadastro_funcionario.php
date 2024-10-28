@@ -1,5 +1,36 @@
 <?php
 require_once '../controle/verificar_login.php';
+
+if (isset($_GET['id'])) {
+    // echo "editar";
+    require_once "../controle/conexao.php";
+
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM funcionario WHERE idfuncionario = $id";
+    $resultado = mysqli_query($conexao, $sql);
+
+    $linha = mysqli_fetch_array($resultado);
+
+    $nome = $linha['nome'];
+    $cpf = $linha['cpf'];
+    $telefone = $linha['telefone'];
+
+    // $acao = "editar";
+    $botao = "Salvar";
+} else {
+    // echo "cadastrar";
+    $id = 0;
+    $nome = '';
+    $cpf = '';
+    $telefone = '';
+
+    // $acao = "cadastrar";
+    $botao = "Cadastrar";
+}
+
+?>
+<?php
+require_once '../controle/verificar_login.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +55,7 @@ require_once '../controle/verificar_login.php';
         <!-- Nome -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="nome" required>
+                <input type="text" class="input" name="nome" value="<?php echo $nome; ?>" required>
                 <span>Nome:</span>
             </label>
         </div>
@@ -32,7 +63,7 @@ require_once '../controle/verificar_login.php';
         <!-- CPF -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="cpf" required>
+                <input type="text" class="input" name="cpf" value="<?php echo $CPF; ?>" required>
                 <span>CPF:</span>
             </label>
         </div>
@@ -40,7 +71,7 @@ require_once '../controle/verificar_login.php';
         <!-- Telefone -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="telefone" required>
+                <input type="text" class="input" name="telefone" value="<?php echo $Telefone; ?>"  required>
                 <span>Telefone:</span>
             </label>
         </div>
@@ -48,14 +79,14 @@ require_once '../controle/verificar_login.php';
         <!-- Data de Nascimento -->
         <div class="flex">
             <label>
-                <input type="date" class="input" name="data_nascimento" required>
+                <input type="date" class="input" name="data_nascimento" value="<?php echo $nome; ?>"  required>
             </label>
         </div>
 
         <!-- Função -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="funcao" required>
+                <input type="text" class="input" name="funcao" value="<?php echo $nome; ?>" required>
                 <span>Função:</span>
             </label>
         </div>

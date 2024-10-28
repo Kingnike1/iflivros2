@@ -1,5 +1,5 @@
 <?php
-require_once '../controle/verificar_login.php'
+require_once '../controle/verificar_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -36,6 +36,7 @@ require_once '../controle/verificar_login.php'
             <th>LIVRO</th>
             <th>CLIENTE</th>
             <th>FUNCIONARIO</th>
+            <th colspan="2" id="acao">AÇÃO</th>
             </tr>
         </thead>
         
@@ -80,9 +81,15 @@ require_once '../controle/verificar_login.php'
                     echo "<td>$livro_nome</td>";
                     echo "<td>$cliente_nome</td>";
                     echo "<td>$funcionario_nome</td>";
+                    echo "<td><a href='../controle/deletar/deletar_emprestimo.php?id={$linha['emprestimo']}' class='btn btn-danger'>Apagar</a></td>";
+                    echo "<td><a href='cadastro_emprestimo.php?id=$id' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
+
                     
                     echo "</tr>";
                 }
+
+                
+
 
         ?>
 

@@ -1,5 +1,10 @@
 <?php
 require_once '../controle/verificar_login.php';
+if (isset($_GET['valor'])) {
+    $valor = $_GET['valor'];
+} else {
+    $valor = ''; 
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,63 +22,19 @@ require_once '../controle/verificar_login.php';
     <link rel="shortcut icon" href="../public/assets/download.png" type="image/png">
 </head>
 
+
+
+
 <body>
     <img src="../public/assets/logo.png" alt="logo do site" id="logo">
     <?php require_once './templates/header.html'; ?>
 
-
-    <?php
-    if (isset($_GET['valor'])) {
-        $valor = $_GET['valor'];
-    } else {
-        $valor = '';
-    }
-    ?>
-
-    <form action="listacliente.php" method="get" class="form-pesquisa">
+    <form action="listalivros.php" method="get" class="form-pesquisa">
         <div class="search-wrapper">
             <input type="text" name="valor" id="valor" class="campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome para pesquisar">
         </div>
         <button type="submit" class="botao-pesquisa">Pesquisar</button>
     </form>
-
-    <?php
-    if (isset($_GET['valor'])) {
-        require_once "../controle/conexao.php";
-        $sql = "SELECT * FROM livro WHERE nome LIKE '%$valor%'";
-        $resultados = mysqli_query($conexao, $sql);
-
-        if (mysqli_num_rows($resultados) == 0) {
-            echo "Não foram encontrados resultados.";
-        } else {
-            echo "<table border='1'>";
-            echo "<tr>";
-            echo "<td>ID</td>";
-            echo "<td>Nome</td>";
-            echo "<td>Gênero</td>";
-            echo "<td>Status</td>";
-            echo "<td>Autor</td>";
-            echo "</tr>"; // Movei a linha de cabeçalho para o lugar correto
-
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idlivros'];
-                $nome = $linha['nome'];
-                $genero = $linha['genero'];
-                $status = $linha['status'];
-                $autor = $linha['autor'];
-
-                echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$nome</td>";
-                echo "<td>$genero</td>";
-                echo "<td>$status</td>";
-                echo "<td>$autor</td>";
-                echo "</tr>";
-            }
-            echo "</table>"; // Fechei a tabela após o loop
-        }
-    }
-    ?>
 
     <table>
         <thead>
@@ -83,39 +44,56 @@ require_once '../controle/verificar_login.php';
                 <th>GÊNERO</th>
                 <th>STATUS</th>
                 <th>AUTOR</th>
-                <th>APAGAR</th>
+                <th colspan="2" id="acao">AÇÃO</th>
             </tr>
         </thead>
         <tbody>
-            <?php
-            require_once "../controle/conexao.php";
-            $sql = "SELECT * FROM livro";
-            $resultados = mysqli_query($conexao, $sql);
+        <?php
+        require_once "../controle/conexao.php";
 
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idlivros'];
-                $nome = $linha['nome'];
-                $genero = $linha['genero'];
-                $status = $linha['status'];
-                $autor = $linha['autor'];
+            // <br /><b>Warning</b>:  Undefined variable $valor in <b>/var/www/html/public/listalivros.php</b> on line <b>29</b><br /><br /><b>Deprecated</b>:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in <b>/var/www/html/public/listalivros.php</b> on line <b>29</b><br />
+            if ($valor) {
+                $sql = "SELECT * FROM livro WHERE nome LIKE '%$valor%'";
+                $resultados = mysqli_query($conexao, $sql);
 
-                echo "<tr>";
-                echo "<td>$id</td>";
-                echo "<td>$nome</td>";
-                echo "<td>$genero</td>";
-                echo "<td>$status</td>";
-                echo "<td>$autor</td>";
-                echo "<td>
-                    <a href='../controle/deletar/delete_livros.php?id=<?php echo $id; ?>' class='btn btn-danger btn-bounce'>APAGAR</a>
-                  </td>";
-                echo "</tr>";
+                if (mysqli_num_rows($resultados) == 0) {
+                    echo "<tr><td colspan='7'>Não foram encontrados resultados.</td></tr>";
+                } else {
+                    while ($linha = mysqli_fetch_array($resultados)) {
+                        echo "<tr>"; 
+                        echo "<td>{$linha['idlivros']}</td>"; 
+                        echo "<td>{$linha['nome']}</td>";  
+                        echo "<td>{$linha['genero']}</td>";  
+                        echo "<td>{$linha['status']}</td>";
+                        echo "<td>{$linha['autor']}</td>";
+                        echo "<td><a href='../controle/deletar/deletar_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Apagar</a></td>";
+                        echo "<td><a href='../controle/deletar/deletar_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Editar</a></td>";
+                        echo "</tr>";
+    
+                    }
+                }
+            } else {
+                // Carrega todos os livros se não houver pesquisa
+                $sql = "SELECT * FROM livro";
+                $resultados = mysqli_query($conexao, $sql);
+                while ($linha = mysqli_fetch_array($resultados)) {
+                    echo "<tr>";
+                    echo "<td>{$linha['idlivros']}</td>";
+                    echo "<td>{$linha['nome']}</td>";
+                    echo "<td>{$linha['genero']}</td>";
+                    echo "<td>{$linha['status']}</td>";
+                    echo "<td>{$linha['autor']}</td>";
+                    echo "<td><a href='../controle/deletar/deletar_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Apagar</a></td>";
+                    echo "<td><a href='cadastrar_livro.php?id={$linha['idlivros']}' class='btn btn-danger'>Editar</a></td>";
+                    echo "</tr>";
+                }
+
             }
             ?>
         </tbody>
-    </table><br>
+    </table>
 
     <?php require_once "../public/templates/footer.html"; ?>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

@@ -13,36 +13,11 @@ Pablo
 Pasta de controle:
 Paulo Ricardo
 
-Tarefas Pendentes:
-
-Criar uma verificação de login:
-
-Objetivo: Verificar se o usuário está logado (longado).
-Tarefa: Criar uma função ou arquivo para checar o status de login.
-Criar arquivo para evitar invasão (Sessão segura):
-
-Objetivo: Garantir que a sessão de cada usuário seja segura.
-Tarefa: Incluir session_start() no início de cada página onde o login é necessário.
-Criar arquivo para deslogar (logout):
-
-Objetivo: Criar um arquivo ou função para deslogar o usuário.
-Tarefa: Criar um script que destrua a sessão e redirecione para a página de login.
-Criar botão de logout na interface de Sara:
-
-Objetivo: Adicionar um botão para Sara (ou qualquer outro usuário) poder deslogar.
-Tarefa: Adicionar um botão de logout na interface (página) de Sara.
-Incluir o arquivo de verificação de login no index.php (Kaio):
-
-Objetivo: Incluir a verificação de login no arquivo index.php para garantir que o usuário esteja logado ao acessar a página principal.
-
-
 04/10
 
 criar um arquivo pesquisa, conforme a aula de hoje: 
 
-lista livros = bianca e sara
+lista livros = Sara e Paulo
 lista emprestimo = Paulo
 lista funcionario = Kaio
 lista cliente = Paulo
-
-192.168.24.215:83/public/

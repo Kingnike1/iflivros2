@@ -19,6 +19,9 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 </head>
 
 
+
+
+
 <body>
     <img src="../public/assets/logo.png" alt="logo do site" id="logo">
     <?php require_once './templates/header.html'; ?>
@@ -66,7 +69,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                         echo "<td>{$linha['email']}</td>";
                         echo "<td>{$linha['data_de_nascimento']}</td>";
                         echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
-                        echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Editar</a></td>";
+                        echo "<td><a href='cadastro_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Editar</a></td>";
                         echo "</tr>";
                     }
                 }
@@ -84,7 +87,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                     echo "<td>{$linha['email']}</td>";
                     echo "<td>{$linha['data_de_nascimento']}</td>";
                     echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Apagar</a></td>";
-                    echo "<td><a href='../controle/deletar/deletar_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Editar</a></td>";
+                    echo "<td><a href='cadastro_cliente.php?id={$linha['idcliente']}' class='btn btn-danger'>Editar</a></td>";
                     echo "</tr>";
                 }
             }

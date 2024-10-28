@@ -2,6 +2,42 @@
 require_once '../controle/verificar_login.php'
 ?>
 
+<?php
+require_once "../controle/verificar_login.php";
+
+if (isset($_GET['id'])){
+
+require_once "../controle/conexao.php";
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM cliente WHERE idcliente = $id";
+$resultado = mysqli_query($conexao, $sql);
+
+$linha = mysqli_fetch_array($resultado);
+
+$nome = $linha['nome'];
+$cpf = $linha['cpf'];
+$telefone = $linha['telefone'];
+$email = $linha['email'];
+$data_de_nascimento = $linha['data_de_nascimento'];
+
+$botao = "Salva";
+
+} else {
+    $id = 0;
+    $nome = '';
+    $cpf = '';
+    $telefone = '';
+    $email = '';
+    $data_de_nascimento = '';
+
+    $botao = "Cadastrar";
+
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,14 +53,14 @@ require_once '../controle/verificar_login.php'
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_cliente.php" method="get" class="form">
+    <form action="../controle/banco_cliente.php" <?php echo $id; ?> method="get" class="form">
         <p class="title">Cadastro de Cliente</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo cliente.</p>
 
         <!-- Nome -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="nome" required>
+                <input type="text" class="input" name="nome" required value="<?php echo $nome; ?>">
                 <span>Nome:</span>
             </label>
         </div>
@@ -32,7 +68,7 @@ require_once '../controle/verificar_login.php'
         <!-- CPF -->
         <div class="flex">
             <label>
-                <input type="text" class="input"  name="cpf" required>
+                <input type="text" class="input"  name="cpf" required value="<?php echo $cpf; ?>">
                 <span>CPF:</span>
             </label>
         </div>
@@ -40,7 +76,7 @@ require_once '../controle/verificar_login.php'
         <!-- Telefone -->
         <div class="flex">
             <label>
-                <input type="text" class="input"  name="telefone" required>
+                <input type="text" class="input"  name="telefone" required value="<?php echo $telefone; ?>">
                 <span>Telefone:</span>
             </label>
         </div>
@@ -48,7 +84,7 @@ require_once '../controle/verificar_login.php'
         <!-- Email -->
         <div class="flex">
             <label>
-                <input type="email" class="input" name="email" required>
+                <input type="email" class="input" name="email" required value="<?php echo $email; ?>">
                 <span>Email:</span>
             </label>
         </div>
@@ -56,7 +92,7 @@ require_once '../controle/verificar_login.php'
         <!-- Data de Nascimento -->
         <div class="flex">
             <label>
-                <input type="date" class="input" name="data_nascimento" required>
+                <input type="date" class="input" name="data_nascimento" required value="<?php echo $data_de_nascimento; ?>">
             </label>
         </div>
 
