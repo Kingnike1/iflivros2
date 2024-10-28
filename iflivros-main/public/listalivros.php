@@ -67,7 +67,7 @@ if (isset($_GET['valor'])) {
                         echo "<td>{$linha['status']}</td>";
                         echo "<td>{$linha['autor']}</td>";
                         echo "<td><a href='../controle/deletar/deletar_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Apagar</a></td>";
-                        echo "<td><a href='../controle/deletar/deletar_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Editar</a></td>";
+                        echo "<td><a href='cadastro_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Editar</a></td>";
                         echo "</tr>";
     
                     }
@@ -84,7 +84,7 @@ if (isset($_GET['valor'])) {
                     echo "<td>{$linha['status']}</td>";
                     echo "<td>{$linha['autor']}</td>";
                     echo "<td><a href='../controle/deletar/deletar_livros.php?id={$linha['idlivros']}' class='btn btn-danger'>Apagar</a></td>";
-                    echo "<td><a href='cadastrar_livro.php?id={$linha['idlivros']}' class='btn btn-danger'>Editar</a></td>";
+                    echo "<td><a href='cadastro_livro.php?id={$linha['idlivros']}' class='btn btn-danger'>Editar</a></td>";
                     echo "</tr>";
                 }
 

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  iflivros2:
+    image: iflivros2
+    build:
+      context: .
+      dockerfile: ./Dockerfile

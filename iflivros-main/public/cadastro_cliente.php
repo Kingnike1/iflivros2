@@ -1,8 +1,4 @@
 <?php
-require_once '../controle/verificar_login.php'
-?>
-
-<?php
 require_once "../controle/verificar_login.php";
 
 if (isset($_GET['id'])){
@@ -53,9 +49,10 @@ $botao = "Salva";
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_cliente.php" <?php echo $id; ?> method="get" class="form">
+    <form action="../controle/banco_cliente.php" <?php echo $id; ?> method="post" class="form">
         <p class="title">Cadastro de Cliente</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo cliente.</p>
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
 
         <!-- Nome -->
         <div class="flex">

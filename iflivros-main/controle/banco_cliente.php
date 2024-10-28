@@ -1,26 +1,24 @@
-<?php 
-    $nome = $_GET['nome'];
-    $cpf = $_GET['cpf'];
-    $telefone = $_GET['telefone'];
-    $email = $_GET['email'];
-    $data_de_nascimento = $_GET['data_nascimento'];
+<?php
 
-   //echo"Nome:". $nome;
-   //echo "<br>";
-   //echo"CPF:". $cpf;
-   //echo "<br>";
-   //echo"Telefone:". $telefone;
-   //echo "<br>";
-   //echo"Email:". $email;
-   //echo "<br>";
-   //echo"Data de Nascimento:";
-   //$data_de_nascimento;
-   //echo "<br>";
-    
-    require_once "conexao.php";
-    
+require_once "conexao.php";
+
+$id = isset($_POST['id']) ? $_POST['id'] : 0;  // Verifica se id está definido
+$nome = $_POST['nome'];
+$cpf = $_POST['cpf'];
+$telefone = $_POST['telefone'];
+$email = $_POST['email'];
+$data_de_nascimento = $_POST['data_nascimento'];
+
+if ($id == 0) {
     $sql = "INSERT INTO cliente (nome, cpf, telefone, email, data_de_nascimento) VALUES ('$nome', '$cpf', '$telefone', '$email', '$data_de_nascimento')";
+} else {
+    $sql = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', telefone = '$telefone', email = '$email', data_de_nascimento = '$data_de_nascimento' WHERE idcliente = $id";
+}
 
-    mysqli_query( $conexao, $sql);
+mysqli_query($conexao, $sql);
 
-    header ("location: ../public/listacliente.php") ; 
+// Redirecionamento após o insert ou update
+header("Location: ../public/listacliente.php");
+exit;  // Garante que nada mais será executado
+
+?>

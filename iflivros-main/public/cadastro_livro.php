@@ -1,5 +1,33 @@
 <?php
-require_once '../controle/verificar_login.php';
+require_once "../controle/verificar_login.php";
+
+if (isset($_GET['id'])){
+
+require_once "../controle/conexao.php";
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM livro WHERE idlivros = $id";
+$resultado = mysqli_query($conexao, $sql);
+
+$linha = mysqli_fetch_array($resultado);
+
+$nome = $linha['nome'];
+$genero = $linha['genero'];
+$status = $linha['status'];
+$autor = $linha['autor'];
+
+$botao = "Salva";
+
+} else {
+    $id = 0;
+    $nome = '';
+    $cpf = '';
+    $status = '';
+    $autor = '';
+
+    $botao = "Cadastrar";
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,14 +45,14 @@ require_once '../controle/verificar_login.php';
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_livro.php" method="GET" class="form">
+    <form action="../controle/banco_livro.phpid" method="GET" class="form">
         <p class="title">Cadastro de Livro</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo livro.</p>
 
         <!-- Nome -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="nome" required>
+                <input type="text" class="input" name="nome" required value="<?php echo $nome?>">
                 <span>Nome:</span>
             </label>
         </div>
@@ -32,7 +60,7 @@ require_once '../controle/verificar_login.php';
         <!-- Gênero -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="genero" required>
+                <input type="text" class="input" name="genero" required value="<?php echo $genero ?>">
                 <span>Gênero:</span>
             </label>
         </div>
@@ -40,7 +68,7 @@ require_once '../controle/verificar_login.php';
         <!-- Autor -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="autor" required>
+                <input type="text" class="input" name="autor" required value="<?php echo $autor ?>">
                 <span>Autor:</span>
             </label>
         </div>
