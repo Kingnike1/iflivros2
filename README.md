@@ -1,6 +1,6 @@
 # 📚 IF_LIVROS
 
-![IF_LIVROS Logo](https://via.placeholder.com/800x200?text=IF_LIVROS+Gerenciamento+de+Biblioteca)
+![IF_LIVROS Logo](https://github.com/Kingnike1/iflivros2/blob/main/iflivros-main/public/assets/logo.png)
 
 **IF_LIVROS** é um sistema de gerenciamento de biblioteca que simplifica o controle de empréstimos, cadastro de clientes, funcionários, e livros. Com uma interface intuitiva, o projeto permite uma gestão organizada e eficiente das operações de uma biblioteca.
 
