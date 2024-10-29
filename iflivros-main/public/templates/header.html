@@ -9,8 +9,10 @@
         <li><a href="../../public/home.php"><i class="fa fa-home"></i> Página Inicial</a></li>
         <!-- Cadastros em ordem alfabética -->
         <li><a href="../../public/cadastro_cliente.php"><i class="fa fa-user-plus"></i> Cadastro do Cliente</a></li>
-        <li><a href="../../public/cadastro_emprestimo.php"><i class="fa fa-bookmark-o"></i> Cadastro do Empréstimo</a></li>
-        <li><a href="../../public/cadastro_funcionario.php"><i class="fa fa-user-secret"></i> Cadastro do Funcionário</a></li>
+        <li><a href="../../public/cadastro_emprestimo.php"><i class="fa fa-bookmark-o"></i> Cadastro do Empréstimo</a>
+        </li>
+        <li><a href="../../public/cadastro_funcionario.php"><i class="fa fa-user-secret"></i> Cadastro do
+                Funcionário</a></li>
         <li><a href="../../public/cadastro_livro.php"><i class="fa fa-book"></i> Cadastro do Livro</a></li>
         <li><a href="../../public/cadastro_usuario.php"><i class="fa fa-user-plus"></i> Cadastro do Usuario</a></li>
 
@@ -21,7 +23,8 @@
         <li><a href="../../public/listalivros.php"><i class="fa fa-book"></i> Lista Livros</a></li>
 
         <!-- Desenvolvedores e Sair -->
-        <li><a href="../../public/desenvolvedores.php" target="_blank" rel="noopener noreferrer"><i class="fa fa-code"></i> Desenvolvedores</a></li>
+        <li><a href="../../public/desenvolvedores.php" target="_blank" rel="noopener noreferrer"><i
+                    class="fa fa-code"></i> Desenvolvedores</a></li>
         <li><a href="../../controle/deslogar.php"><i class="fa fa-sign-out"></i> Sair</a></li>
     </ul>
 </div>
@@ -31,24 +34,24 @@
 
 <script>
     // Função para abrir e fechar a sidebar
-    document.getElementById('off-menu-btn').onclick = function() {
+    document.getElementById('off-menu-btn').onclick = function () {
         var sidebar = document.getElementById('sidebar');
         sidebar.classList.toggle('active');
     };
 
     // Função para fechar a sidebar
-    document.getElementById('close-btn').onclick = function() {
+    document.getElementById('close-btn').onclick = function () {
         var sidebar = document.getElementById('sidebar');
         sidebar.classList.remove('active');
     };
 
-    document.addEventListener('click', function(event) {
-    var sidebar = document.getElementById('sidebar');
-    var isClickInside = sidebar.contains(event.target) || document.getElementById('off-menu-btn').contains(event.target);
-    if (!isClickInside) {
-        sidebar.classList.remove('active');
-    }
-});
+    document.addEventListener('click', function (event) {
+        var sidebar = document.getElementById('sidebar');
+        var isClickInside = sidebar.contains(event.target) || document.getElementById('off-menu-btn').contains(event.target);
+        if (!isClickInside) {
+            sidebar.classList.remove('active');
+        }
+    });
 
 
 </script>
