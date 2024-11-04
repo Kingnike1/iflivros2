@@ -19,5 +19,5 @@ criar um arquivo pesquisa, conforme a aula de hoje:
 
 lista livros = Sara e Paulo
 lista emprestimo = Paulo
-lista funcionario = Kaio
+lista funcionario = Sara e Paulo
 lista cliente = Paulo

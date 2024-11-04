@@ -1,9 +1,10 @@
 <?php
-        $nome = $_GET['nome'];
-        $cpf = $_GET['cpf'];
-        $telefone = $_GET['telefone'];
-        $data_nascimento = $_GET['data_nascimento'];
-        $funcao = $_GET['funcao'];
+        $id = isset($_POST['id']) ? $_POST['id'] : 0;  // Verifica se id está definido
+        $nome = $_POST['nome'];
+        $cpf = $_POST['cpf'];
+        $telefone = $_POST['telefone'];
+        $data_nascimento = $_POST['data_nascimento'];
+        $funcao = $_POST['funcao'];
 
         // echo "seu nome: " . $nome;
         // echo "<br>";
@@ -21,9 +22,14 @@
         
         require_once "conexao.php";
 
-        $sql = "INSERT INTO funcionario (nome, cpf, telefone, data_de_nascimento, funcao) VALUES ('$nome', '$cpf', '$telefone', '$data_nascimento', '$funcao')";
+        if ($id == 0) {
+                $sql = "INSERT INTO funcionario (nome, cpf, telefone, data_de_nascimento, funcao) VALUES ('$nome', '$cpf', '$telefone','$data_nascimento','$funcao')";
+            } else {
+                $sql = "UPDATE funcionario SET nome = '$nome', cpf = '$cpf', telefone = '$telefone', data_de_nascimento = '$data_nascimento', funcao ='$funcao' WHERE idfuncionario = $id";
+        }
+            
         
         mysqli_query( $conexao, $sql );
 
-        header ("location: ../public/home.html") ;
+        header ("location: ../public/listafuncionario.php") ;
 ?>

@@ -11,6 +11,6 @@
 
         mysqli_query( $conexao, $sql );    
 
-        header ("location: ../public/home.html") ;
+        header ("location: ../public/listaemprestimo.php") ;
 
 ?>

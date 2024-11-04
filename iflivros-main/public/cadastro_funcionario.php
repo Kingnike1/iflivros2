@@ -14,18 +14,16 @@ if (isset($_GET['id'])) {
     $nome = $linha['nome'];
     $cpf = $linha['cpf'];
     $telefone = $linha['telefone'];
+    $data_de_nascimento = $linha['data_de_nascimento'];
+    $funcao = $linha['funcao'];
 
-    // $acao = "editar";
-    $botao = "Salvar";
 } else {
-    // echo "cadastrar";
     $id = 0;
-    $nome = '';
-    $cpf = '';
-    $telefone = '';
-
-    // $acao = "cadastrar";
-    $botao = "Cadastrar";
+    $nome = ''; 
+    $cpf = ''; 
+    $telefone = ''; 
+    $data_de_nascimento = ''; 
+    $funcao = ''; 
 }
 
 ?>
@@ -48,9 +46,11 @@ require_once '../controle/verificar_login.php';
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_funcionario.php" method="get" class="form">
+    <form action="../controle/banco_funcionario.php?<?php echo $id; ?> " method="post" class="form">
         <p class="title">Cadastro de Funcionário</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo funcionário.</p>
+
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
 
         <!-- Nome -->
         <div class="flex">
@@ -63,7 +63,7 @@ require_once '../controle/verificar_login.php';
         <!-- CPF -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="cpf" value="<?php echo $nome; ?>" required>
+                <input type="text" class="input" name="cpf" value="<?php echo $cpf; ?>" required>
                 <span>CPF:</span>
             </label>
         </div>
@@ -71,7 +71,7 @@ require_once '../controle/verificar_login.php';
         <!-- Telefone -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="telefone" value="<?php echo $nome; ?>"  required>
+                <input type="text" class="input" name="telefone" value="<?php echo $telefone; ?>"  required>
                 <span>Telefone:</span>
             </label>
         </div>
@@ -79,14 +79,14 @@ require_once '../controle/verificar_login.php';
         <!-- Data de Nascimento -->
         <div class="flex">
             <label>
-                <input type="date" class="input" name="data_nascimento" value="<?php echo $nome; ?>"  required>
+                <input type="date" class="input" name="data_nascimento" value="<?php echo $data_de_nascimento; ?>"  required>
             </label>
         </div>
 
         <!-- Função -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="funcao" required>
+                <input type="text" class="input" name="funcao" value="<?php echo $funcao; ?>" required>
                 <span>Função:</span>
             </label>
         </div>

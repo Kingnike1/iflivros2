@@ -21,7 +21,7 @@ $botao = "Salva";
 } else {
     $id = 0;
     $nome = '';
-    $cpf = '';
+    $genero = '';
     $status = '';
     $autor = '';
 
@@ -45,10 +45,10 @@ $botao = "Salva";
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_livro.phpid" method="GET" class="form">
+    <form action="../controle/banco_livro.php? <?php echo $id ?>" method="post" class="form">
         <p class="title">Cadastro de Livro</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo livro.</p>
-
+        <input type="hidden" name="id" value="<?php echo $id ?>">
         <!-- Nome -->
         <div class="flex">
             <label>
@@ -56,7 +56,7 @@ $botao = "Salva";
                 <span>Nome:</span>
             </label>
         </div>
-        
+        <!-- <br /><b>Warning</b>:  Undefined variable $genero in <b>/var/www/html/public/cadastro_livro.php</b> on line <b>63</b><br /> -->
         <!-- Gênero -->
         <div class="flex">
             <label>
