@@ -48,23 +48,23 @@ require_once '../controle/verificar_login.php';
 
 
         // Consulta para selecionar todos os dados da tabela emprestimo
-        $sql = "
-                SELECT 
-                    e.emprestimo, 
-                    e.data_de_devolucao, 
-                    e.data_de_emprestimo, 
-                    f.nome AS funcionario_nome, 
-                    l.nome AS livro_nome, 
-                    c.nome AS cliente_nome 
-                FROM 
-                    emprestimo e 
-                JOIN 
-                    funcionario f ON e.funcionario_idfuncionario = f.idfuncionario 
-                JOIN 
-                    livro l ON e.livro_idlivros = l.idlivros 
-                JOIN 
-                    cliente c ON e.cliente_idcliente = c.idcliente
-                ";
+        // $sql = "
+        //         SELECT 
+        //             e.emprestimo, 
+        //             e.data_de_devolucao, 
+        //             e.data_de_emprestimo, 
+        //             f.nome AS funcionario_nome, 
+        //             l.nome AS livro_nome, 
+        //             c.nome AS cliente_nome 
+        //         FROM 
+        //             emprestimo e 
+        //         JOIN 
+        //             funcionario f ON e.funcionario_idfuncionario = f.idfuncionario 
+        //         JOIN 
+        //             livro l ON e.livro_idlivros = l.idlivros 
+        //         JOIN 
+        //             cliente c ON e.cliente_idcliente = c.idcliente
+        //         ";
 
                 $resultados = mysqli_query($conexao, $sql);
 
