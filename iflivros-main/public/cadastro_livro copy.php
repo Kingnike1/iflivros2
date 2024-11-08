@@ -84,9 +84,9 @@ $botao = "Salva";
                 <input class="form-check-input" type="radio" name="status" id="statusIndisponivel" value="Indisponível">
                 <label class="form-check-label" for="statusIndisponivel">Indisponível</label>
 
+            
             </div>
         </div>
-        
         
         <button class="submit">Cadastrar Livro</button>
     </form>
