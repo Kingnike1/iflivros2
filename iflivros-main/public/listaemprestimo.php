@@ -1,5 +1,10 @@
 <?php
 require_once '../controle/verificar_login.php';
+if (isset($_GET['valor'])) {
+    $valor = $_GET['valor'];
+} else {
+    $valor = '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,13 +23,24 @@ require_once '../controle/verificar_login.php';
     
 </head>
 
-<body>
-<img src="../public/assets/logo.png" alt="logo do site" id="logo">
 
+<body>
+    <img src="../public/assets/logo.png" alt="logo do site" id="logo">
+    <?php require_once './templates/header.html'; ?>
+    <form action="listaemprestimo.php" method="get" class="form-pesquisa">
+        <div class="search-wrapper">
+            <input type="text" name="valor" id="valor" class="campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou a data de emprestimo para pesquisar">
+        </div>
+        <button type="submit" class="botao-pesquisa">Pesquisar</button>
+    </form>
+
+    
 <?php
         require_once './templates/header.html'
+        
     ?>
     
+
 
 
 
@@ -45,6 +61,29 @@ require_once '../controle/verificar_login.php';
         
         <?php
             require_once "../controle/conexao.php";
+
+            // Pesquisa
+            if ($valor) {
+                $sql = "SELECT * FROM empprestimo WHERE nome LIKE '%$valor%' OR datadeemprestimo LIKE '%$valor%'";
+                $resultados = mysqli_query($conexao, $sql);
+
+                if (mysqli_num_rows($resultados) == 0) {
+                    echo "<tr><td colspan='7'>Não foram encontrados resultados.</td></tr>";
+                } else {
+                    while ($linha = mysqli_fetch_array($resultados)) {
+                        echo "<tr>";
+                        echo "<td>{$linha['idemprestimo']}</td>";
+                        echo "<td>{$linha['data_de_devoluçao']}</td>";
+                        echo "<td>{$linha['data_de_emprestimo']}</td>";
+                        echo "<td>{$linha['livro']}</td>";
+                        echo "<td>{$linha['cliente']}</td>";
+                        echo "<td>{$linha['funcao']}</td>";
+                        echo "<td><a href='../controle/deletar/deletar_emprestimo.php?id={$linha['idemprestimo']}' class = 'btn btn-danger btn-bounce'>Apagar</a></td>";
+                        echo "<td><a href='cadastro_emprestimo.php?id={$linha['idemprestimo']}' class = 'btn btn-danger btn-bounce'>Editar</a></td>";
+                        echo "</tr>";
+                    }
+                }
+            }
 
 
         // Consulta para selecionar todos os dados da tabela emprestimo
