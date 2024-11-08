@@ -64,7 +64,7 @@ if (isset($_GET['valor'])) {
 
             // Pesquisa
             if ($valor) {
-                $sql = "SELECT * FROM empprestimo WHERE nome LIKE '%$valor%' OR datadeemprestimo LIKE '%$valor%'";
+                $sql = "SELECT * FROM emprestimo WHERE nome LIKE '%$valor%' OR data_de_emprestimo LIKE '%$valor%'";
                 $resultados = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($resultados) == 0) {
