@@ -28,7 +28,7 @@ body {
 
 /* Ao focar, a largura do input aumenta */
 .campo-pesquisa:focus {
-    width: 400px; /* Largura quando focado */
+    width: 500px; /* Largura quando focado */
 }
 
 .botao-pesquisa {

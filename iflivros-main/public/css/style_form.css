@@ -50,6 +50,7 @@ body {
     border-radius: 8px;
     font-size: 16px;
     width: 120%;
+    caret-color: #ffffff;
 }
 
 .form label .input + span {

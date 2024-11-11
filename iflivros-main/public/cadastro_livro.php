@@ -73,13 +73,14 @@ $botao = "Salva";
             </label>
         </div>
 
+        
 
         <!-- Status -->
         <div class="flex">
             <label>Status:</label><br>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="status" id="statusDisponivel" value="Disponível" checked>
-                <label class="form-check-label" for="statusDisponivel">Disponível</label>
+                <label class="form-check-label" for="statusDisponivel"></label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="status" id="statusIndisponivel" value="Indisponível">
@@ -88,7 +89,7 @@ $botao = "Salva";
             </div>
         </div>
         
-        
+    
         <button class="submit">Cadastrar Livro</button>
     </form>
 
