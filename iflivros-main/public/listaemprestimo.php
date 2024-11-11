@@ -24,9 +24,15 @@ if (isset($_GET['valor'])) {
 </head>
 
 
+
+
+
+
 <body>
     <img src="../public/assets/logo.png" alt="logo do site" id="logo">
     <?php require_once './templates/header.html'; ?>
+
+
     <form action="listaemprestimo.php" method="get" class="form-pesquisa">
         <div class="search-wrapper">
             <input type="text" name="valor" id="valor" class="campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou a data de emprestimo para pesquisar">
@@ -34,21 +40,12 @@ if (isset($_GET['valor'])) {
         <button type="submit" class="botao-pesquisa">Pesquisar</button>
     </form>
 
-    
-<?php
-        require_once './templates/header.html'
-        
-    ?>
-    
-
-
-
 
 
     <table>
         <thead>
+            <tr> 
 
-            <tr>
             <th>ID</th>
             <th>DATA DE DEVOLUÇÃO</th>
             <th>DATA DE EMPRESTIMO</th>
@@ -58,13 +55,13 @@ if (isset($_GET['valor'])) {
             <th colspan="2" id="acao">AÇÃO</th>
             </tr>
         </thead>
-        
+        <tbody>
         <?php
             require_once "../controle/conexao.php";
 
             // Pesquisa
             if ($valor) {
-                $sql = "SELECT * FROM emprestimo WHERE nome LIKE '%$valor%' OR data_de_emprestimo LIKE '%$valor%'";
+                $sql = "SELECT * FROM emprestimo WHERE data_de_devolucao LIKE '%$valor%' OR livro LIKE '%$valor%'";
                 $resultados = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($resultados) == 0) {
@@ -85,25 +82,24 @@ if (isset($_GET['valor'])) {
                 }
             }
 
-
         // Consulta para selecionar todos os dados da tabela emprestimo
-        // $sql = "
-        //         SELECT 
-        //             e.emprestimo, 
-        //             e.data_de_devolucao, 
-        //             e.data_de_emprestimo, 
-        //             f.nome AS funcionario_nome, 
-        //             l.nome AS livro_nome, 
-        //             c.nome AS cliente_nome 
-        //         FROM 
-        //             emprestimo e 
-        //         JOIN 
-        //             funcionario f ON e.funcionario_idfuncionario = f.idfuncionario 
-        //         JOIN 
-        //             livro l ON e.livro_idlivros = l.idlivros 
-        //         JOIN 
-        //             cliente c ON e.cliente_idcliente = c.idcliente
-        //         ";
+        $sql = "
+                SELECT 
+                    e.emprestimo, 
+                    e.data_de_devolucao, 
+                    e.data_de_emprestimo, 
+                    f.nome AS funcionario_nome, 
+                    l.nome AS livro_nome, 
+                    c.nome AS cliente_nome 
+                FROM 
+                    emprestimo e 
+                JOIN 
+                    funcionario f ON e.funcionario_idfuncionario = f.idfuncionario 
+                JOIN 
+                    livro l ON e.livro_idlivros = l.idlivros 
+                JOIN 
+                    cliente c ON e.cliente_idcliente = c.idcliente
+                ";
 
                 $resultados = mysqli_query($conexao, $sql);
 
