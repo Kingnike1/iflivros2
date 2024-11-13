@@ -86,3 +86,76 @@ Este sistema de gerenciamento de biblioteca foi desenvolvido com o intuito de fa
 - **Notificações de Atraso**: O sistema pode ser expandido para enviar notificações de atraso para clientes que não devolveram os livros dentro do prazo.
 - **Controle de Reservas**: Implementar a funcionalidade de reserva de livros para clientes, com a possibilidade de notificação quando o livro estiver disponível.
 - **Sistema de Multas**: Integrar um sistema de multas por atraso na devolução de livros.
+
+# IF_LIVROS
+
+## controle
+- **deletar**
+  - `deletar_funcionario.php`  - Deleta funcionário
+  - `deletar_emprestimo.php`   - Deleta empréstimo
+  - `deletar_cliente.php`      - Deleta cliente
+  - `deletar_livro.php`        - Deleta livro
+- `banco_cliente.php`          - Operações de banco de dados para cliente
+- `banco_emprestimo.php`       - Operações de banco de dados para empréstimo
+- `banco_funcionario.php`      - Operações de banco de dados para funcionário
+- `banco_livro.php`            - Operações de banco de dados para livro
+- `banco_usuario.php`          - Operações de banco de dados para usuário
+- `conexao.php`                - Arquivo de conexão com o banco de dados
+- `deslongar.php`              - Função de deslongar
+- `estatisticas.php`           - Geração de estatísticas
+- `login.php`                  - Página de login
+- `verificar_login.php`        - Verificação de login
+
+## documentation
+- **bd**
+  - `foto_tabela.png`          - Foto da tabela do banco de dados
+  - `script_banco.sql`         - Script do banco de dados
+  - `insert_funcionario.sql`   - Inserção de funcionário
+  - `insert_livro.sql`         - Inserção de livro
+  - `insert_cliente.sql`       - Inserção de cliente
+  - `insert_emprestimo.sql`    - Inserção de empréstimo
+  - `arquivo_1.mwb`            - Arquivo MWB
+  - `arquivo_2.mwb`            - Arquivo MWB
+- **entregas_e_aulas**
+  - `entrega_1.zip`            - Arquivo ZIP da entrega parte 1
+  - `entrega_2.zip`            - Arquivo ZIP da entrega parte 2
+  - `entrega_3.zip`            - Arquivo ZIP da entrega parte 3
+  - `readme.md`                - Instruções da entrega
+  - `tarefas.txt`              - Tarefas relacionadas
+  - `professor_aula.txt`       - Material deixado pelo professor
+- `documentacao.md`            - Documento geral de documentação
+
+## public
+- **assets**
+  - `logo.png`                 - Imagem do logo
+  - `outros_arquivos.png`      - Outras imagens ou arquivos estáticos
+- **css**
+  - `styles.css`               - Arquivo CSS principal
+  - `desenvolvedores.css`                 - Arquivo CSS dos desenvolvedores
+  - `header.css`               - Arquivo CSS do cabeçalho
+  - `style_form.css`               - Arquivo CSS formulario
+  - `styles_form.css`               - Arquivo CSS formulario
+- **templates**
+  - `footer.php` - Template para a Rodape
+  - `header`  - Template para a Cabeçalho
+- **test**
+  - `test_livro.php`           - Testes relacionados aos livros
+  - `test_cliente.php`         - Testes relacionados aos clientes
+  - `test_funcionario.php`     - Testes relacionados aos funcionários
+  - `test_emprestimo.php`      - Testes relacionados aos empréstimos
+
+## Arquivos principais
+- `cadastro_cliente.php`       - Formulário para cadastrar cliente
+- `cadastro_funcionario.php`   - Formulário para cadastrar funcionário
+- `cadastro_livro.php`         - Formulário para cadastrar livro
+- `cadastro_usuario.php`       - Formulário para cadastrar usuário
+- `desenvolvedores.php`        - Página com informações dos desenvolvedores
+- `home.php`                   - Página inicial do sistema
+- `index.php`                  - Página principal do site
+- `lista_cliente.php`          - Listagem de clientes
+- `lista_funcionario.php`      - Listagem de funcionários
+- `lista_emprestimo.php`       - Listagem de empréstimos
+- `lista_livros.php`           - Listagem de livros
+- `docker-compose.yml`         - Arquivo de configuração do Docker Compose
+- `Dockerfile`                 - Arquivo Dockerfile
+- `README.md`                  - Arquivo de leitura inicial do projeto
