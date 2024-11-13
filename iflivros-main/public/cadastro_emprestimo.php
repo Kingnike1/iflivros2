@@ -1,37 +1,49 @@
 <?php
 require_once "../controle/verificar_login.php";
+require_once "../controle/conexao.php";
 
-if (isset($_GET['id'])) {
+// Inicializa variáveis
+$id = 0;
+$livro_id = '';
+$cliente_id = '';
+$funcionario_id = '';
+$data_emprestimo = '';
+$data_devolucao = '';
+$botao = "Cadastrar"; // Define o botão como "Cadastrar" por padrão
 
-    require_once "../controle/conexao.php";
-
+// Verifica se o parâmetro 'id' foi passado na URL (edição)
+if (isset($_GET['id']) && $_GET['id'] != '') {
     $id = $_GET['id'];
+
+    // Consulta ao banco para editar o empréstimo
     $sql = "SELECT * FROM emprestimo WHERE emprestimo = $id";
     $resultado = mysqli_query($conexao, $sql);
+    
+    if ($resultado) {
+        $linha = mysqli_fetch_array($resultado);
 
-    $linha = mysqli_fetch_array($resultado);
+        // Verifica se o empréstimo foi encontrado
+        if ($linha) {
+            // Preenche os campos do formulário com os dados do empréstimo
+            $livro_id = $linha['livro_idlivros'];
+            $cliente_id = $linha['cliente_idcliente'];
+            $funcionario_id = $linha['funcionario_idfuncionario'];
+            $data_emprestimo = $linha['data_de_emprestimo'];
+            $data_devolucao = $linha['data_de_devolucao'];
 
-    // Atribui os valores do empréstimo obtido na consulta
-    $livro_id = $linha['livro_idlivros'];  // Corrigido o nome da coluna
-    $cliente_id = $linha['cliente_idcliente'];  // Corrigido o nome da coluna
-    $funcionario_id = $linha['funcionario_idfuncionario'];  // Corrigido o nome da coluna
-    $data_emprestimo = $linha['data_de_emprestimo'];  // Corrigido o nome da coluna
-    $data_devolucao = $linha['data_de_devolucao'];  // Corrigido o nome da coluna
-
-    $botao = "Salvar";
-
-} else {
-    // Define os valores iniciais para um novo cadastro de empréstimo
-    $id = 0;
-    $livro_id = '';
-    $cliente_id = '';
-    $funcionario_id = '';
-    $data_emprestimo = '';
-    $data_devolucao = '';
-
-    $botao = "Cadastrar";
+            // Atualiza o botão para "Salvar"
+            $botao = "Salvar";
+        } else {
+            // Se o empréstimo não for encontrado, exibe uma mensagem
+            echo "Empréstimo não encontrado.";
+            exit;
+        }
+    } else {
+        // Erro ao consultar o banco de dados
+        echo "Erro ao acessar o banco de dados.";
+        exit;
+    }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -52,57 +64,60 @@ if (isset($_GET['id'])) {
 
     <!-- Livro -->
     <label for="livro_id">Livro:</label><br>
-    <select name="livro_id" required>  <!-- Corrigido o nome do campo -->
+    <select name="livro_id" required> 
         <?php
+        // Consulta para carregar livros
         $sql = "SELECT idlivros, nome FROM livro";
         $resultados = mysqli_query($conexao, $sql);
         while ($linha = mysqli_fetch_array($resultados)) {
-            $id = $linha['idlivros'];
-            $nome = $linha['nome'];
-            $selected = ($livro_id == $id) ? "selected" : "";
-            echo "<option value='$id' $selected>$nome</option>";
+            $id_livro = $linha['idlivros'];
+            $nome_livro = $linha['nome'];
+            $selected = ($livro_id == $id_livro) ? "selected" : "";
+            echo "<option value='$id_livro' $selected>$nome_livro</option>";
         }
         ?>
     </select><br>
 
     <!-- Cliente -->
     <label for="cliente_id">Cliente:</label><br>
-    <select name="cliente_id" required>  <!-- Corrigido o nome do campo -->
+    <select name="cliente_id" required> 
         <?php
+        // Consulta para carregar clientes
         $sql = "SELECT idcliente, nome FROM cliente";
         $resultados = mysqli_query($conexao, $sql);
         while ($linha = mysqli_fetch_array($resultados)) {
-            $id = $linha['idcliente'];
-            $nome = $linha['nome'];
-            $selected = ($cliente_id == $id) ? "selected" : "";
-            echo "<option value='$id' $selected>$nome</option>";
+            $id_cliente = $linha['idcliente'];
+            $nome_cliente = $linha['nome'];
+            $selected = ($cliente_id == $id_cliente) ? "selected" : "";
+            echo "<option value='$id_cliente' $selected>$nome_cliente</option>";
         }
         ?>
     </select><br>
 
     <!-- Funcionário -->
     <label for="funcionario_id">Funcionário:</label><br>
-    <select name="funcionario_id" required>  <!-- Corrigido o nome do campo -->
+    <select name="funcionario_id" required>  
         <?php
+        // Consulta para carregar funcionários
         $sql = "SELECT idfuncionario, nome FROM funcionario";
         $resultados = mysqli_query($conexao, $sql);
         while ($linha = mysqli_fetch_array($resultados)) {
-            $id = $linha['idfuncionario'];
-            $nome = $linha['nome'];
-            $selected = ($funcionario_id == $id) ? "selected" : "";
-            echo "<option value='$id' $selected>$nome</option>";
+            $id_funcionario = $linha['idfuncionario'];
+            $nome_funcionario = $linha['nome'];
+            $selected = ($funcionario_id == $id_funcionario) ? "selected" : "";
+            echo "<option value='$id_funcionario' $selected>$nome_funcionario</option>";
         }
         ?>
     </select><br>
 
     <!-- Datas de Empréstimo e Devolução -->
     <label for="data_emprestimo">Data de Empréstimo:</label><br>
-    <input type="date" name="data_de_emprestimo" required value="<?php echo $data_emprestimo; ?>"><br>  <!-- Corrigido o nome do campo -->
+    <input type="date" name="data_de_emprestimo" required value="<?php echo $data_emprestimo; ?>"><br> 
 
     <label for="data_devolucao">Data de Devolução:</label><br>
-    <input type="date" name="data_de_devolucao" required value="<?php echo $data_devolucao; ?>"><br>  <!-- Corrigido o nome do campo -->
+    <input type="date" name="data_de_devolucao" required value="<?php echo $data_devolucao; ?>"><br> 
 
-    <input type="submit" value="<?php echo $botao; ?>">
+    <input type="submit" value="<?php echo $botao; ?>"> <!-- Exibe o botão adequado -->
 </form>
 
 <?php require_once "../public/templates/footer.html"; ?>
