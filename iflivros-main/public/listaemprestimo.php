@@ -68,7 +68,10 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                     JOIN 
                         cliente c ON e.cliente_idcliente = c.idcliente
                     WHERE 
-                        e.data_de_devolucao LIKE '%$valor%' OR l.nome LIKE '%$valor%'";
+                        e.data_de_devolucao LIKE '%$valor%' OR l.nome LIKE '%$valor%'
+                    ORDER BY 
+                        e.emprestimo ASC";
+
 
             $resultados = mysqli_query($conexao, $sql);
 

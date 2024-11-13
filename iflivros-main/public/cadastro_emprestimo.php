@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
 
 <h2>Empréstimo de Livro</h2>
 <form action="../controle/banco_emprestimo.php" method="post">
-    <input type="hidden" name="id_emprestimo" value="<?php echo $id; ?>">
+    <input type="hidden" name="id" value="<?php echo $id; ?>">
 
     <!-- Livro -->
     <label for="livro_id">Livro:</label><br>

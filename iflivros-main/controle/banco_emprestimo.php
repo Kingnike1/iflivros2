@@ -21,7 +21,6 @@ if ($id == 0) {
                 data_de_emprestimo = '$data_emprestimo', data_de_devolucao = '$data_devolucao' 
             WHERE emprestimo = $id";  // A chave primária da tabela é 'emprestimo', não 'idfuncionario'
 }
-        mysqli_query( $conexao, $sql );    
+mysqli_query($conexao, $sql);
 
-        header ("location: ../public/listaemprestimo.php") ;
-?>
+header("location: ../public/listaemprestimo.php");
