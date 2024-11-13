@@ -6,7 +6,7 @@ function getEstatisticas() {
     // Consultas SQL para contar os registros
     $sql_livros = "SELECT COUNT(*) AS total_livros FROM livro";
     $sql_clientes = "SELECT COUNT(*) AS total_clientes FROM cliente";
-    $sql_emprestimos = "SELECT COUNT(*) AS emprestimos_abertos FROM emprestimo WHERE data_de_devolucao IS NULL";
+    $sql_emprestimos = "SELECT COUNT(*) AS emprestimos_abertos FROM emprestimo";
     $sql_funcionarios = "SELECT COUNT(*) AS total_funcionarios FROM funcionario";
 
     // Executar as consultas

@@ -14,6 +14,8 @@ $max_value = max($estatisticas['total_livros'], $estatisticas['total_clientes'],
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas da Biblioteca</title>
+    <link rel="stylesheet" href="../public/css/header.css">
+
     <style>
         /* =========================== */
         /* ESTILO GERAL DA PÁGINA */
@@ -52,9 +54,13 @@ $max_value = max($estatisticas['total_livros'], $estatisticas['total_clientes'],
 
         p strong {
             font-weight: bold;
-            color: #007acc; /* Cor para os rótulos */
+            color: #007acc; 
         }
 
+        a{
+            text-decoration: none;
+            color: #007acc;
+        }
         /* =========================== */
         /* ESTILO DO CONTAINER DE CONTEÚDO */
         /* =========================== */
@@ -124,15 +130,35 @@ $max_value = max($estatisticas['total_livros'], $estatisticas['total_clientes'],
             font-weight: bold;
             color: #333;
         }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: auto;
+        }
+        footer p {
+            color: black;
+            font-size: 18px;
+            margin: 20px auto;
+            width: 80%;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
-    <h1>Resumo Estatístico</h1>
 
-    <p><strong>Total de Livros:</strong> <?php echo $estatisticas['total_livros']; ?></p>
-    <p><strong>Total de Clientes:</strong> <?php echo $estatisticas['total_clientes']; ?></p>
-    <p><strong>Empréstimos Abertos:</strong> <?php echo $estatisticas['emprestimos_abertos']; ?></p>
-    <p><strong>Total de Funcionários:</strong> <?php echo $estatisticas['total_funcionarios']; ?></p>
+<?php require_once './templates/header.html'; ?>
+<h1>Resumo Estatístico</h1>
+
+    <p><strong> <a href="listalivros.php">Total de Livros:</a></strong> <?php echo $estatisticas['total_livros']; ?></p>
+    <p><strong> <a href="listacliente.php">Total de Clientes:</a></strong> <?php echo $estatisticas['total_clientes']; ?></p>
+    <p><strong><a href="listaemprestimo.php">Empréstimos Abertos:</a></strong> <?php echo $estatisticas['emprestimos_abertos']; ?></p>
+    <p><strong> <a href="listafuncionario.php">Total de Funcionários:</a></strong> <?php echo $estatisticas['total_funcionarios']; ?></p>
 
     <!-- Seção do Gráfico -->
     <section class="grafico">
@@ -150,5 +176,8 @@ $max_value = max($estatisticas['total_livros'], $estatisticas['total_clientes'],
             <span class="valor">Total de Funcionários: <?php echo $estatisticas['total_funcionarios']; ?></span>
         </div>
     </section>
+
+    <?php require_once "../public/templates/footer.html"; ?>
+
 </body>
 </html>
