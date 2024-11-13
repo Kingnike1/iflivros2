@@ -1,10 +1,11 @@
 <?php
-$livro_id = $_GET["livro_id"];
-$cliente_id = $_GET["cliente_id"];
-$funcionario_id = $_GET["funcionario_id"];
-$data_emprestimo = $_GET["data_emprestimo"];
-$data_devolucao = $_GET["data_devolucao"];
-$id = $_GET["id"]; // Aqui você precisa recuperar o ID de empréstimo, caso seja um UPDATE
+$id = isset($_POST['id']) ? $_POST['id'] : 0;  // Verifica se id está definido
+
+$livro_id = $_POST["livro_id"];
+$cliente_id = $_POST["cliente_id"];
+$funcionario_id = $_POST["funcionario_id"];
+$data_emprestimo = $_POST["data_de_emprestimo"];
+$data_devolucao = $_POST["data_de_devolucao"];
 
 require_once "conexao.php";
 
