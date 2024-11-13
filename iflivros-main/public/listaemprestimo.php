@@ -91,8 +91,8 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                     echo "<td>$livro_nome</td>";
                     echo "<td>$cliente_nome</td>";
                     echo "<td>$funcionario_nome</td>";
-                    echo "<td><a href='../controle/deletar/deletar_emprestimo.php?id={$id}' class='btn btn-danger'>Apagar</a></td>";
-                    echo "<td><a href=../controle/banco_emprestimo.php' class='btn btn-danger btn-bounce'>Editar</a></td>";
+                    echo "<td><a href='../controle/deletar/deletar_emprestimo.php?id={$linha['emprestimo']}' class='btn btn-danger'>Apagar</a></td>";
+                    echo "<td><a href='cadastro_emprestimo.php?id={$linha['emprestimo']}' class='btn btn-danger btn-bounce'>Editar</a></td>";
                     echo "</tr>";
                 }
             }

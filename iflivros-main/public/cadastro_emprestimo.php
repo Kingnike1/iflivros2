@@ -1,5 +1,37 @@
 <?php
-require_once '../controle/verificar_login.php'
+require_once "../controle/verificar_login.php";
+
+if (isset($_GET['id'])) {
+
+    require_once "../controle/conexao.php";
+
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM emprestimo WHERE emprestimo = $id";
+    $resultado = mysqli_query($conexao, $sql);
+
+    $linha = mysqli_fetch_array($resultado);
+
+    // Atribui os valores do empréstimo obtido na consulta
+    $livro_id = $linha['livro_idlivros'];  // Corrigido o nome da coluna
+    $cliente_id = $linha['cliente_idcliente'];  // Corrigido o nome da coluna
+    $funcionario_id = $linha['funcionario_idfuncionario'];  // Corrigido o nome da coluna
+    $data_emprestimo = $linha['data_de_emprestimo'];  // Corrigido o nome da coluna
+    $data_devolucao = $linha['data_de_devolucao'];  // Corrigido o nome da coluna
+
+    $botao = "Salvar";
+
+} else {
+    // Define os valores iniciais para um novo cadastro de empréstimo
+    $id = 0;
+    $livro_id = '';
+    $cliente_id = '';
+    $funcionario_id = '';
+    $data_emprestimo = '';
+    $data_devolucao = '';
+
+    $botao = "Cadastrar";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,67 +46,66 @@ require_once '../controle/verificar_login.php'
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <h2>Empréstimo de Livro</h2>
-    <form action="../controle/banco_emprestimo.php" method="get">
-        <label for="livro_id">Livro:</label><br>
+<h2>Empréstimo de Livro</h2>
+<form action="../controle/banco_emprestimo.php" method="post">
+    <input type="hidden" name="id_emprestimo" value="<?php echo $id; ?>">
 
-        
-        <select name="livro_id" required>
-            <?php
-            require_once "../controle/conexao.php";
+    <!-- Livro -->
+    <label for="livro_id">Livro:</label><br>
+    <select name="livro_id" required>  <!-- Corrigido o nome do campo -->
+        <?php
+        $sql = "SELECT idlivros, nome FROM livro";
+        $resultados = mysqli_query($conexao, $sql);
+        while ($linha = mysqli_fetch_array($resultados)) {
+            $id = $linha['idlivros'];
+            $nome = $linha['nome'];
+            $selected = ($livro_id == $id) ? "selected" : "";
+            echo "<option value='$id' $selected>$nome</option>";
+        }
+        ?>
+    </select><br>
 
-            // Livros
-            $sql = "SELECT idlivros, nome FROM livro WHERE status = 'Disponível'"; // Alterado aqui
-            $resultados = mysqli_query($conexao, $sql);
+    <!-- Cliente -->
+    <label for="cliente_id">Cliente:</label><br>
+    <select name="cliente_id" required>  <!-- Corrigido o nome do campo -->
+        <?php
+        $sql = "SELECT idcliente, nome FROM cliente";
+        $resultados = mysqli_query($conexao, $sql);
+        while ($linha = mysqli_fetch_array($resultados)) {
+            $id = $linha['idcliente'];
+            $nome = $linha['nome'];
+            $selected = ($cliente_id == $id) ? "selected" : "";
+            echo "<option value='$id' $selected>$nome</option>";
+        }
+        ?>
+    </select><br>
 
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idlivros']; // Usando idlivros
-                $nome = $linha['nome'];
-                echo "<option value='$id'>$nome</option>";
-            }
-            ?>
-        </select><br>
+    <!-- Funcionário -->
+    <label for="funcionario_id">Funcionário:</label><br>
+    <select name="funcionario_id" required>  <!-- Corrigido o nome do campo -->
+        <?php
+        $sql = "SELECT idfuncionario, nome FROM funcionario";
+        $resultados = mysqli_query($conexao, $sql);
+        while ($linha = mysqli_fetch_array($resultados)) {
+            $id = $linha['idfuncionario'];
+            $nome = $linha['nome'];
+            $selected = ($funcionario_id == $id) ? "selected" : "";
+            echo "<option value='$id' $selected>$nome</option>";
+        }
+        ?>
+    </select><br>
 
-        
-        <label for="cliente_id">Cliente:</label><br>
-        <select name="cliente_id" required>
-            <?php
-            $sql = "SELECT idcliente, nome FROM cliente";
-            $resultados = mysqli_query($conexao, $sql);
+    <!-- Datas de Empréstimo e Devolução -->
+    <label for="data_emprestimo">Data de Empréstimo:</label><br>
+    <input type="date" name="data_de_emprestimo" required value="<?php echo $data_emprestimo; ?>"><br>  <!-- Corrigido o nome do campo -->
 
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idcliente'];
-                $nome = $linha['nome'];
-                echo "<option value='$id'>$nome</option>";
-            }
-            ?>
-        </select><br>
-        
-        <label for="funcionario_id">Funcionário:</label><br>
-        <select name="funcionario_id" required>
-            <?php
-            $sql = "SELECT idfuncionario, nome FROM funcionario";
-            $resultados = mysqli_query($conexao, $sql);
+    <label for="data_devolucao">Data de Devolução:</label><br>
+    <input type="date" name="data_de_devolucao" required value="<?php echo $data_devolucao; ?>"><br>  <!-- Corrigido o nome do campo -->
 
-            while ($linha = mysqli_fetch_array($resultados)) {
-                $id = $linha['idfuncionario'];
-                $nome = $linha['nome'];
-                echo "<option value='$id'>$nome</option>";
-            }
-            ?>
-        </select><br>
-        
-        <label for="data_emprestimo">Data de Empréstimo:</label><br>
-        <input type="date" name="data_emprestimo" required><br>
-    
-        <label for="data_devolucao">Data de Devolução:</label><br>
-        <input type="date" name="data_devolucao" required><br>
+    <input type="submit" value="<?php echo $botao; ?>">
+</form>
 
-        <input type="submit" value="Realizar Empréstimo">
-    </form>    
-
-    <?php require_once "../public/templates/footer.html";?>
-
+<?php require_once "../public/templates/footer.html"; ?>
 
 </body>
 </html>
