@@ -130,6 +130,8 @@ INSERT INTO `IF_livros`.`usuario` (`email`, `senha`) VALUES
 ('rafael.mendes@gmail.com', 'Rafael123'),
 ('ricardo.santos@gmail.com', 'Ricardo123'),
 ('thiago.ribeiro@gmail.com', 'Thiago123');
+INSERT INTO `IF_livros`.`usuario` (`email`, `senha`) VALUES
+('oi@gmail.com','123');
 
 
 -- SQLBook: Code

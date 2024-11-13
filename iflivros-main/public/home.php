@@ -26,7 +26,10 @@ require_once '../controle/verificar_login.php'
         <!-- Seções com animação de subida no scroll -->
         <section class="painel" data-aos="fade-up">
             <h2>Painel de Controle</h2>
-            <p>Bem-vindo ao painel de controle do sistema da biblioteca! Aqui você tem acesso a todas as funcionalidades essenciais, incluindo o cadastro de novos livros, clientes, empréstimos e funcionários. Gerencie eficientemente todas as informações da biblioteca em um único lugar.</p>
+            <p>Bem-vindo ao painel de controle do sistema da biblioteca! Aqui você tem acesso a todas as funcionalidades essenciais, incluindo o cadastro de novos livros, clientes, empréstimos e funcionários. Gerencie eficientemente todas as informações da biblioteca em um único lugar.</p><br>
+            <iframe src="pagina_estatisticas.php">
+
+            </iframe>
         </section>
 
         <section class="biblioteca" data-aos="fade-up">
