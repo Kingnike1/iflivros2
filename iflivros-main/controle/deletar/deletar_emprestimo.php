@@ -7,4 +7,4 @@ $id = $_GET['id'];
 $sql_funcionario = "DELETE FROM emprestimo WHERE emprestimo = $id;";
 mysqli_query($conexao, $sql_funcionario);
 
-header("Location: ../../public/listaemprestimo.php");
+header("Location: ../../public/lista_emprestimo.php");

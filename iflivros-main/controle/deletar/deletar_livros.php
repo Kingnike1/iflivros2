@@ -11,5 +11,5 @@
     $sql_funcionario = "DELETE FROM livro WHERE idlivros = $id;";
     mysqli_query($conexao, $sql_funcionario);
     
-    header("Location: ../../public/listalivros.php");
+    header("Location: ../../public/lista_livros.php");
 ?>

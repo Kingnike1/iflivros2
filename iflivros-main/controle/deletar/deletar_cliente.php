@@ -9,5 +9,5 @@
     $sql_funcionario = "DELETE FROM cliente WHERE idcliente = $id;";
     mysqli_query($conexao, $sql_funcionario);
     
-    header("Location: ../../public/listacliente.php");
+    header("Location: ../../public/lista_cliente.php");
 ?>

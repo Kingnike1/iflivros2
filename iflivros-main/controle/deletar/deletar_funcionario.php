@@ -11,5 +11,5 @@
     $sql_funcionario = "DELETE FROM funcionario WHERE idfuncionario = $id;";
     mysqli_query($conexao, $sql_funcionario);
     
-    header("Location: ../../public/listafuncionario.php");
+    header("Location: ../../public/lista_funcionario.php");
 ?>
