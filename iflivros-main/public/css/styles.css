@@ -19,23 +19,7 @@ iframe {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-    transition: transform 0.3s ease-in-out;
 }
-
-/* Efeito de zoom ao passar o mouse sobre o iframe */
-iframe:hover {
-    transform: scale(1.02);
-}
-
-/* =========================== */
-/* MEDIA QUERY PARA IFRAME EM TELAS MENORES */
-/* =========================== */
-@media (max-width: 768px) {
-    iframe {
-        height: 300px; /* Reduz a altura em telas pequenas */
-    }
-}
-
 
 /* =========================== */
 /* FORMULÁRIO DE PESQUISA */
@@ -219,6 +203,10 @@ footer {
 /* MEDIA QUERY */
 /* =========================== */
 @media (max-width: 768px) {
+    iframe {
+        height: 300px;
+    }
+
     header {
         padding: 15px;
         flex-direction: column;
