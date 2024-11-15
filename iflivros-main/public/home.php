@@ -26,10 +26,8 @@ require_once '../controle/verificar_login.php'
         <!-- Seções com animação de subida no scroll -->
         <section class="painel" data-aos="fade-up">
             <h2>Painel de Controle</h2>
-            <p>Bem-vindo ao painel de controle do sistema da biblioteca! Aqui você tem acesso a todas as funcionalidades essenciais, incluindo o cadastro de novos livros, clientes, empréstimos e funcionários. Gerencie eficientemente todas as informações da biblioteca em um único lugar.</p><br>
-            <iframe src="pagina_estatisticas.php">
-
-            </iframe>
+            <p>Bem-vindo ao painel de controle do sistema da biblioteca! Neste espaço, você pode gerenciar de forma eficiente todas as operações essenciais, como o cadastro de novos livros, clientes, empréstimos e funcionários. Acesse e administre facilmente todas as informações da biblioteca em um único ambiente centralizado, otimizando seu fluxo de trabalho e garantindo organização e controle.</p><br>
+            <iframe src="pagina_estatisticas.php"></iframe>
         </section>
 
         <section class="biblioteca" data-aos="fade-up">

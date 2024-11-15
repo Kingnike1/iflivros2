@@ -93,12 +93,14 @@ h2 {
 /* LOGO */
 /* =========================== */
 #logo {
-    max-height: 200px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: auto;
-}
+    max-height: 200px; 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: auto; 
+    object-fit: contain; 
+  }
+  
 
 /* =========================== */
 /* TABELA */
