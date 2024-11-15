@@ -17,11 +17,6 @@ if (isset($_GET['id'])) {
     $autor = $linha['autor'];
     $botao = "Salvar";
 
-    // Verifique o valor de status (opcional para depuração)
-    // var_dump($status); // Para ver o valor real de status
-
-    // Certifique-se de que o valor de status seja um dos esperados
-
 } else {
     $id = 0;
     $nome = '';
