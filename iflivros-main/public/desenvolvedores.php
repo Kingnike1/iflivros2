@@ -58,7 +58,7 @@ require_once '../controle/verificar_login.php';
                     
                     <img src="./assets/dev3.jpeg" alt="Desenvolvedor 2" class="image">
                     <div class="overlay">
-                        <a href="https://github.com/" class="link_instagram">Nome: Paulo Ricardo</a>
+                        <a href="https://github.com/Paulin09k2" class="link_instagram">Nome: Paulo Ricardo</a>
                         <p class="codinome">
                             <i class="fas fa-code-branch"></i> Back-end
                         </p>                  
@@ -86,7 +86,7 @@ require_once '../controle/verificar_login.php';
                     
                     <img src="./assets/dev4.jpeg" alt="Desenvolvedor 4" class="image">
                     <div class="overlay">
-                        <a href="https://github.com/" class="link_instagram">Nome: Bianca Vitoria</a>
+                        <a href="https://github.com/bianckkj" class="link_instagram">Nome: Bianca Vitoria</a>
                         <p class="codinome">
                         <i class="fas fa-cogs"></i> Back-end
     
@@ -101,7 +101,7 @@ require_once '../controle/verificar_login.php';
                     
                     <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
                     <div class="overlay">
-                        <a href="https://github.com/" class="link_instagram">Nome: Sara Xavier</a>
+                        <a href="https://github.com/saraxavi" class="link_instagram">Nome: Sara Xavier</a>
                         <p class="codinome">
                         <i class="fas fa-server"></i> Back-end
                         </p>
