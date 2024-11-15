@@ -3,7 +3,7 @@
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM usuario WHERE email = '$login' and senha ='$senha'";
+    $sql = "SELECT * FROM usuario WHERE email = '$login'";
     
     $resultados = mysqli_query($conexao, $sql);
 

@@ -24,6 +24,7 @@ if (isset($_SESSION['logado'])) {
         <input type="password" name="senha"> <br><br>
 
         <input type="submit" value="Acessar">
+        <a href="cadastro_usuario.php">cadastrar</a>
     </form>
 </body>
 </html>
