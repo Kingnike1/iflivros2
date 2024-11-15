@@ -14,7 +14,7 @@ $max_value = max($estatisticas['total_livros'], $estatisticas['total_clientes'],
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatísticas da Biblioteca</title>
-    <link rel="stylesheet" href="estatisticas.css">
+    <link rel="stylesheet" href="./css/estatisticas.css">
 </head>
 <body>
 
