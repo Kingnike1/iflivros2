@@ -74,6 +74,5 @@ require_once '../controle/verificar_login.php'
         once: false
       });
     </script>
-    jajajsjsjsjsjsjsjjsjsjjsjs
 </body>
 </html>
