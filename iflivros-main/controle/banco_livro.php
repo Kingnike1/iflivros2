@@ -27,6 +27,6 @@ if ($id == 0) {
 
 mysqli_query($conexao, $sql);
 
-header("location: ../public/listalivros.php");
+header("location: ../public/lista_livros.php");
 exit;
 ?>

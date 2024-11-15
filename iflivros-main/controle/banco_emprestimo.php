@@ -23,4 +23,4 @@ if ($id == 0) {
 }
 mysqli_query($conexao, $sql);
 
-header("location: ../public/listaemprestimo.php");
+header("location: ../public/lista_emprestimo.php");

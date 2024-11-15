@@ -31,5 +31,5 @@
         
         mysqli_query( $conexao, $sql );
 
-        header ("location: ../public/listafuncionario.php") ;
+        header ("location: ../public/lista_funcionario.php") ;
 ?>

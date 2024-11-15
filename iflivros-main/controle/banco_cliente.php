@@ -18,7 +18,7 @@ if ($id == 0) {
 mysqli_query($conexao, $sql);
 
 // Redirecionamento após o insert ou update
-header("Location: ../public/listacliente.php");
+header("Location: ../public/lista_cliente.php");
 exit;  // Garante que nada mais será executado
 
 ?>
