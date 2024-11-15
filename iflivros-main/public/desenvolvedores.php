@@ -38,6 +38,7 @@ require_once '../controle/verificar_login.php';
 
         <h2 class="text-center titulo">Equipe de Desenvolvimento</h2>
         <div class="row mt-4">
+            
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 1</p>
@@ -50,6 +51,7 @@ require_once '../controle/verificar_login.php';
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 2</p> 
@@ -63,6 +65,7 @@ require_once '../controle/verificar_login.php';
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 3</p> 
@@ -76,6 +79,7 @@ require_once '../controle/verificar_login.php';
                     </div>                
                 </div>
             </div>
+            
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 4</p> 
@@ -90,6 +94,7 @@ require_once '../controle/verificar_login.php';
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
                     <p>Desenvolvedor 5</p> 
