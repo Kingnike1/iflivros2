@@ -80,12 +80,12 @@ if (isset($_GET['id'])) {
         <div class="flex">
             <label>Status:</label><br>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="status" id="statusDisponivel" value="Disponível" 
+                <input class="form-check-input" type="radio" name="status" id="statusDisponivel" value="<?php echo $status?>" 
                        <?php echo ($status == 'Disponível') ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="statusDisponivel">Disponível</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="status" id="statusIndisponivel" value="Indisponível" 
+                <input class="form-check-input" type="radio" name="status" id="statusIndisponivel" value="<?php echo $status?>" 
                        <?php echo ($status == 'Indisponível') ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="statusIndisponivel">Indisponível</label>
             </div>
