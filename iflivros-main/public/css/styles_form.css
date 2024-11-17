@@ -120,9 +120,10 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-  position: fixed;
+  position: relative;
   bottom: 0;
-  width: 100%;
+  width: 150%;
+  height: 100%;
 }
 
 /* Media queries */
