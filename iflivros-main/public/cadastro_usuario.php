@@ -15,28 +15,29 @@
 <body>
 <?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_usuario.php" method="post" class="form">
-        <p class="title">Cadastro de Usuário</p>
-        <p class="message">Preencha os dados abaixo para cadastrar um novo usuário.</p>
+<form action="../controle/banco_usuario.php" method="post" class="form">
+    <p class="title">Cadastro de Usuário</p>
+    <p class="message">Preencha os dados abaixo para cadastrar um novo usuário.</p>
 
-        <!-- Email -->
-        <div class="flex">
-            <label>
-                <input type="email" class="input" name="email" required>
-                <span>Email:</span>
-            </label>
-        </div>
+    <!-- Email -->
+    <div class="flex">
+        <label>
+            <input type="email" class="input" name="email" required title="Digite o email do usuário">
+            <span>Email:</span>
+        </label>
+    </div>
 
-        <!-- Senha -->
-        <div class="flex">
-            <label>
-                <input type="password" class="input" name="senha" required>
-                <span>Senha:</span>
-            </label>
-        </div>
+    <!-- Senha -->
+    <div class="flex">
+        <label>
+            <input type="password" class="input" name="senha" required title="Escolha uma senha segura para o usuário">
+            <span>Senha:</span>
+        </label>
+    </div>
 
-        <button class="submit">Cadastrar Usuário</button>
-    </form>
+    <button class="submit" title="Clique para cadastrar o usuário">Cadastrar Usuário</button>
+</form>
+
 
     <?php require_once "../public/templates/footer.html";?>
 

@@ -16,14 +16,13 @@ if (isset($_GET['id'])) {
     $telefone = $linha['telefone'];
     $data_de_nascimento = $linha['data_de_nascimento'];
     $funcao = $linha['funcao'];
-
 } else {
     $id = 0;
-    $nome = ''; 
-    $cpf = ''; 
-    $telefone = ''; 
-    $data_de_nascimento = ''; 
-    $funcao = ''; 
+    $nome = '';
+    $cpf = '';
+    $telefone = '';
+    $data_de_nascimento = '';
+    $funcao = '';
 }
 
 ?>
@@ -33,6 +32,7 @@ require_once '../controle/verificar_login.php';
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,10 +43,11 @@ require_once '../controle/verificar_login.php';
 
     <link rel="stylesheet" href="./css/style_form.css">
 </head>
-<body>
-<?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_funcionario.php?<?php echo $id; ?> " method="post" class="form">
+<body>
+    <?php require_once './templates/header.html'; ?>
+
+    <form action="../controle/banco_funcionario.php?<?php echo $id; ?>" method="post" class="form">
         <p class="title">Cadastro de Funcionário</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo funcionário.</p>
 
@@ -55,7 +56,8 @@ require_once '../controle/verificar_login.php';
         <!-- Nome -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="nome" value="<?php echo $nome; ?>" required>
+                <input type="text" class="input" name="nome" value="<?php echo $nome; ?>" required
+                    title="Digite o nome completo do funcionário">
                 <span>Nome:</span>
             </label>
         </div>
@@ -63,7 +65,8 @@ require_once '../controle/verificar_login.php';
         <!-- CPF -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="cpf" value="<?php echo $cpf; ?>" required>
+                <input type="text" class="input" name="cpf" value="<?php echo $cpf; ?>" required
+                    title="Digite o CPF do funcionário (somente números)">
                 <span>CPF:</span>
             </label>
         </div>
@@ -71,7 +74,8 @@ require_once '../controle/verificar_login.php';
         <!-- Telefone -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="telefone" value="<?php echo $telefone; ?>"  required>
+                <input type="text" class="input" name="telefone" value="<?php echo $telefone; ?>" required
+                    title="Digite o número de telefone com DDD">
                 <span>Telefone:</span>
             </label>
         </div>
@@ -79,22 +83,27 @@ require_once '../controle/verificar_login.php';
         <!-- Data de Nascimento -->
         <div class="flex">
             <label>
-                <input type="date" class="input" name="data_nascimento" value="<?php echo $data_de_nascimento; ?>"  required>
+                <input type="date" class="input" name="data_nascimento" value="<?php echo $data_de_nascimento; ?>" required
+                    title="Selecione a data de nascimento do funcionário">
             </label>
         </div>
 
         <!-- Função -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="funcao" value="<?php echo $funcao; ?>" required>
+                <input type="text" class="input" name="funcao" value="<?php echo $funcao; ?>" required
+                    title="Digite a função do funcionário (ex.: Gerente, Atendente)">
                 <span>Função:</span>
             </label>
         </div>
 
-        <button class="submit">Cadastrar Funcionário</button>
+        <!-- Botão -->
+        <button class="submit" title="Clique para salvar as informações do funcionário">Cadastrar Funcionário</button>
     </form>
-    <?php require_once "../public/templates/footer.html";?>
+
+    <?php require_once "../public/templates/footer.html"; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,24 +1,23 @@
 <?php
 require_once "../controle/verificar_login.php";
 
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
 
-require_once "../controle/conexao.php";
+    require_once "../controle/conexao.php";
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM cliente WHERE idcliente = $id";
-$resultado = mysqli_query($conexao, $sql);
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM cliente WHERE idcliente = $id";
+    $resultado = mysqli_query($conexao, $sql);
 
-$linha = mysqli_fetch_array($resultado);
+    $linha = mysqli_fetch_array($resultado);
 
-$nome = $linha['nome'];
-$cpf = $linha['cpf'];
-$telefone = $linha['telefone'];
-$email = $linha['email'];
-$data_de_nascimento = $linha['data_de_nascimento'];
+    $nome = $linha['nome'];
+    $cpf = $linha['cpf'];
+    $telefone = $linha['telefone'];
+    $email = $linha['email'];
+    $data_de_nascimento = $linha['data_de_nascimento'];
 
-$botao = "Salva";
-
+    $botao = "Salva";
 } else {
     $id = 0;
     $nome = '';
@@ -28,7 +27,6 @@ $botao = "Salva";
     $data_de_nascimento = '';
 
     $botao = "Cadastrar";
-
 }
 ?>
 
@@ -36,6 +34,7 @@ $botao = "Salva";
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,10 +45,10 @@ $botao = "Salva";
 
     <link rel="stylesheet" href="../public/css/style_form.css">
 </head>
-<body>
-<?php require_once './templates/header.html'; ?>
 
-    <form action="../controle/banco_cliente.php" <?php echo $id; ?> method="post" class="form">
+<body>
+    <?php require_once './templates/header.html'; ?>
+    <form action="../controle/banco_cliente.php" method="post" class="form">
         <p class="title">Cadastro de Cliente</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo cliente.</p>
         <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -57,7 +56,7 @@ $botao = "Salva";
         <!-- Nome -->
         <div class="flex">
             <label>
-                <input type="text" class="input" name="nome" required value="<?php echo $nome; ?>">
+                <input type="text" class="input" name="nome" required value="<?php echo $nome; ?>" title="Digite o nome completo do cliente">
                 <span>Nome:</span>
             </label>
         </div>
@@ -65,7 +64,7 @@ $botao = "Salva";
         <!-- CPF -->
         <div class="flex">
             <label>
-                <input type="text" class="input"  name="cpf" required value="<?php echo $cpf; ?>">
+                <input type="text" class="input" name="cpf" required value="<?php echo $cpf; ?>" title="Digite o CPF do cliente">
                 <span>CPF:</span>
             </label>
         </div>
@@ -73,7 +72,7 @@ $botao = "Salva";
         <!-- Telefone -->
         <div class="flex">
             <label>
-                <input type="text" class="input"  name="telefone" required value="<?php echo $telefone; ?>">
+                <input type="text" class="input" name="telefone" required value="<?php echo $telefone; ?>" title="Digite o número de telefone do cliente">
                 <span>Telefone:</span>
             </label>
         </div>
@@ -81,7 +80,7 @@ $botao = "Salva";
         <!-- Email -->
         <div class="flex">
             <label>
-                <input type="email" class="input" name="email" required value="<?php echo $email; ?>">
+                <input type="email" class="input" name="email" required value="<?php echo $email; ?>" title="Digite o email do cliente">
                 <span>Email:</span>
             </label>
         </div>
@@ -89,15 +88,17 @@ $botao = "Salva";
         <!-- Data de Nascimento -->
         <div class="flex">
             <label>
-                <input type="date" class="input" name="data_nascimento" required value="<?php echo $data_de_nascimento; ?>">
+                <input type="date" class="input" name="data_nascimento" required value="<?php echo $data_de_nascimento; ?>" title="Selecione a data de nascimento do cliente">
             </label>
         </div>
 
-        <button class="submit">Cadastrar Cliente</button>
+        <button class="submit" title="Clique para <?php echo $botao === 'Cadastrar' ? 'cadastrar' : 'salvar' ?> o cliente"><?php echo $botao; ?> Cliente</button>
     </form>
 
-    <?php require_once "../public/templates/footer.html";?>
+
+    <?php require_once "../public/templates/footer.html"; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
