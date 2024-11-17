@@ -20,10 +20,10 @@ $max_value = max($estatisticas['total_livros'], $estatisticas['total_clientes'],
 
 <a href="pagina_estatisticas.php"><h1>Resumo Estatístico</h1>
 </a>
-    <p><strong> <a href="listalivros.php">Total de Livros:</a></strong> <?php echo $estatisticas['total_livros']; ?></p>
-    <p><strong> <a href="listacliente.php">Total de Clientes:</a></strong> <?php echo $estatisticas['total_clientes']; ?></p>
-    <p><strong><a href="listaemprestimo.php">Empréstimos Abertos:</a></strong> <?php echo $estatisticas['emprestimos_abertos']; ?></p>
-    <p><strong> <a href="listafuncionario.php">Total de Funcionários:</a></strong> <?php echo $estatisticas['total_funcionarios']; ?></p>
+    <p><strong> <a href="lista_livros.php" target="_parent">Total de Livros:</a></strong> <?php echo $estatisticas['total_livros']; ?></p>
+    <p><strong> <a href="lista_cliente.php" target="_parent">Total de Clientes:</a></strong> <?php echo $estatisticas['total_clientes']; ?></p>
+    <p><strong><a href="lista_emprestimo.php" target="_parent">Empréstimos Abertos:</a></strong> <?php echo $estatisticas['emprestimos_abertos']; ?></p>
+    <p><strong> <a href="lista_funcionario.php" target="_parent">Total de Funcionários:</a></strong> <?php echo $estatisticas['total_funcionarios']; ?></p>
 
     <!-- Seção do Gráfico -->
     <section class="grafico">

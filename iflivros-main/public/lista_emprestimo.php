@@ -27,7 +27,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
         <div class="search-wrapper">
             <input type="text" name="valor" id="valor" class="campo-pesquisa"
                 value="<?php echo htmlspecialchars($valor); ?>"
-                placeholder="Digite o nome do livro ou a data do empréstimo para pesquisar">
+                placeholder="Digite o nome do cliente ou nome do livro  para pesquisar">
         </div>
         <button type="submit" class="botao-pesquisa">Pesquisar</button>
     </form>
@@ -50,7 +50,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
 
             // Consulta para buscar empréstimos
             $sql = "SELECT * FROM cliente";
-                $resultados = mysqli_query($conexao, $sql);
+            $resultados = mysqli_query($conexao, $sql);
 
             $sql = "SELECT 
                         e.emprestimo, 
@@ -68,7 +68,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
                     JOIN 
                         cliente c ON e.cliente_idcliente = c.idcliente
                     WHERE 
-                        e.data_de_devolucao LIKE '%$valor%' OR l.nome LIKE '%$valor%'
+                        l.nome LIKE '%$valor%' OR c.nome LIKE '%$valor%'
                     ORDER BY 
                         e.emprestimo ASC";
 

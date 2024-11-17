@@ -40,7 +40,7 @@ iframe {
 
 /* Ao focar, a largura do input aumenta */
 .campo-pesquisa:focus {
-    width: 500px; /* Largura quando focado */
+    width: 700px; /* Largura quando focado */
 }
 
 .botao-pesquisa {
