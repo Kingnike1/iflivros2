@@ -27,7 +27,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
         <div class="search-wrapper">
             <input type="text" name="valor" id="valor" class="campo-pesquisa"
                 value="<?php echo htmlspecialchars($valor); ?>"
-                placeholder="Digite o nome ou a data de empréstimo para pesquisar">
+                placeholder="Digite o nome do livro ou a data do empréstimo para pesquisar">
         </div>
         <button type="submit" class="botao-pesquisa">Pesquisar</button>
     </form>
