@@ -27,7 +27,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
     <?php require_once './templates/header.html'; ?>
 
 
-    <form action="listacliente.php" method="get" class="form-pesquisa">
+    <form action="lista_cliente.php" method="get" class="form-pesquisa">
         <div class="search-wrapper">
             <input type="text" name="valor" id="valor" class="campo-pesquisa" value="<?php echo htmlspecialchars($valor); ?>" placeholder="Digite o nome ou o CPF para pesquisar">
         </div>

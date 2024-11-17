@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /* Formulário */
@@ -129,7 +130,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
     z-index: 1;
     width: 100%;

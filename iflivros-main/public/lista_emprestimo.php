@@ -23,7 +23,7 @@ $valor = isset($_GET['valor']) ? $_GET['valor'] : '';
     <img src="../public/assets/logo.png" alt="logo do site" id="logo">
     <?php require_once './templates/header.html'; ?>
 
-    <form action="listaemprestimo.php" method="get" class="form-pesquisa">
+    <form action="lista_emprestimo.php" method="get" class="form-pesquisa">
         <div class="search-wrapper">
             <input type="text" name="valor" id="valor" class="campo-pesquisa"
                 value="<?php echo htmlspecialchars($valor); ?>"
