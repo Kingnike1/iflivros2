@@ -99,7 +99,11 @@ require_once '../controle/verificar_login.php';
                 <div class="container overlay-container">
                     <p>Desenvolvedor 5</p> 
                     
-                    
+                    <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
+                    <div class="overlay">
+                        <a href="https://github.com/saraxavi" class="link_instagram">Nome: Sara Xavier</a>
+                        <p class="codinome">
+                        <i class="fas fa-server"></i> Back-end
                         </p>
                     </div>
                 </div>
