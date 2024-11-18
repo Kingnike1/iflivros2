@@ -70,7 +70,7 @@ require_once '../controle/verificar_login.php';
                 <div class="container overlay-container">
                     <p>Desenvolvedor 3</p> 
                     
-                    <img src="./" alt="Desenvolvedor 3" class="image">
+                    <img src="./assets/dev2.jpeg" alt="Desenvolvedor 3" class="image">
                     <div class="overlay">
                         <a href="https://github.com/kaio062/" target="_blank" class="link_instagram">Nome: Kaio Barbosa</a>
                         <p class="codinome">                        
@@ -99,11 +99,7 @@ require_once '../controle/verificar_login.php';
                 <div class="container overlay-container">
                     <p>Desenvolvedor 5</p> 
                     
-                    <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
-                    <div class="overlay">
-                        <a href="https://github.com/saraxavi" class="link_instagram">Nome: Sara Xavier</a>
-                        <p class="codinome">
-                        <i class="fas fa-server"></i> Back-end
+                    
                         </p>
                     </div>
                 </div>
