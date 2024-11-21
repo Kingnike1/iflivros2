@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
 <body>
     <?php require_once './templates/header.html'; ?>
     <form action="../controle/banco_cliente.php" method="post" class="form">
-        <p class="title">Cadastro de Cliente</p>
+        <p class="title"><?php echo ($id > 0) ? "Editar " : "Cadastrar "; ?> Cliente</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo cliente.</p>
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 
@@ -92,7 +92,7 @@ if (isset($_GET['id'])) {
             </label>
         </div>
 
-        <button class="submit" title="Clique para <?php echo $botao === 'Cadastrar' ? 'cadastrar' : 'salvar' ?> o cliente"><?php echo $botao; ?> Cliente</button>
+        <button type="submit" class="submit" title="Clique para <?php echo $botao === 'Cadastrar' ? 'Cadastrar' : 'Salvar' ?> o cliente"><?php echo $botao; ?> Cliente</button>
     </form>
 
 

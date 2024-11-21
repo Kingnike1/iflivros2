@@ -35,7 +35,7 @@
         </label>
     </div>
 
-    <button class="submit" title="Clique para cadastrar o usuário">Cadastrar Usuário</button>
+    <button type="submit" class="submit" title="Clique para cadastrar o usuário">Cadastrar Usuário</button>
 </form>
 
 

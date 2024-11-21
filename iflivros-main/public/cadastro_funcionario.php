@@ -16,6 +16,8 @@ if (isset($_GET['id'])) {
     $telefone = $linha['telefone'];
     $data_de_nascimento = $linha['data_de_nascimento'];
     $funcao = $linha['funcao'];
+    $botao = "Salvar";
+
 } else {
     $id = 0;
     $nome = '';
@@ -23,6 +25,9 @@ if (isset($_GET['id'])) {
     $telefone = '';
     $data_de_nascimento = '';
     $funcao = '';
+
+    $botao = "Cadastrar";
+
 }
 
 ?>
@@ -48,7 +53,7 @@ require_once '../controle/verificar_login.php';
     <?php require_once './templates/header.html'; ?>
 
     <form action="../controle/banco_funcionario.php?<?php echo $id; ?>" method="post" class="form">
-        <p class="title">Cadastro de Funcionário</p>
+        <p class="title"><?php echo ($id > 0) ? "Editar " : "Cadastrar "; ?> Funcionário</p>
         <p class="message">Preencha os dados abaixo para cadastrar um novo funcionário.</p>
 
         <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -98,7 +103,7 @@ require_once '../controle/verificar_login.php';
         </div>
 
         <!-- Botão -->
-        <button class="submit" title="Clique para salvar as informações do funcionário">Cadastrar Funcionário</button>
+        <button type="submit" class="submit" title="Clique para salvar as informações do funcionário"><?php echo $botao; ?> Funcionário</button>
     </form>
 
     <?php require_once "../public/templates/footer.html"; ?>
