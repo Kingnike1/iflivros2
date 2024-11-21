@@ -15,9 +15,7 @@
         $linha = mysqli_fetch_array($resultados);
         $senhaHash = $linha['senha'];
     
-        // verdadeiro ou falso
         if (password_verify($senha, $senhaHash) == true) {
-            // pode acessar.
             session_start();
             $_SESSION['logado'] = 1;
     

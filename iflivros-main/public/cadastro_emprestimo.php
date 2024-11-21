@@ -70,7 +70,11 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
             <option value="" disabled selected>Selecione um livro</option>
             <?php
             // Consulta para carregar livros
-            $sql = "SELECT idlivros, nome FROM livro";
+            $sql = "SELECT l.idlivros, l.nome
+                    FROM livro l
+                    LEFT JOIN emprestimo e ON l.idlivros = e.livro_idlivros
+                    WHERE e.livro_idlivros IS NULL;
+                    ";
             $resultados = mysqli_query($conexao, $sql);
             while ($linha = mysqli_fetch_array($resultados)) {
                 $id_livro = $linha['idlivros'];
