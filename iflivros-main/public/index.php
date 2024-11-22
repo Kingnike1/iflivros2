@@ -6,6 +6,7 @@ if (isset($_SESSION['logado'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@ if (isset($_SESSION['logado'])) {
 
 
 </head>
+
 <body>
     <h2>Login do Usuario</h2>
     <form action="../controle/login.php" method="post">
@@ -22,10 +24,12 @@ if (isset($_SESSION['logado'])) {
         <input type="email" name="login"> <br><br>
         Senha: <br>
         <input type="password" name="senha"> <br><br>
+        <div class="oxe">
+            <input type="submit" value="Acessar">
+            <a href="cadastro_usuario.php">Cadastrar</a>
+        </div>
 
-        <input type="submit" value="Acessar">
-        <a href="cadastro_usuario.php">cadastrar</a>
     </form>
 </body>
-</html>
 
+</html>
