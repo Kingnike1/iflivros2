@@ -60,8 +60,8 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 <body>
     <?php require_once './templates/header.html'; ?>
 
-    <h2>Empréstimo de Livro</h2>
     <form action="../controle/banco_emprestimo.php" method="post">
+        <h2>Empréstimo de Livro</h2>
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 
         <!-- Livro -->

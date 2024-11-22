@@ -45,11 +45,13 @@ form {
   width: 100%;
   max-width: 500px;
   margin-bottom: 20px;
+  height: auto;
 }
 
 /* Estilo para os rótulos (labels) */
 label {
-  display: block;
+  display: inline-block;
+  padding-bottom: 10px;
   font-weight: bold;
   color: var(--text-color);
 }
