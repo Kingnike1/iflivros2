@@ -85,8 +85,7 @@ select:focus {
 }
 
 /* Estilo para o botão de submit */
-input[type="submit"],
-a{
+input[type="submit"]{
   text-decoration: none;
   background-color: var(--primary-color);
   color: #ffffff;
