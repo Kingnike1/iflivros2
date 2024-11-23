@@ -78,7 +78,14 @@ h2 {
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     background-color: #ffffff;
 }
+pre{
+    opacity: 0;
+    transition: opacity ease 3s;
+}
 
+pre:hover{
+    opacity: 1;
+}
 .overlay-container:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);

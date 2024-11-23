@@ -41,7 +41,7 @@ require_once '../controle/verificar_login.php';
             
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 1</p>
+                    <p>Desenvolvedor 1 <br> <pre>vulgo: Sonequinha</pre></p>
                     <img src="./assets/dev1.jpeg" alt="Desenvolvedor 1" class="image">
                     <div class="overlay">
                         <a href="https://github.com/Kingnike1/" target="_blank" class="link_instagram">Nome: Pablo Rodrigues</a>
@@ -54,7 +54,7 @@ require_once '../controle/verificar_login.php';
             
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 2</p> 
+                    <p>Desenvolvedor 2 <br><pre>vulgo: Cheirador de pó</pre> </p> 
                     
                     <img src="./assets/dev3.jpeg" alt="Desenvolvedor 2" class="image">
                     <div class="overlay">
@@ -68,7 +68,7 @@ require_once '../controle/verificar_login.php';
             
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 3</p> 
+                    <p>Desenvolvedor 3 <br> <pre>vulgo: Gordão da XJ</pre></p> 
                     
                     <img src="./assets/dev2.jpeg" alt="Desenvolvedor 3" class="image">
                     <div class="overlay">
@@ -82,7 +82,7 @@ require_once '../controle/verificar_login.php';
             
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 4</p> 
+                <p>Desenvolvedor 2 <br><pre>vulgo: Cheirador de pó</pre> </p> 
                     
                     <img src="./assets/dev4.jpeg" alt="Desenvolvedor 4" class="image">
                     <div class="overlay">
@@ -97,7 +97,7 @@ require_once '../controle/verificar_login.php';
 
             <div class="col-md-4 text-center" data-aos="fade-up">
                 <div class="container overlay-container">
-                    <p>Desenvolvedor 5</p> 
+                <p>Desenvolvedor 5 <br><pre>vulgo: Nossa tampinha</pre> </p> 
                     
                     <img src="./assets/dev5.jpeg" alt="Desenvolvedor 5" class="image">
                     <div class="overlay">
