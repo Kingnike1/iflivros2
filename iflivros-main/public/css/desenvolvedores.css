@@ -168,7 +168,7 @@ pre:hover{
 }
 
 /* Estilo Personalizado para o Parágrafo */
-p {
+p , pre {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #4d4d4d;
