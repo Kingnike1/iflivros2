@@ -159,3 +159,114 @@ Este sistema de gerenciamento de biblioteca foi desenvolvido com o intuito de fa
 - `docker-compose.yml`         - Arquivo de configuração do Docker Compose
 - `Dockerfile`                 - Arquivo Dockerfile
 - `README.md`                  - Arquivo de leitura inicial do projeto
+
+```mermaid
+graph TB
+    User((Library User))
+    Admin((Admin User))
+
+    subgraph "IF Livros System"
+        subgraph "Web Interface Container"
+            WebApp["Web Application<br>PHP-Apache"]
+            
+            subgraph "Frontend Components"
+                AuthUI["Authentication UI<br>PHP/HTML"]
+                BookManagementUI["Book Management UI<br>PHP/HTML"]
+                LoanManagementUI["Loan Management UI<br>PHP/HTML"]
+                StatsUI["Statistics UI<br>PHP/HTML"]
+                Templates["Template System<br>PHP/HTML"]
+            end
+        end
+
+        subgraph "Authentication Container"
+            AuthService["Authentication Service<br>PHP"]
+            
+            subgraph "Auth Components"
+                LoginHandler["Login Handler<br>PHP"]
+                SessionManager["Session Manager<br>PHP"]
+                LogoutHandler["Logout Handler<br>PHP"]
+            end
+        end
+
+        subgraph "Data Access Container"
+            DataAccess["Data Access Layer<br>PHP"]
+            
+            subgraph "Data Components"
+                BookDAO["Book Manager<br>PHP/MySQL"]
+                UserDAO["User Manager<br>PHP/MySQL"]
+                LoanDAO["Loan Manager<br>PHP/MySQL"]
+                ClientDAO["Client Manager<br>PHP/MySQL"]
+                StaffDAO["Staff Manager<br>PHP/MySQL"]
+            end
+        end
+
+        subgraph "Database Container"
+            DB[("Database<br>MariaDB")]
+            
+            subgraph "Database Tables"
+                BookDB["Books Table<br>MariaDB"]
+                UserDB["Users Table<br>MariaDB"]
+                LoanDB["Loans Table<br>MariaDB"]
+                ClientDB["Clients Table<br>MariaDB"]
+                StaffDB["Staff Table<br>MariaDB"]
+            end
+        end
+
+        subgraph "Statistics Container"
+            StatsService["Statistics Service<br>PHP"]
+            
+            subgraph "Statistics Components"
+                DataAggregator["Data Aggregator<br>PHP"]
+                ReportGenerator["Report Generator<br>PHP"]
+            end
+        end
+    end
+
+    %% User Interactions
+    User -->|"Accesses"| WebApp
+    Admin -->|"Manages"| WebApp
+
+    %% Web Interface Connections
+    WebApp -->|"Uses"| AuthUI
+    WebApp -->|"Uses"| BookManagementUI
+    WebApp -->|"Uses"| LoanManagementUI
+    WebApp -->|"Uses"| StatsUI
+    WebApp -->|"Uses"| Templates
+
+    %% Authentication Flow
+    AuthUI -->|"Authenticates via"| AuthService
+    AuthService -->|"Manages"| LoginHandler
+    AuthService -->|"Uses"| SessionManager
+    AuthService -->|"Uses"| LogoutHandler
+
+    %% Data Access Flow
+    BookManagementUI -->|"Uses"| DataAccess
+    LoanManagementUI -->|"Uses"| DataAccess
+    StatsUI -->|"Uses"| DataAccess
+
+    DataAccess -->|"Uses"| BookDAO
+    DataAccess -->|"Uses"| UserDAO
+    DataAccess -->|"Uses"| LoanDAO
+    DataAccess -->|"Uses"| ClientDAO
+    DataAccess -->|"Uses"| StaffDAO
+
+    %% Database Interactions
+    BookDAO -->|"Reads/Writes"| BookDB
+    UserDAO -->|"Reads/Writes"| UserDB
+    LoanDAO -->|"Reads/Writes"| LoanDB
+    ClientDAO -->|"Reads/Writes"| ClientDB
+    StaffDAO -->|"Reads/Writes"| StaffDB
+
+    %% Statistics Flow
+    StatsUI -->|"Requests from"| StatsService
+    StatsService -->|"Uses"| DataAggregator
+    StatsService -->|"Uses"| ReportGenerator
+    DataAggregator -->|"Queries"| DataAccess
+
+    %% Database Container Connections
+    BookDB -->|"Stored in"| DB
+    UserDB -->|"Stored in"| DB
+    LoanDB -->|"Stored in"| DB
+    ClientDB -->|"Stored in"| DB
+    StaffDB -->|"Stored in"| DB
+```
