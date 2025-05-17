@@ -26,7 +26,7 @@ if (isset($_SESSION['logado'])) {
         <input type="password" name="senha"> <br><br>
         <div class="oxe">
             <input type="submit" value="Acessar">
-            <a href="cadastro_usuario.php">Cadastrar</a>
+            <a href="cadastro_usuario.php" class="cadastrar">Cadastrar</a>
         </div>
 
     </form>
