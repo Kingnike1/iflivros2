@@ -85,7 +85,7 @@ select:focus {
 }
 
 /* Estilo para o botão de submit */
-input[type="submit"]{
+input[type="submit"], .cadastrar{
   text-decoration: none;
   background-color: var(--primary-color);
   color: #ffffff;
@@ -97,22 +97,19 @@ input[type="submit"]{
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-input[type="submit"]:hover, a:hover {
+input[type="submit"]:hover, .cadastrar:hover {
   text-decoration: none;
-
   background-color: var(--primary-color-hover);
   transform: scale(1.05);
 }
 
-input[type="submit"]:active, a:active {
+input[type="submit"]:active, .cadastrar:active {
   text-decoration: none;
-
   transform: scale(0.95);
 }
 
-input[type="submit"]:focus, a:focus {
+input[type="submit"]:focus, .cadastrar:focus {
   text-decoration: none;
-
   outline: 2px solid var(--primary-color); /* Acessibilidade ao focar */
 }
 .oxe{
